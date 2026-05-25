@@ -5,6 +5,16 @@
   tarunAI Connect: Bridging the Gap Between AI Agents and the World's Software</strong>
 </div>
 
+<div align="center">
+  
+[![GitHub Stars](https://img.shields.io/github/stars/tharunramagiri/tarunai-connect?style=social)](https://github.com/tharunramagiri/tarunai-connect)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10+-brightgreen)](https://python.org)
+[![Built by tarunai](https://img.shields.io/badge/built%20by-tarunai-ff69b4)](https://tarunai.ramagiritharun.in)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/tharunramagiri/tarunai-connect/pulls)
+
+</div>
+
 ---
 
 **tarunAI Connect** is a CLI framework that auto-generates stateful CLI interfaces for GUI applications, making them agent-native. Forked from CLI-Anything and rebranded for the tarunAI ecosystem.
