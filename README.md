@@ -72,4 +72,4 @@ Apache License 2.0
 ## Links
 
 - **Repository**: [github.com/tharunramagiri/tarunai-connect](https://github.com/tharunramagiri/tarunai-connect)
-- **Web**: [tarunai.dev](https://tarunai.dev)
+- **Web**: [chat.ramagiritharun.in/connect](chat.ramagiritharun.in/connect)
