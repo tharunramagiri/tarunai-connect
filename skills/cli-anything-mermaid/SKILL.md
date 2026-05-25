@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-mermaid"
+name: "tarunai-connect-mermaid"
 description: >-
   Command-line interface for Mermaid Live Editor - Create, edit, and render Mermaid diagrams via stateful project files and mermaid.ink renderer URLs. Designed for AI agents and power users who need to generate flowcharts, sequence diagrams, and other visualizations without a GUI.
 ---
 
-# cli-anything-mermaid
+# tarunai-connect-mermaid
 
 Create, edit, and render Mermaid diagrams via stateful project files and the mermaid.ink renderer. Designed for AI agents and power users who need to generate flowcharts, sequence diagrams, and other visualizations without a GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-mermaid package:
+This CLI is installed as part of the tarunai-connect-mermaid package:
 
 ```bash
-pip install cli-anything-mermaid
+pip install tarunai-connect-mermaid
 ```
 
 **Prerequisites:**
@@ -26,16 +26,16 @@ pip install cli-anything-mermaid
 
 ```bash
 # Show help
-cli-anything-mermaid --help
+tarunai-connect-mermaid --help
 
 # Start interactive REPL mode
-cli-anything-mermaid
+tarunai-connect-mermaid
 
 # Create a new project
-cli-anything-mermaid project new -o diagram.json
+tarunai-connect-mermaid project new -o diagram.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-mermaid --json project info
+tarunai-connect-mermaid --json project info
 ```
 
 ### REPL Mode
@@ -43,7 +43,7 @@ cli-anything-mermaid --json project info
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-mermaid
+tarunai-connect-mermaid
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -95,42 +95,42 @@ Session state commands.
 
 ```bash
 # Create a project with flowchart sample
-cli-anything-mermaid project new --sample flowchart -o flow.json
+tarunai-connect-mermaid project new --sample flowchart -o flow.json
 
 # Replace diagram source
-cli-anything-mermaid --project flow.json diagram set --text "graph TD; A-->B; B-->C;"
+tarunai-connect-mermaid --project flow.json diagram set --text "graph TD; A-->B; B-->C;"
 
 # Render to SVG
-cli-anything-mermaid --project flow.json export render output.svg --format svg
+tarunai-connect-mermaid --project flow.json export render output.svg --format svg
 ```
 
 ### Create a Sequence Diagram
 
 ```bash
 # Create project with sequence sample
-cli-anything-mermaid project new --sample sequence -o seq.json
+tarunai-connect-mermaid project new --sample sequence -o seq.json
 
 # Set diagram from file
-cli-anything-mermaid --project seq.json diagram set --file my_diagram.mmd
+tarunai-connect-mermaid --project seq.json diagram set --file my_diagram.mmd
 
 # Render to PNG
-cli-anything-mermaid --project seq.json export render output.png --format png
+tarunai-connect-mermaid --project seq.json export render output.png --format png
 ```
 
 ### Share a Diagram
 
 ```bash
 # Generate an editable Mermaid Live URL
-cli-anything-mermaid --project flow.json export share --mode edit
+tarunai-connect-mermaid --project flow.json export share --mode edit
 
 # Generate a view-only URL
-cli-anything-mermaid --project flow.json export share --mode view
+tarunai-connect-mermaid --project flow.json export share --mode view
 ```
 
 ### Interactive REPL Session
 
 ```bash
-cli-anything-mermaid
+tarunai-connect-mermaid
 # new flowchart
 # set graph TD; A-->B; B-->C;
 # render output.svg
@@ -155,10 +155,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-mermaid project info
+tarunai-connect-mermaid project info
 
 # JSON output for agents
-cli-anything-mermaid --json project info
+tarunai-connect-mermaid --json project info
 ```
 
 ## For AI Agents
@@ -175,7 +175,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

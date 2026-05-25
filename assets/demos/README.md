@@ -1,4 +1,4 @@
-# CLI-Anything Demo Assets
+# tarunAI Connect Demo Assets
 
 This directory centralizes the GIFs and images used by the repository demo pages.
 The top-level [README.md](../README.md) is the primary showcase; this file is the
@@ -8,7 +8,7 @@ asset-side landing page so the directory still makes sense on its own.
 
 ## FreeCAD — Curiosity Rover via Preview, Live Preview, and Trajectory
 
-> **Harness:** `cli-anything-freecad` | **Preview Stack:** `preview` + `preview live` + `trajectory.json` | **Artifact:** Agent-built Curiosity-style rover
+> **Harness:** `tarunai-connect-freecad` | **Preview Stack:** `preview` + `preview live` + `trajectory.json` | **Artifact:** Agent-built Curiosity-style rover
 
 An agent incrementally assembles a Curiosity-inspired rover while publishing real
 FreeCAD preview bundles, refreshing a live preview session, and recording
@@ -26,7 +26,7 @@ command-to-preview history for later replay.
 
 ## Blender — Orbital Relay Drone via Preview, Live Preview, and Trajectory
 
-> **Harness:** `cli-anything-blender` | **Preview Stack:** `preview` + `preview live` + `trajectory.json` | **Artifact:** Agent-built orbital relay drone
+> **Harness:** `tarunai-connect-blender` | **Preview Stack:** `preview` + `preview live` + `trajectory.json` | **Artifact:** Agent-built orbital relay drone
 
 An agent uses the Blender harness to grow a hard-surface orbital relay drone under
 a real preview loop: each stage pushes new render-backed bundles, the live
@@ -45,7 +45,7 @@ matching visual state.
 
 ## Draw.io — HTTPS Handshake Diagram
 
-> **Harness:** `cli-anything-drawio` | **Time:** ~4 min | **Artifact:** `.drawio` + `.png`
+> **Harness:** `tarunai-connect-drawio` | **Time:** ~4 min | **Artifact:** `.drawio` + `.png`
 
 An agent creates a full HTTPS connection lifecycle diagram from scratch through
 CLI commands only.
@@ -67,7 +67,7 @@ CLI commands only.
 
 ## Slay the Spire II — Game Automation
 
-> **Harness:** `cli-anything-slay-the-spire-ii` | **Artifact:** Automated gameplay session
+> **Harness:** `tarunai-connect-slay-the-spire-ii` | **Artifact:** Automated gameplay session
 
 An agent plays through a Slay the Spire II run using the CLI harness, making
 real-time strategic decisions from game state.
@@ -82,7 +82,7 @@ real-time strategic decisions from game state.
 
 ## VideoCaptioner — Auto-Generated Subtitles
 
-> **Harness:** `cli-anything-videocaptioner` | **Artifact:** Captioned video frames
+> **Harness:** `tarunai-connect-videocaptioner` | **Artifact:** Captioned video frames
 
 An agent uses the VideoCaptioner CLI to automatically generate and overlay styled
 subtitles onto video content.

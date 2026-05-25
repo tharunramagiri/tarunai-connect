@@ -1,17 +1,17 @@
-"""PyPI setup for cli-anything-nslogger."""
+"""PyPI setup for tarunai-connect-nslogger."""
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-nslogger",
+    name="tarunai-connect-nslogger",
     version="0.1.0",
     description="CLI harness for NSLogger — read, filter, export, and monitor NSLogger log files",
-    long_description=open("cli_anything/nslogger/README.md", encoding="utf-8").read(),
+    long_description=open("tarunai_connect/nslogger/README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    author="cli-anything",
+    author="tarunai-connect",
     python_requires=">=3.10",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     package_data={
-        "cli_anything.nslogger": ["helpers/*.swift", "skills/*.md"],
+        "tarunai_connect.nslogger": ["helpers/*.swift", "skills/*.md"],
     },
     install_requires=[
         "click>=8.0",
@@ -20,7 +20,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cli-anything-nslogger=cli_anything.nslogger.nslogger_cli:main",
+            "tarunai-connect-nslogger=tarunai_connect.nslogger.nslogger_cli:main",
         ],
     },
     classifiers=[

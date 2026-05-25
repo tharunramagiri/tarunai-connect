@@ -1,18 +1,18 @@
 ---
-name: "cli-anything-firefly-iii"
-description: "Firefly III CLI - Personal finance management via CLI-Anything"
+name: "tarunai-connect-firefly-iii"
+description: "Firefly III CLI - Personal finance management via tarunAI Connect"
 version: "1.0.0"
-author: "CLI-Anything Community"
+author: "tarunAI Connect Community"
 ---
 
 # Firefly III CLI
 
-Firefly III command-line interface based on CLI-Anything specification. Converts MCP mode to stateless CLI mode to avoid Node residual process issues.
+Firefly III command-line interface based on tarunAI Connect specification. Converts MCP mode to stateless CLI mode to avoid Node residual process issues.
 
 ## Installation
 
 ```bash
-pip install cli-anything-firefly-iii
+pip install tarunai-connect-firefly-iii
 ```
 
 ## Prerequisites
@@ -33,7 +33,7 @@ export FIREFLY_III_PAT="your-personal-access-token"
 ### Command Line Arguments
 
 ```bash
-cli-anything-firefly-iii --base-url https://firefly.yourdomain.com --pat your-token
+tarunai-connect-firefly-iii --base-url https://firefly.yourdomain.com --pat your-token
 ```
 
 ## Command Groups
@@ -58,57 +58,57 @@ cli-anything-firefly-iii --base-url https://firefly.yourdomain.com --pat your-to
 
 ```bash
 # List all accounts
-cli-anything-firefly-iii --json accounts list
+tarunai-connect-firefly-iii --json accounts list
 
 # List asset accounts
-cli-anything-firefly-iii --json accounts list --type asset
+tarunai-connect-firefly-iii --json accounts list --type asset
 
 # Get account details
-cli-anything-firefly-iii --json accounts get --id 123
+tarunai-connect-firefly-iii --json accounts get --id 123
 
 # Create account
-cli-anything-firefly-iii --json accounts create --name "Cash" --type asset --currency-code USD
+tarunai-connect-firefly-iii --json accounts create --name "Cash" --type asset --currency-code USD
 
 # Delete account
-cli-anything-firefly-iii accounts delete --id 123
+tarunai-connect-firefly-iii accounts delete --id 123
 ```
 
 ### Transaction Management
 
 ```bash
 # List transactions
-cli-anything-firefly-iii --json transactions list --limit 10
+tarunai-connect-firefly-iii --json transactions list --limit 10
 
 # Create transaction
-cli-anything-firefly-iii --json transactions create \
+tarunai-connect-firefly-iii --json transactions create \
   --description "Grocery" \
   --amount 50.00 \
   --source-account 1 \
   --category "Food"
 
 # Get transaction details
-cli-anything-firefly-iii --json transactions get --id 456
+tarunai-connect-firefly-iii --json transactions get --id 456
 
 # Delete transaction
-cli-anything-firefly-iii transactions delete --id 456
+tarunai-connect-firefly-iii transactions delete --id 456
 ```
 
 ### Insights and Reports
 
 ```bash
 # Expense report (by category)
-cli-anything-firefly-iii --json insights expense \
+tarunai-connect-firefly-iii --json insights expense \
   --start 2024-01-01 \
   --end 2024-01-31 \
   --group-by category
 
 # Income report
-cli-anything-firefly-iii --json insights income \
+tarunai-connect-firefly-iii --json insights income \
   --start 2024-01-01 \
   --end 2024-01-31
 
 # Account overview
-cli-anything-firefly-iii --json insights overview \
+tarunai-connect-firefly-iii --json insights overview \
   --start 2024-01-01 \
   --end 2024-01-31
 ```
@@ -117,29 +117,29 @@ cli-anything-firefly-iii --json insights overview \
 
 ```bash
 # Search transactions
-cli-anything-firefly-iii --json search transactions --query "grocery"
+tarunai-connect-firefly-iii --json search transactions --query "grocery"
 ```
 
 ### Data Export
 
 ```bash
 # Export transactions
-cli-anything-firefly-iii --json export transactions \
+tarunai-connect-firefly-iii --json export transactions \
   --start 2024-01-01 \
   --end 2024-01-31
 
 # Export accounts
-cli-anything-firefly-iii --json export accounts
+tarunai-connect-firefly-iii --json export accounts
 ```
 
 ### System Information
 
 ```bash
 # System information
-cli-anything-firefly-iii --json info about
+tarunai-connect-firefly-iii --json info about
 
 # Connection status
-cli-anything-firefly-iii info status
+tarunai-connect-firefly-iii info status
 ```
 
 ## Preset Filtering
@@ -148,16 +148,16 @@ Use `--preset` parameter to filter available commands:
 
 ```bash
 # Default preset
-cli-anything-firefly-iii --preset default accounts list
+tarunai-connect-firefly-iii --preset default accounts list
 
 # Full preset
-cli-anything-firefly-iii --preset full accounts list
+tarunai-connect-firefly-iii --preset full accounts list
 
 # Budget preset
-cli-anything-firefly-iii --preset budget budgets list
+tarunai-connect-firefly-iii --preset budget budgets list
 
 # Reporting preset
-cli-anything-firefly-iii --preset reporting insights expense --start 2024-01-01 --end 2024-01-31
+tarunai-connect-firefly-iii --preset reporting insights expense --start 2024-01-01 --end 2024-01-31
 ```
 
 Available presets:
@@ -183,23 +183,23 @@ Available presets:
 
 ```bash
 # 1. Check connection
-cli-anything-firefly-iii info status
+tarunai-connect-firefly-iii info status
 
 # 2. List asset accounts
-cli-anything-firefly-iii --json accounts list --type asset
+tarunai-connect-firefly-iii --json accounts list --type asset
 
 # 3. View account details (get balance)
-cli-anything-firefly-iii --json accounts get --id <account_id>
+tarunai-connect-firefly-iii --json accounts get --id <account_id>
 ```
 
 #### Record Expense
 
 ```bash
 # 1. Find expense accounts
-cli-anything-firefly-iii --json accounts list --type expense
+tarunai-connect-firefly-iii --json accounts list --type expense
 
 # 2. Create transaction
-cli-anything-firefly-iii --json transactions create \
+tarunai-connect-firefly-iii --json transactions create \
   --description "Lunch" \
   --amount 15.50 \
   --source-account <asset_account_id> \
@@ -211,18 +211,18 @@ cli-anything-firefly-iii --json transactions create \
 
 ```bash
 # 1. Expense report
-cli-anything-firefly-iii --json insights expense \
+tarunai-connect-firefly-iii --json insights expense \
   --start 2024-01-01 \
   --end 2024-01-31 \
   --group-by category
 
 # 2. Income report
-cli-anything-firefly-iii --json insights income \
+tarunai-connect-firefly-iii --json insights income \
   --start 2024-01-01 \
   --end 2024-01-31
 
 # 3. Export data
-cli-anything-firefly-iii --json export transactions \
+tarunai-connect-firefly-iii --json export transactions \
   --start 2024-01-01 \
   --end 2024-01-31
 ```
@@ -267,7 +267,7 @@ Error: Authentication failed: Personal Access Token is invalid
 
 ## Comparison with MCP Version
 
-| Feature | MCP Version | CLI-Anything Version |
+| Feature | MCP Version | tarunAI Connect Version |
 |---------|------------|---------------------|
 | Process Lifecycle | Long-running | Single call, immediate exit |
 | Memory Usage | Continuous | On-demand, released after |

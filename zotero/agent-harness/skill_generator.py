@@ -1,5 +1,5 @@
 """
-SKILL.md Generator for CLI-Anything harnesses.
+SKILL.md Generator for tarunAI Connect harnesses.
 """
 
 from __future__ import annotations
@@ -149,11 +149,11 @@ def extract_commands_from_cli(cli_path: Path) -> list[CommandGroup]:
 
 def generate_examples(software_name: str) -> list[Example]:
     return [
-        Example("Runtime Status", "Inspect Zotero paths and backend availability.", f"cli-anything-{software_name} app status --json"),
-        Example("Read Selected Collection", "Persist the collection selected in the Zotero GUI.", f"cli-anything-{software_name} collection use-selected --json"),
-        Example("Render Citation", "Render a citation using Zotero's Local API.", f"cli-anything-{software_name} item citation <item-key> --style apa --locale en-US --json"),
-        Example("Add Child Note", "Create a child note under an existing Zotero item.", f"cli-anything-{software_name} note add <item-key> --text \"Key takeaway\" --json"),
-        Example("Build LLM Context", "Assemble structured context for downstream model analysis.", f"cli-anything-{software_name} item context <item-key> --include-notes --include-links --json"),
+        Example("Runtime Status", "Inspect Zotero paths and backend availability.", f"tarunai-connect-{software_name} app status --json"),
+        Example("Read Selected Collection", "Persist the collection selected in the Zotero GUI.", f"tarunai-connect-{software_name} collection use-selected --json"),
+        Example("Render Citation", "Render a citation using Zotero's Local API.", f"tarunai-connect-{software_name} item citation <item-key> --style apa --locale en-US --json"),
+        Example("Add Child Note", "Create a child note under an existing Zotero item.", f"tarunai-connect-{software_name} note add <item-key> --text \"Key takeaway\" --json"),
+        Example("Build LLM Context", "Assemble structured context for downstream model analysis.", f"tarunai-connect-{software_name} item context <item-key> --include-notes --include-links --json"),
     ]
 
 
@@ -171,14 +171,14 @@ def generate_important_constraints(software_name: str) -> list[str]:
 
 def extract_cli_metadata(harness_path: str) -> SkillMetadata:
     harness_root = Path(harness_path)
-    cli_root = harness_root / "cli_anything"
+    cli_root = harness_root / "tarunai_connect"
     software_dir = next(path for path in cli_root.iterdir() if path.is_dir() and (path / "__init__.py").exists())
     software_name = software_dir.name
     intro = extract_intro_from_readme((software_dir / "README.md").read_text(encoding="utf-8"))
     version = extract_version_from_setup(harness_root / "setup.py")
     groups = extract_commands_from_cli(software_dir / f"{software_name}_cli.py")
     return SkillMetadata(
-        skill_name=f"cli-anything-{software_name}",
+        skill_name=f"tarunai-connect-{software_name}",
         skill_description=f"CLI harness for {_format_display_name(software_name)}.",
         software_name=software_name,
         skill_intro=intro,
@@ -211,8 +211,8 @@ def generate_skill_md_simple(metadata: SkillMetadata) -> str:
         "## Entry Points",
         "",
         "```bash",
-        f"cli-anything-{metadata.software_name}",
-        f"python -m cli_anything.{metadata.software_name}",
+        f"tarunai-connect-{metadata.software_name}",
+        f"python -m tarunai_connect.{metadata.software_name}",
         "```",
         "",
     ]
@@ -272,9 +272,9 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None, te
     metadata = extract_cli_metadata(harness_path)
     content = generate_skill_md(metadata, template_path=template_path)
     harness_root = Path(harness_path)
-    skill_id = f"cli-anything-{harness_root.parent.name.replace('_', '-')}"
+    skill_id = f"tarunai-connect-{harness_root.parent.name.replace('_', '-')}"
     output = Path(output_path) if output_path else harness_root.parent.parent / "skills" / skill_id / "SKILL.md"
-    mirror = harness_root / "cli_anything" / metadata.software_name / "skills" / "SKILL.md"
+    mirror = harness_root / "tarunai_connect" / metadata.software_name / "skills" / "SKILL.md"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding="utf-8")
     if mirror != output:
@@ -284,7 +284,7 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None, te
 
 
 def main(argv: Optional[list[str]] = None) -> int:
-    parser = argparse.ArgumentParser(description="Generate SKILL.md for a CLI-Anything harness")
+    parser = argparse.ArgumentParser(description="Generate SKILL.md for a tarunAI Connect harness")
     parser.add_argument("harness_path")
     parser.add_argument("-o", "--output", default=None)
     parser.add_argument("-t", "--template", default=None)

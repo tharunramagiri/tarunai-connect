@@ -1,16 +1,16 @@
-"""Setup for cli-anything-freecad — CLI harness for FreeCAD."""
+"""Setup for tarunai-connect-freecad — CLI harness for FreeCAD."""
 
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-freecad",
+    name="tarunai-connect-freecad",
     version="1.0.0",
     description="CLI harness for FreeCAD parametric 3D CAD modeler",
-    long_description=open("cli_anything/freecad/README.md").read(),
+    long_description=open("tarunai_connect/freecad/README.md").read(),
     long_description_content_type="text/markdown",
-    author="CLI-Anything Contributors",
+    author="tarunAI Connect Contributors",
     license="Apache-2.0",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     python_requires=">=3.10",
     install_requires=[
         "click>=8.0.0",
@@ -18,11 +18,11 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cli-anything-freecad=cli_anything.freecad.freecad_cli:main",
+            "tarunai-connect-freecad=tarunai_connect.freecad.freecad_cli:main",
         ],
     },
     package_data={
-        "cli_anything.freecad": ["skills/*.md"],
+        "tarunai_connect.freecad": ["skills/*.md"],
     },
     classifiers=[
         "Programming Language :: Python :: 3",

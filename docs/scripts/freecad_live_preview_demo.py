@@ -3,7 +3,7 @@
 
 This script has two phases:
 
-1. ``collect`` runs a real CLI trajectory against ``cli-anything-freecad``,
+1. ``collect`` runs a real CLI trajectory against ``tarunai-connect-freecad``,
    starts poll-mode live preview, waits for real preview bundles to update,
    and saves a structured timeline plus copied preview snapshots.
 2. ``render`` turns that real timeline into an editable split-screen MP4:
@@ -45,7 +45,7 @@ from PIL import Image, ImageDraw, ImageFont
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FREECAD_WORKDIR = REPO_ROOT / "freecad" / "agent-harness"
 CLI_HUB_WORKDIR = REPO_ROOT / "cli-hub"
-FREECAD_CLI = shutil.which("cli-anything-freecad") or "cli-anything-freecad"
+FREECAD_CLI = shutil.which("tarunai-connect-freecad") or "tarunai-connect-freecad"
 CLI_HUB = shutil.which("cli-hub") or "cli-hub"
 MONO_FONT_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 MONO_BOLD_FONT_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
@@ -2737,14 +2737,14 @@ def _curiosity_steps() -> List[Dict[str, Any]]:
 SCENARIOS: Dict[str, Dict[str, Any]] = {
     "curiosity": {
         "title": "Curiosity",
-        "subtitle": "high-fidelity tiny Curiosity rover built with cli-anything-freecad and live preview",
+        "subtitle": "high-fidelity tiny Curiosity rover built with tarunai-connect-freecad and live preview",
         "project_name": "Curiosity",
         "project_file": "curiosity.json",
         "steps": _curiosity_steps(),
     },
     "mars-rover": {
         "title": "Mars Rover",
-        "subtitle": "modular six-wheel rover built with cli-anything-freecad and live preview",
+        "subtitle": "modular six-wheel rover built with tarunai-connect-freecad and live preview",
         "project_name": "MarsRover",
         "project_file": "mars_rover.json",
         "steps": _mars_rover_steps(),
@@ -2974,7 +2974,7 @@ SCENARIOS: Dict[str, Dict[str, Any]] = {
     },
     "empire-state-building": {
         "title": "Empire State Building",
-        "subtitle": "tiny iconic skyscraper model built with cli-anything-freecad",
+        "subtitle": "tiny iconic skyscraper model built with tarunai-connect-freecad",
         "project_name": "EmpireStateBuilding",
         "project_file": "empire_state_building.json",
         "steps": [
@@ -3247,7 +3247,7 @@ SCENARIOS: Dict[str, Dict[str, Any]] = {
     },
     "taipei-101": {
         "title": "Taipei 101",
-        "subtitle": "tiny stacked-shoulder skyscraper model built with cli-anything-freecad",
+        "subtitle": "tiny stacked-shoulder skyscraper model built with tarunai-connect-freecad",
         "project_name": "Taipei101",
         "project_file": "taipei_101.json",
         "steps": _taipei_101_steps(),
@@ -3331,7 +3331,7 @@ def run_cli(argv: List[str], *, timeout: int = 300) -> Dict[str, Any]:
 def _load_motion_module():
     if str(FREECAD_WORKDIR) not in sys.path:
         sys.path.insert(0, str(FREECAD_WORKDIR))
-    from cli_anything.freecad.core import motion as motion_mod
+    from tarunai_connect.freecad.core import motion as motion_mod
 
     return motion_mod
 
@@ -3429,7 +3429,7 @@ def collect_demo(output_dir: Path, scenario_name: str) -> Path:
         "commands": [],
         "preview_events": [],
         "notes": [
-            "All commands were executed against the real cli-anything-freecad entry point.",
+            "All commands were executed against the real tarunai-connect-freecad entry point.",
             "All preview images came from the real FreeCAD live-preview poll session.",
             "The final video is a programmatic composition of these real artifacts.",
         ],
@@ -4067,7 +4067,7 @@ def generate_curiosity_true_motion_showcase(
         "keyframes": keyframes,
         "notes": [
             "This sequence uses the final Curiosity v6 project as source geometry.",
-            "Motion is rendered frame-by-frame through cli-anything-freecad motion render-video.",
+            "Motion is rendered frame-by-frame through tarunai-connect-freecad motion render-video.",
             "No synthetic in-between frames or blend-based motion are used.",
         ],
     }
@@ -4114,9 +4114,9 @@ def _wrap_trimmed(text: str, *, width_chars: int, max_lines: int) -> List[str]:
 def _readable_command_text(cmd_text: str) -> str:
     normalized = cmd_text.strip()
     replacements = {
-        str(Path(FREECAD_CLI)): "cli-anything-freecad",
+        str(Path(FREECAD_CLI)): "tarunai-connect-freecad",
         str(Path(CLI_HUB)): "cli-hub",
-        "/root/miniconda3/bin/cli-anything-freecad": "cli-anything-freecad",
+        "/root/miniconda3/bin/tarunai-connect-freecad": "tarunai-connect-freecad",
         "/root/miniconda3/bin/cli-hub": "cli-hub",
     }
     for source, target in replacements.items():
@@ -4413,7 +4413,7 @@ def draw_global_header(
     title = trajectory.get("scenario_title", "FreeCAD Live Demo").upper()
     subtitle = trajectory.get("scenario_subtitle", "real CLI trajectory + real preview bundles")
 
-    draw.text((34, 20), "CLI-ANYTHING / FREECAD / LIVE PREVIEW PROTOCOL", fill="#88a9c8", font=fonts["small"])
+    draw.text((34, 20), "TARUNAI CONNECT / FREECAD / LIVE PREVIEW PROTOCOL", fill="#88a9c8", font=fonts["small"])
     draw.text((34, 36), title, fill=COLORS["white"], font=fonts["display"])
     draw.text((34, 68), subtitle, fill="#97abc2", font=fonts["body"])
 
@@ -4801,7 +4801,7 @@ def compose_showcase_frame(
         empty=COLORS["panel_line"],
     )
 
-    footer = "Real ending sequence: final project JSON + cli-anything-freecad motion render-video + programmatic composition"
+    footer = "Real ending sequence: final project JSON + tarunai-connect-freecad motion render-video + programmatic composition"
     draw.text((panel[0] + 26, panel[3] - 74), footer, fill=COLORS["preview_muted"], font=fonts["small"])
     return canvas
 

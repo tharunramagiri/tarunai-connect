@@ -13,10 +13,10 @@ error handling without requiring `calibredb`, `ebook-convert`, or `ebook-meta`.
 ```bash
 cd calibre/agent-harness
 python -m py_compile \
-  cli_anything/calibre/calibre_cli.py \
-  cli_anything/calibre/core/*.py \
-  cli_anything/calibre/utils/*.py
-python -m pytest cli_anything/calibre/tests/test_core.py -v
+  tarunai_connect/calibre/calibre_cli.py \
+  tarunai_connect/calibre/core/*.py \
+  tarunai_connect/calibre/utils/*.py
+python -m pytest tarunai_connect/calibre/tests/test_core.py -v
 ```
 
 To require the installed console script for smoke validation:
@@ -24,8 +24,8 @@ To require the installed console script for smoke validation:
 ```bash
 cd calibre/agent-harness
 pip install -e .
-CLI_ANYTHING_FORCE_INSTALLED=1 python -m pytest \
-  cli_anything/calibre/tests/test_core.py::TestCLISubprocessSmoke -v
+TARUNAI_CONNECT_FORCE_INSTALLED=1 python -m pytest \
+  tarunai_connect/calibre/tests/test_core.py::TestCLISubprocessSmoke -v
 ```
 
 ## Real Calibre Backend Validation
@@ -43,8 +43,8 @@ Then run the E2E suite:
 ```bash
 cd calibre/agent-harness
 pip install -e .
-CLI_ANYTHING_FORCE_INSTALLED=1 python -m pytest \
-  cli_anything/calibre/tests/test_full_e2e.py -v -s
+TARUNAI_CONNECT_FORCE_INSTALLED=1 python -m pytest \
+  tarunai_connect/calibre/tests/test_full_e2e.py -v -s
 ```
 
 Expected E2E coverage:
@@ -57,4 +57,4 @@ Expected E2E coverage:
 
 ## Remaining Gaps
 
-- Catalog generation, file-level metadata embedding, and real custom-column workflows are documented as E2E gaps in `cli_anything/calibre/tests/TEST.md`.
+- Catalog generation, file-level metadata embedding, and real custom-column workflows are documented as E2E gaps in `tarunai_connect/calibre/tests/TEST.md`.

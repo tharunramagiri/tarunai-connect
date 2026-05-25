@@ -35,7 +35,7 @@ It exposes a REST HTTP API with 58 endpoints organized in 14 tag groups, secured
 ## CLI Command Map
 
 ```
-cli-anything-adguardhome
+tarunai-connect-adguardhome
 ├── config show / save / test
 ├── server status / version / restart
 ├── filter list / add / remove / enable / disable / refresh / status / toggle
@@ -56,11 +56,11 @@ cli-anything-adguardhome
 Settings resolved in order:
 1. CLI flags (`--host`, `--port`, `--username`, `--password`)
 2. Environment vars (`AGH_HOST`, `AGH_PORT`, `AGH_USERNAME`, `AGH_PASSWORD`)
-3. Config file (`~/.config/cli-anything-adguardhome.json`)
+3. Config file (`~/.config/tarunai-connect-adguardhome.json`)
 4. Defaults: `localhost:3000`
 
 ## Testing Strategy
 
 - **Unit tests:** Mock HTTP calls via `unittest.mock` - no real AdGuardHome needed
 - **E2E tests:** Spin up `adguard/adguardhome` via Docker on port 3001 for isolation
-- **Subprocess tests:** `_resolve_cli("cli-anything-adguardhome")` tests the installed CLI binary
+- **Subprocess tests:** `_resolve_cli("tarunai-connect-adguardhome")` tests the installed CLI binary

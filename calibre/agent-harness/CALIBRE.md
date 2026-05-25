@@ -33,7 +33,7 @@ The CLI harness is a **stateful wrapper** — it tracks the library path in a se
 
 ### Session State
 
-The CLI maintains a JSON session file at `~/.cli-anything-calibre/session.json`:
+The CLI maintains a JSON session file at `~/.tarunai-connect-calibre/session.json`:
 ```json
 {
   "library_path": "/path/to/Calibre Library",
@@ -136,25 +136,25 @@ which ebook-meta
 - Unit tests: synthetic CLI argument parsing, query building, JSON output
 - E2E tests with `calibredb`: real library operations, real output verification
 - E2E tests with `ebook-convert`: real format conversion, output file validation
-- Subprocess tests via `_resolve_cli("cli-anything-calibre")`
+- Subprocess tests via `_resolve_cli("tarunai-connect-calibre")`
 
 ## Example Workflows
 
 ### Import a library of epubs and tag them:
 ```bash
-cli-anything-calibre library connect ~/my-books
-cli-anything-calibre books add *.epub
-cli-anything-calibre books search "not:tags:read" --json
+tarunai-connect-calibre library connect ~/my-books
+tarunai-connect-calibre books add *.epub
+tarunai-connect-calibre books search "not:tags:read" --json
 ```
 
 ### Convert EPUB to MOBI for Kindle:
 ```bash
-cli-anything-calibre formats convert 42 EPUB MOBI
+tarunai-connect-calibre formats convert 42 EPUB MOBI
 ```
 
 ### Batch metadata update:
 ```bash
-cli-anything-calibre meta set 42 series "Foundation"
-cli-anything-calibre meta set 42 series_index 1
-cli-anything-calibre meta set 42 tags "scifi,classic"
+tarunai-connect-calibre meta set 42 series "Foundation"
+tarunai-connect-calibre meta set 42 series_index 1
+tarunai-connect-calibre meta set 42 tags "scifi,classic"
 ```

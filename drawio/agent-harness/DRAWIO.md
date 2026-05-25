@@ -11,7 +11,7 @@
 Draw.io uses an XML-based format built on the mxGraph library:
 
 ```xml
-<mxfile host="cli-anything" agent="cli-anything-drawio/1.0.0">
+<mxfile host="tarunai-connect" agent="tarunai-connect-drawio/1.0.0">
   <diagram id="..." name="Page-1">
     <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10"
                   page="1" pageWidth="850" pageHeight="1100">

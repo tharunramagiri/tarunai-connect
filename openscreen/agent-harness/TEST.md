@@ -127,9 +127,9 @@
 platform linux -- Python 3.11.2, pytest-9.0.2, pluggy-1.6.0
 collected 101 items
 
-cli_anything/openscreen/tests/test_core.py ............................................... [ 76%]
+tarunai_connect/openscreen/tests/test_core.py ............................................... [ 76%]
 ...............................                                                            [ 77%]
-cli_anything/openscreen/tests/test_full_e2e.py .......................                     [100%]
+tarunai_connect/openscreen/tests/test_full_e2e.py .......................                     [100%]
 
 ============================= 101 passed in 35.19s =============================
 ```

@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-obsidian"
+name: "tarunai-connect-obsidian"
 description: >-
   Command-line interface for Obsidian — Knowledge management and note-taking via Obsidian Local REST API. Designed for AI agents and power users who need to manage notes, search the vault, and execute commands without the GUI.
 ---
 
-# cli-anything-obsidian
+# tarunai-connect-obsidian
 
 Knowledge management and note-taking via the Obsidian Local REST API. Designed for AI agents and power users who need to manage notes, search the vault, and execute commands without the GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-obsidian package:
+This CLI is installed as part of the tarunai-connect-obsidian package:
 
 ```bash
-pip install cli-anything-obsidian
+pip install tarunai-connect-obsidian
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-obsidian
 
 ```bash
 # Show help
-cli-anything-obsidian --help
+tarunai-connect-obsidian --help
 
 # Start interactive REPL mode
-cli-anything-obsidian
+tarunai-connect-obsidian
 
 # List vault files
-cli-anything-obsidian vault list
+tarunai-connect-obsidian vault list
 
 # Run with JSON output (for agent consumption)
-cli-anything-obsidian --json vault list
+tarunai-connect-obsidian --json vault list
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-obsidian --json vault list
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-obsidian
+tarunai-connect-obsidian
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -122,13 +122,13 @@ Session state commands.
 
 ```bash
 # List all vault files
-cli-anything-obsidian vault list
+tarunai-connect-obsidian vault list
 
 # List files in a subdirectory
-cli-anything-obsidian vault list "Daily Notes"
+tarunai-connect-obsidian vault list "Daily Notes"
 
 # Read a note
-cli-anything-obsidian vault read "Projects/my-project.md"
+tarunai-connect-obsidian vault read "Projects/my-project.md"
 ```
 
 
@@ -136,13 +136,13 @@ cli-anything-obsidian vault read "Projects/my-project.md"
 
 ```bash
 # Create a new note
-cli-anything-obsidian vault create "Projects/new-project.md" --content "# New Project"
+tarunai-connect-obsidian vault create "Projects/new-project.md" --content "# New Project"
 
 # Update (overwrite) a note
-cli-anything-obsidian vault update "Projects/new-project.md" --content "# Updated Content"
+tarunai-connect-obsidian vault update "Projects/new-project.md" --content "# Updated Content"
 
 # Append to a note
-cli-anything-obsidian vault append "Projects/new-project.md" --content "\n## New Section"
+tarunai-connect-obsidian vault append "Projects/new-project.md" --content "\n## New Section"
 ```
 
 
@@ -150,14 +150,14 @@ cli-anything-obsidian vault append "Projects/new-project.md" --content "\n## New
 
 ```bash
 # Plain text search (GET /search/simple/)
-cli-anything-obsidian search simple "meeting notes"
+tarunai-connect-obsidian search simple "meeting notes"
 
 # Dataview DQL query — default --type dql, sent as
 # application/vnd.olrapi.dataview.dql+txt
-cli-anything-obsidian search query 'TABLE file.link FROM "Projects"'
+tarunai-connect-obsidian search query 'TABLE file.link FROM "Projects"'
 
 # JsonLogic query — application/vnd.olrapi.jsonlogic+json
-cli-anything-obsidian search query --type jsonlogic \
+tarunai-connect-obsidian search query --type jsonlogic \
   '{"==":[{"var":"frontmatter.status"},"active"]}'
 ```
 
@@ -166,10 +166,10 @@ cli-anything-obsidian search query --type jsonlogic \
 
 ```bash
 # List available commands
-cli-anything-obsidian command list
+tarunai-connect-obsidian command list
 
 # Execute a command by ID
-cli-anything-obsidian command execute "editor:toggle-bold"
+tarunai-connect-obsidian command execute "editor:toggle-bold"
 ```
 
 
@@ -178,7 +178,7 @@ cli-anything-obsidian command execute "editor:toggle-bold"
 Start an interactive session for exploratory use.
 
 ```bash
-cli-anything-obsidian
+tarunai-connect-obsidian
 # Enter commands interactively
 # Use 'help' to see available commands
 ```
@@ -188,11 +188,11 @@ cli-anything-obsidian
 
 ```bash
 # Via flag
-cli-anything-obsidian --api-key YOUR_KEY vault list
+tarunai-connect-obsidian --api-key YOUR_KEY vault list
 
 # Via environment variable (recommended for agents)
 export OBSIDIAN_API_KEY=YOUR_KEY
-cli-anything-obsidian vault list
+tarunai-connect-obsidian vault list
 ```
 
 
@@ -212,10 +212,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-obsidian vault list
+tarunai-connect-obsidian vault list
 
 # JSON output for agents
-cli-anything-obsidian --json vault list
+tarunai-connect-obsidian --json vault list
 ```
 
 ## For AI Agents
@@ -232,7 +232,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

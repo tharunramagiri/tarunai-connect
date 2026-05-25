@@ -1,15 +1,15 @@
-"""Setup for cli-anything-chromadb — CLI harness for ChromaDB vector database."""
+"""Setup for tarunai-connect-chromadb — CLI harness for ChromaDB vector database."""
 
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-chromadb",
+    name="tarunai-connect-chromadb",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
-    description="CLI-Anything harness for ChromaDB vector database",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    description="tarunAI Connect harness for ChromaDB vector database",
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -34,11 +34,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-chromadb=cli_anything.chromadb.chromadb_cli:main",
+            "tarunai-connect-chromadb=tarunai_connect.chromadb.chromadb_cli:main",
         ],
     },
     package_data={
-        "cli_anything.chromadb": ["skills/*.md"],
+        "tarunai_connect.chromadb": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

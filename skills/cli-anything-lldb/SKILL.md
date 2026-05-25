@@ -1,9 +1,9 @@
 ---
-name: "cli-anything-lldb"
+name: "tarunai-connect-lldb"
 description: Stateful LLDB debugging via LLDB Python API
 version: 1.0.0
-command: cli-anything-lldb
-install: pip install cli-anything-lldb
+command: tarunai-connect-lldb
+install: pip install tarunai-connect-lldb
 requires:
   - lldb (Python bindings)
   - click>=8.0
@@ -33,17 +33,17 @@ Use this CLI to run structured LLDB debugging workflows with JSON output.
 ## Quick Commands
 
 ```bash
-cli-anything-lldb --json target create --exe /path/to/exe
-cli-anything-lldb --json process launch --arg foo --arg bar
-cli-anything-lldb --json breakpoint set --function main
-cli-anything-lldb --json breakpoint set --function PluginEntry --allow-pending
-cli-anything-lldb --json process continue
-cli-anything-lldb --json process interrupt
-cli-anything-lldb --json thread backtrace --limit 20
-cli-anything-lldb --json frame locals
-cli-anything-lldb --json expr "myVar"
-cli-anything-lldb --json memory read --address 0x1000 --size 64
-cli-anything-lldb --json session close
+tarunai-connect-lldb --json target create --exe /path/to/exe
+tarunai-connect-lldb --json process launch --arg foo --arg bar
+tarunai-connect-lldb --json breakpoint set --function main
+tarunai-connect-lldb --json breakpoint set --function PluginEntry --allow-pending
+tarunai-connect-lldb --json process continue
+tarunai-connect-lldb --json process interrupt
+tarunai-connect-lldb --json thread backtrace --limit 20
+tarunai-connect-lldb --json frame locals
+tarunai-connect-lldb --json expr "myVar"
+tarunai-connect-lldb --json memory read --address 0x1000 --size 64
+tarunai-connect-lldb --json session close
 ```
 
 ## Debug Adapter Protocol
@@ -52,15 +52,15 @@ Use the DAP entry point when an AI client needs a real debug adapter lifecycle
 instead of shelling out separate CLI commands:
 
 ```bash
-cli-anything-lldb-dap
-cli-anything-lldb-dap --profile /path/to/stop-rules.json
+tarunai-connect-lldb-dap
+tarunai-connect-lldb-dap --profile /path/to/stop-rules.json
 ```
 
 or:
 
 ```bash
-cli-anything-lldb dap
-cli-anything-lldb dap --profile /path/to/stop-rules.json
+tarunai-connect-lldb dap
+tarunai-connect-lldb dap --profile /path/to/stop-rules.json
 ```
 
 The DAP server speaks stdio `Content-Length` frames and must have exclusive
@@ -96,7 +96,7 @@ outside the generic adapter.
 
 DAP `stopped` events include `body.cliAnythingStop.origin`: `manualPause` for a
 client pause request, `internalTrap` for a matched internal rule, and `debuggee`
-for ordinary program stops. Existing `cli-anything-lldb-dap` processes do not
+for ordinary program stops. Existing `tarunai-connect-lldb-dap` processes do not
 hot-load new code or profile contents; restart the adapter and re-attach or
 re-launch before expecting new rules to apply.
 
@@ -104,59 +104,59 @@ re-launch before expecting new rules to apply.
 
 ### target
 ```bash
-cli-anything-lldb --json target create --exe /path/to/exe [--arch x86_64]
-cli-anything-lldb --json target info
+tarunai-connect-lldb --json target create --exe /path/to/exe [--arch x86_64]
+tarunai-connect-lldb --json target info
 ```
 
 ### process
 ```bash
-cli-anything-lldb --json process launch [--arg ARG ...] [--env KEY=VALUE ...] [--cwd DIR] [--stop-at-entry]
-cli-anything-lldb --json process attach --pid 1234
-cli-anything-lldb --json process attach --name myapp --wait-for
-cli-anything-lldb --json process continue
-cli-anything-lldb --json process interrupt
-cli-anything-lldb --json process detach
-cli-anything-lldb --json process info
+tarunai-connect-lldb --json process launch [--arg ARG ...] [--env KEY=VALUE ...] [--cwd DIR] [--stop-at-entry]
+tarunai-connect-lldb --json process attach --pid 1234
+tarunai-connect-lldb --json process attach --name myapp --wait-for
+tarunai-connect-lldb --json process continue
+tarunai-connect-lldb --json process interrupt
+tarunai-connect-lldb --json process detach
+tarunai-connect-lldb --json process info
 ```
 
 ### breakpoint
 ```bash
-cli-anything-lldb --json breakpoint set --function main
-cli-anything-lldb --json breakpoint set --file main.c --line 42 --condition "i > 10"
-cli-anything-lldb --json breakpoint set --function LateLoadedSymbol --allow-pending
-cli-anything-lldb --json breakpoint list
-cli-anything-lldb --json breakpoint delete --id 1
-cli-anything-lldb --json breakpoint enable --id 1
-cli-anything-lldb --json breakpoint disable --id 1
+tarunai-connect-lldb --json breakpoint set --function main
+tarunai-connect-lldb --json breakpoint set --file main.c --line 42 --condition "i > 10"
+tarunai-connect-lldb --json breakpoint set --function LateLoadedSymbol --allow-pending
+tarunai-connect-lldb --json breakpoint list
+tarunai-connect-lldb --json breakpoint delete --id 1
+tarunai-connect-lldb --json breakpoint enable --id 1
+tarunai-connect-lldb --json breakpoint disable --id 1
 ```
 
 ### thread / frame / step
 ```bash
-cli-anything-lldb --json thread list
-cli-anything-lldb --json thread select --id 11111
-cli-anything-lldb --json thread backtrace --limit 50
-cli-anything-lldb --json frame select --index 0
-cli-anything-lldb --json frame info
-cli-anything-lldb --json frame locals
-cli-anything-lldb --json step over
-cli-anything-lldb --json step into
-cli-anything-lldb --json step out
+tarunai-connect-lldb --json thread list
+tarunai-connect-lldb --json thread select --id 11111
+tarunai-connect-lldb --json thread backtrace --limit 50
+tarunai-connect-lldb --json frame select --index 0
+tarunai-connect-lldb --json frame info
+tarunai-connect-lldb --json frame locals
+tarunai-connect-lldb --json step over
+tarunai-connect-lldb --json step into
+tarunai-connect-lldb --json step out
 ```
 
 ### expr / memory / core
 ```bash
-cli-anything-lldb --json expr "argc"
-cli-anything-lldb --json memory read --address 0x1000 --size 128
-cli-anything-lldb --json memory find "needle" --start 0x1000 --size 4096
-cli-anything-lldb --json core load --path /path/to/core
+tarunai-connect-lldb --json expr "argc"
+tarunai-connect-lldb --json memory read --address 0x1000 --size 128
+tarunai-connect-lldb --json memory find "needle" --start 0x1000 --size 4096
+tarunai-connect-lldb --json core load --path /path/to/core
 ```
 
 ## Agent Usage Notes
 
 - Prefer `--json` for all automated flows.
 - Separate non-REPL invocations share a persistent session daemon by default.
-- Use `--session-file PATH` or `CLI_ANYTHING_LLDB_SESSION_FILE` to pin an explicit session for a task.
-- Run `cli-anything-lldb --json session close` when finished so attached processes detach and launched debuggees are cleaned up.
+- Use `--session-file PATH` or `TARUNAI_CONNECT_LLDB_SESSION_FILE` to pin an explicit session for a task.
+- Run `tarunai-connect-lldb --json session close` when finished so attached processes detach and launched debuggees are cleaned up.
 - Use REPL when a human-like interactive shell is more convenient, not because persistence requires it.
 - Unresolved CLI breakpoints fail by default; pass `--allow-pending` only when a future module/symbol load is expected.
 - DAP unresolved breakpoints use protocol semantics: `verified: false` until resolved.

@@ -27,7 +27,7 @@ standalone CLI (`pip install videocaptioner`) with a well-defined command interf
 Unlike applications that need reverse-engineering of internal formats,
 VideoCaptioner already provides a production CLI. Our harness:
 
-1. **Click wrapper** provides the CLI-Anything standard interface
+1. **Click wrapper** provides the tarunAI Connect standard interface
 2. **Subprocess backend** delegates to `videocaptioner` CLI commands
 3. **JSON mode** (`--json`) returns structured output for agents
 4. **REPL mode** provides interactive session with tab-completion

@@ -50,7 +50,7 @@ quit                          - quit
 ## CLI Command Groups
 
 ```
-cli-anything-sbox
+tarunai-connect-sbox
 ├── project         # .sbproj management
 │   ├── new         # Create new s&box project
 │   ├── info        # Show project metadata

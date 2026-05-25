@@ -1,22 +1,22 @@
 ---
-name: "cli-anything-rms"
+name: "tarunai-connect-rms"
 description: >-
   Teltonika RMS device management and monitoring CLI
 ---
 
-# cli-anything-rms
+# tarunai-connect-rms
 
 CLI harness for Teltonika RMS (Remote Management System). Manage routers, gateways, and IoT devices via the RMS REST API.
 
 ## Installation
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=rms/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=rms/agent-harness
 ```
 
 ## Authentication
 
-Set `RMS_API_TOKEN` environment variable or run `cli-anything-rms config set api_token <token>`.
+Set `RMS_API_TOKEN` environment variable or run `tarunai-connect-rms config set api_token <token>`.
 
 ## Command Groups
 
@@ -128,14 +128,14 @@ Set `RMS_API_TOKEN` environment variable or run `cli-anything-rms config set api
 
 ```bash
 # List all online devices
-cli-anything-rms devices list --status online
+tarunai-connect-rms devices list --status online
 
 # Get device details as JSON
-cli-anything-rms --json devices get 12345
+tarunai-connect-rms --json devices get 12345
 
 # Check alerts for a specific device
-cli-anything-rms alerts list --device 12345
+tarunai-connect-rms alerts list --device 12345
 
 # Interactive mode
-cli-anything-rms
+tarunai-connect-rms
 ```

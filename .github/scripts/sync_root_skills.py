@@ -13,14 +13,14 @@ ROOT_SKILLS_DIR = REPO_ROOT / "skills"
 def _canonical_skill_id(source: Path) -> str:
     rel = source.relative_to(REPO_ROOT)
     parts = rel.parts
-    if "cli_anything" in parts:
-        package_index = parts.index("cli_anything") + 1
+    if "tarunai_connect" in parts:
+        package_index = parts.index("tarunai_connect") + 1
         if package_index < len(parts):
             package_name = parts[package_index]
-            return f"cli-anything-{package_name.replace('_', '-')}"
+            return f"tarunai-connect-{package_name.replace('_', '-')}"
 
     software_dir = parts[0]
-    return f"cli-anything-{software_dir.replace('_', '-')}"
+    return f"tarunai-connect-{software_dir.replace('_', '-')}"
 
 
 def _rewrite_name_frontmatter(content: str, skill_id: str) -> str:
@@ -57,8 +57,8 @@ def _rewrite_name_frontmatter(content: str, skill_id: str) -> str:
 
 def _discover_sources() -> list[Path]:
     sources: list[Path] = []
-    sources.extend(sorted(REPO_ROOT.glob("*/agent-harness/cli_anything/*/skills/SKILL.md")))
-    sources.extend(sorted(REPO_ROOT.glob("*/agent-harness/cli_anything/*/SKILL.md")))
+    sources.extend(sorted(REPO_ROOT.glob("*/agent-harness/tarunai_connect/*/skills/SKILL.md")))
+    sources.extend(sorted(REPO_ROOT.glob("*/agent-harness/tarunai_connect/*/SKILL.md")))
     return [path for path in sources if path.is_file()]
 
 

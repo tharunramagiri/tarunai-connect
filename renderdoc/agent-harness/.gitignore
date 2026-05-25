@@ -1,5 +1,5 @@
 # Bundled RenderDoc native bindings must not be committed (use system install).
-cli_anything/renderdoc/native/
+tarunai_connect/renderdoc/native/
 
 # Python
 __pycache__/

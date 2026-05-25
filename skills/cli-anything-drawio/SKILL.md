@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-drawio"
+name: "tarunai-connect-drawio"
 description: >-
   Command-line interface for Drawio - A CLI harness for **Draw.io** — create, edit, and export diagrams from the command line....
 ---
 
-# cli-anything-drawio
+# tarunai-connect-drawio
 
 A CLI harness for **Draw.io** — create, edit, and export diagrams from the command line.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-drawio package:
+This CLI is installed as part of the tarunai-connect-drawio package:
 
 ```bash
-pip install cli-anything-drawio
+pip install tarunai-connect-drawio
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-drawio
 
 ```bash
 # Show help
-cli-anything-drawio --help
+tarunai-connect-drawio --help
 
 # Start interactive REPL mode
-cli-anything-drawio
+tarunai-connect-drawio
 
 # Create a new project
-cli-anything-drawio project new -o project.json
+tarunai-connect-drawio project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-drawio --json project info -p project.json
+tarunai-connect-drawio --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-drawio --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-drawio
+tarunai-connect-drawio
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -142,9 +142,9 @@ Session management: status, undo, redo.
 Create a new drawio project file.
 
 ```bash
-cli-anything-drawio project new -o myproject.json
+tarunai-connect-drawio project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-drawio --json project new -o myproject.json
+tarunai-connect-drawio --json project new -o myproject.json
 ```
 
 
@@ -153,7 +153,7 @@ cli-anything-drawio --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-drawio
+tarunai-connect-drawio
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -165,7 +165,7 @@ cli-anything-drawio
 Export the project to a final output format.
 
 ```bash
-cli-anything-drawio --project myproject.json export render output.pdf --overwrite
+tarunai-connect-drawio --project myproject.json export render output.pdf --overwrite
 ```
 
 
@@ -186,10 +186,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-drawio project info -p project.json
+tarunai-connect-drawio project info -p project.json
 
 # JSON output for agents
-cli-anything-drawio --json project info -p project.json
+tarunai-connect-drawio --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -206,7 +206,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

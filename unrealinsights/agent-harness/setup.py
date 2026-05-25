@@ -1,20 +1,20 @@
-"""Setup for cli-anything-unrealinsights package."""
+"""Setup for tarunai-connect-unrealinsights package."""
 
 from pathlib import Path
 
 from setuptools import find_namespace_packages, setup
 
-_README = Path(__file__).parent / "cli_anything" / "unrealinsights" / "README.md"
+_README = Path(__file__).parent / "tarunai_connect" / "unrealinsights" / "README.md"
 _long_desc = _README.read_text(encoding="utf-8") if _README.is_file() else ""
 
 setup(
-    name="cli-anything-unrealinsights",
+    name="tarunai-connect-unrealinsights",
     version="0.1.0",
     description="CLI harness for Unreal Insights trace capture and export workflows",
     long_description=_long_desc,
     long_description_content_type="text/markdown",
-    author="cli-anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    author="tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     python_requires=">=3.10",
     install_requires=[
         "click>=8.0",
@@ -25,11 +25,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-unrealinsights=cli_anything.unrealinsights.unrealinsights_cli:main",
+            "tarunai-connect-unrealinsights=tarunai_connect.unrealinsights.unrealinsights_cli:main",
         ],
     },
     package_data={
-        "cli_anything.unrealinsights": ["skills/*.md", "README.md"],
+        "tarunai_connect.unrealinsights": ["skills/*.md", "README.md"],
     },
     include_package_data=True,
     zip_safe=False,

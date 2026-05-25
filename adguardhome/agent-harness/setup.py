@@ -1,10 +1,10 @@
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-adguardhome",
+    name="tarunai-connect-adguardhome",
     version="1.0.0",
     description="CLI harness for AdGuardHome - control your ad blocker from the command line",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     install_requires=[
         "click>=8.0.0",
         "prompt-toolkit>=3.0.0",
@@ -12,11 +12,11 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cli-anything-adguardhome=cli_anything.adguardhome.adguardhome_cli:main",
+            "tarunai-connect-adguardhome=tarunai_connect.adguardhome.adguardhome_cli:main",
         ],
     },
     package_data={
-        "cli_anything.adguardhome": ["skills/*.md"],
+        "tarunai_connect.adguardhome": ["skills/*.md"],
     },
     include_package_data=True,
     python_requires=">=3.10",

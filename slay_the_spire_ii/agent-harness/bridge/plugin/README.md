@@ -1,7 +1,7 @@
 # STS2 Bridge Plugin
 
 This directory contains the source code for `STS2_Bridge`, the in-game mod used
-by the CLI-Anything Slay the Spire II harness.
+by the tarunAI Connect Slay the Spire II harness.
 
 The bridge runs inside the real Steam game process and exposes a local HTTP API
 at `http://localhost:15526/api/v1/singleplayer`. The CLI in

@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-notebooklm
+setup.py for tarunai-connect-notebooklm
 
 Install with: pip install -e .
 """
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/notebooklm/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/notebooklm/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-notebooklm",
+    name="tarunai-connect-notebooklm",
     version="0.1.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="Experimental CLI harness for NotebookLM via an installed notebooklm CLI. Unofficial and community-maintained.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -43,11 +43,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-notebooklm=cli_anything.notebooklm.notebooklm_cli:main",
+            "tarunai-connect-notebooklm=tarunai_connect.notebooklm.notebooklm_cli:main",
         ],
     },
     package_data={
-        "cli_anything.notebooklm": ["skills/*.md"],
+        "tarunai_connect.notebooklm": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

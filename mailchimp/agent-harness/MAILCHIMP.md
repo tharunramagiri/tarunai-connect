@@ -1,8 +1,8 @@
-# MAILCHIMP.md — cli-anything Harness for Mailchimp Marketing API v3.0
+# MAILCHIMP.md — tarunai-connect Harness for Mailchimp Marketing API v3.0
 
 ## Overview
 
-`cli-anything-mailchimp` makes the [Mailchimp Marketing API v3.0](https://mailchimp.com/developer/marketing/docs/fundamentals/) fully agent-native. Every endpoint from the official Swagger spec is exposed as a typed Click command, with JSON output and REPL mode.
+`tarunai-connect-mailchimp` makes the [Mailchimp Marketing API v3.0](https://mailchimp.com/developer/marketing/docs/fundamentals/) fully agent-native. Every endpoint from the official Swagger spec is exposed as a typed Click command, with JSON output and REPL mode.
 
 **303 commands across 30 resource groups**, covering the full Marketing API surface.
 
@@ -28,7 +28,7 @@ No config files. The data-centre prefix (`us8`, `eu2`, etc.) is derived automati
 ## Command Hierarchy
 
 ```
-cli-anything-mailchimp [--json] [--version]
+tarunai-connect-mailchimp [--json] [--version]
 │
 ├── ping            # GET /ping — health check
 ├── root            # GET /  — account info
@@ -90,8 +90,8 @@ cli-anything-mailchimp [--json] [--version]
 All commands share a root `--json` flag:
 
 ```bash
-cli-anything-mailchimp --json lists list
-cli-anything-mailchimp --json campaigns get <campaign_id>
+tarunai-connect-mailchimp --json lists list
+tarunai-connect-mailchimp --json campaigns get <campaign_id>
 ```
 
 **JSON envelopes** (commands emit the native Mailchimp API response):
@@ -116,15 +116,15 @@ Collection commands expose Mailchimp's native `count` and `offset` query paramet
 
 1. **Code generation from spec** — 303 commands are auto-generated from Mailchimp's public Swagger 2.0 spec via `_codegen/generate.py`. Generated files are committed so end-users get fast `--help` without downloading the spec.
 
-2. **Env-var-only auth** — per CLI-Anything convention, no config files. `MAILCHIMP_API_KEY` is the single source of truth.
+2. **Env-var-only auth** — per tarunAI Connect convention, no config files. `MAILCHIMP_API_KEY` is the single source of truth.
 
-3. **Verbatim `repl_skin.py`** — the REPL skin is copied unmodified from `cli-anything-plugin/repl_skin.py` as required by CLI-Anything's contribution rules.
+3. **Verbatim `repl_skin.py`** — the REPL skin is copied unmodified from `tarunai-connect-plugin/repl_skin.py` as required by tarunAI Connect's contribution rules.
 
 4. **Path params as positional args** — Mailchimp path parameters (`{list_id}`, `{campaign_id}`, etc.) become required positional Click arguments, keeping commands concise.
 
 5. **Body as `--data` JSON** — request bodies are passed as `--data '{"key": "value"}'` JSON strings. This avoids generating dozens of per-field flags per command and works naturally for agent use (agents can construct JSON payloads directly).
 
-6. **Subscriber hash utility** — `cli_anything.mailchimp.core.client.subscriber_hash(email)` computes the MD5 hash Mailchimp uses as a member identifier, matching the Node.js reference implementation.
+6. **Subscriber hash utility** — `tarunai_connect.mailchimp.core.client.subscriber_hash(email)` computes the MD5 hash Mailchimp uses as a member identifier, matching the Node.js reference implementation.
 
 ---
 
@@ -134,7 +134,7 @@ Collection commands expose Mailchimp's native `count` and `offset` query paramet
 mailchimp/agent-harness/
 ├── setup.py
 ├── MAILCHIMP.md                          ← this file
-└── cli_anything/mailchimp/
+└── tarunai_connect/mailchimp/
     ├── __init__.py
     ├── __main__.py
     ├── mailchimp_cli.py                  ← Click root + REPL
@@ -149,7 +149,7 @@ mailchimp/agent-harness/
     │   └── ...                           ← one module per tag
     ├── utils/
     │   ├── output.py                     ← _out() JSON/human switch
-    │   └── repl_skin.py                  ← verbatim copy from cli-anything-plugin/repl_skin.py
+    │   └── repl_skin.py                  ← verbatim copy from tarunai-connect-plugin/repl_skin.py
     ├── _codegen/
     │   └── generate.py                   ← spec → commands/*.py generator
     ├── skills/SKILL.md                   ← packaged skill copy

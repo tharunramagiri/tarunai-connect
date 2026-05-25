@@ -3,7 +3,7 @@
 ## Architecture Summary
 
 NotebookLM is a hosted Google research and content-generation product. Unlike the
-local GUI applications that CLI-Anything usually targets, this harness wraps an
+local GUI applications that tarunAI Connect usually targets, this harness wraps an
 installed `notebooklm` command-line client that already manages authentication,
 source ingestion, chat, artifact generation, and downloads.
 
@@ -20,7 +20,7 @@ This harness therefore behaves as a **service-style CLI wrapper**:
 - Keep credentials outside the repository and outside test fixtures.
 - Treat this integration as experimental and unofficial.
 - Require explicit confirmation for destructive or high-impact operations.
-- Preserve clear attribution to CLI-Anything, notebooklm-py, and Google NotebookLM documentation.
+- Preserve clear attribution to tarunAI Connect, notebooklm-py, and Google NotebookLM documentation.
 
 ## Contribution Boundary
 
@@ -39,6 +39,6 @@ This harness is designed to be safe for an upstream contribution review:
 
 ## References
 
-- CLI-Anything methodology: https://github.com/HKUDS/CLI-Anything
+- tarunAI Connect methodology: https://github.com/tharunramagiri/tarunai-connect
 - notebooklm-py project: https://github.com/teng-lin/notebooklm-py
 - Google NotebookLM help: https://support.google.com/notebooklm/answer/16206563

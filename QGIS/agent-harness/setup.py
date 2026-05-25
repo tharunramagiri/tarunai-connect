@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""setup.py for cli-anything-qgis."""
+"""setup.py for tarunai-connect-qgis."""
 
 from setuptools import find_namespace_packages, setup
 
-with open("cli_anything/qgis/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/qgis/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-qgis",
+    name="tarunai-connect-qgis",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for QGIS using PyQGIS for project authoring and qgis_process for exports and processing.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -41,11 +41,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-qgis=cli_anything.qgis.qgis_cli:main",
+            "tarunai-connect-qgis=tarunai_connect.qgis.qgis_cli:main",
         ],
     },
     package_data={
-        "cli_anything.qgis": ["skills/*.md"],
+        "tarunai_connect.qgis": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

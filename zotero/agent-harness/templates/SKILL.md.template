@@ -18,8 +18,8 @@ pip install -e .
 ## Entry Points
 
 ```bash
-cli-anything-{{ software_name }}
-python -m cli_anything.{{ software_name }}
+tarunai-connect-{{ software_name }}
+python -m tarunai_connect.{{ software_name }}
 ```
 
 {% if important_constraints %}

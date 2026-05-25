@@ -5,7 +5,7 @@
 Unreal Insights is Epic's trace analysis tool for Unreal Engine performance,
 profiling, timing, and counter data stored in `.utrace` files.
 
-This harness follows the CLI-Anything rule of using the real backend:
+This harness follows the tarunAI Connect rule of using the real backend:
 
 - `UnrealInsights.exe` for headless analysis and CSV/TXT export
 - a traced Unreal Engine target executable for capture generation

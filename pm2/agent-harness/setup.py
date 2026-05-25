@@ -1,15 +1,15 @@
-"""Setup for cli-anything-pm2 — CLI harness for PM2 process management."""
+"""Setup for tarunai-connect-pm2 — CLI harness for PM2 process management."""
 
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-pm2",
+    name="tarunai-connect-pm2",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
-    description="CLI-Anything harness for PM2 process management",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    description="tarunAI Connect harness for PM2 process management",
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -33,11 +33,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-pm2=cli_anything.pm2.pm2_cli:main",
+            "tarunai-connect-pm2=tarunai_connect.pm2.pm2_cli:main",
         ],
     },
     package_data={
-        "cli_anything.pm2": ["skills/*.md"],
+        "tarunai_connect.pm2": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

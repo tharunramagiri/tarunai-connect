@@ -1,4 +1,4 @@
-# cli-anything-rekordbox
+# tarunai-connect-rekordbox
 
 Agent-native command-line interface for **Pioneer Rekordbox 6/7**. Drives library writes (tracks, playlists, cues) and live-deck mixing (play/sync/crossfade) programmatically.
 
@@ -17,9 +17,9 @@ This harness combines (1) + (2) into a single CLI:
 ## Installation
 
 ```bash
-pip install cli-anything-rekordbox
+pip install tarunai-connect-rekordbox
 # Optional Windows extras for live-deck UI automation:
-pip install cli-anything-rekordbox[windows]
+pip install tarunai-connect-rekordbox[windows]
 ```
 
 **Prerequisites:**
@@ -34,25 +34,25 @@ pip install cli-anything-rekordbox[windows]
 
 ```bash
 # Library inspection (no MIDI needed)
-cli-anything-rekordbox library count
-cli-anything-rekordbox library search "Daft Punk"
+tarunai-connect-rekordbox library count
+tarunai-connect-rekordbox library search "Daft Punk"
 
 # Create + populate a playlist. Writes back up master.db first and refuse to run
 # while Rekordbox is open unless --force is supplied.
-cli-anything-rekordbox playlist create "MyMix"
-cli-anything-rekordbox playlist add "MyMix" --track-title "Track A"
-cli-anything-rekordbox playlist add "MyMix" --track-title "Track B"
+tarunai-connect-rekordbox playlist create "MyMix"
+tarunai-connect-rekordbox playlist add "MyMix" --track-title "Track A"
+tarunai-connect-rekordbox playlist add "MyMix" --track-title "Track B"
 
 # Live-deck mixing (requires virtual MIDI port + mapping in rekordbox)
-cli-anything-rekordbox install-mapping            # one-time: drops Bunker.midi.csv into rekordbox MidiMappings/
-cli-anything-rekordbox deck play --deck 1 --port "LoopBe"
-cli-anything-rekordbox deck crossfade 1 2 --secs 16
+tarunai-connect-rekordbox install-mapping            # one-time: drops Bunker.midi.csv into rekordbox MidiMappings/
+tarunai-connect-rekordbox deck play --deck 1 --port "LoopBe"
+tarunai-connect-rekordbox deck crossfade 1 2 --secs 16
 
 # End-to-end: load + mix two tracks
-cli-anything-rekordbox mix "Track A" "Track B" --secs 16
+tarunai-connect-rekordbox mix "Track A" "Track B" --secs 16
 
 # REPL mode
-cli-anything-rekordbox
+tarunai-connect-rekordbox
 ```
 
 ## Command groups
@@ -74,7 +74,7 @@ cli-anything-rekordbox
 | `clear NAME [--force] [--no-backup]` | Empty a playlist |
 
 Playlist writes create timestamped backups under `master.db`'s sibling
-`cli-anything-backups/` directory before mutation. If Rekordbox is running, the
+`tarunai-connect-backups/` directory before mutation. If Rekordbox is running, the
 CLI refuses to write by default; `--force` acknowledges that risk but still
 requires a backup. `--no-backup` is only accepted when Rekordbox is closed.
 
@@ -100,7 +100,7 @@ requires a backup. `--no-backup` is only accepted when Rekordbox is closed.
 
 ```
 +-----------------------------+
-|  cli-anything-rekordbox     |
+|  tarunai-connect-rekordbox     |
 +-----------------------------+
             |
    +--------+----------+
@@ -120,13 +120,13 @@ requires a backup. `--no-backup` is only accepted when Rekordbox is closed.
 
 ## Data files
 
-- `cli_anything/rekordbox/data/Bunker.midi.csv` — MIDI mapping (transport, mixer, EQ, hot cues, beat loops, browser nav). Pioneer-format, drops directly into rekordbox's `MidiMappings/` folder.
+- `tarunai_connect/rekordbox/data/Bunker.midi.csv` — MIDI mapping (transport, mixer, EQ, hot cues, beat loops, browser nav). Pioneer-format, drops directly into rekordbox's `MidiMappings/` folder.
 
 ## JSON output
 
 Every command supports `--json` for agent consumption:
 ```bash
-$ cli-anything-rekordbox --json library search "Daft Punk"
+$ tarunai-connect-rekordbox --json library search "Daft Punk"
 [{"id": 12345, "title": "One More Time", "artist": "Daft Punk", "bpm": 123.0}, ...]
 ```
 
@@ -138,4 +138,4 @@ $ cli-anything-rekordbox --json library search "Daft Punk"
 - **Pioneer offers no playback REST API.** This is the closest thing.
 
 ## License
-MIT — same as parent CLI-Anything project.
+MIT — same as parent tarunAI Connect project.

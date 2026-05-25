@@ -135,7 +135,7 @@ def build_trajectory(build_manifest_path: Path, output_dir: Path) -> Dict[str, A
         "Bring live preview online from the launch-platform baseline",
         str(
             live_session.get("start_command")
-            or f"cli-anything-blender --project {project_path} preview live start --recipe quick --mode manual --root-dir {live_root}"
+            or f"tarunai-connect-blender --project {project_path} preview live start --recipe quick --mode manual --root-dir {live_root}"
         ),
         BASELINE_START_S,
     )
@@ -262,7 +262,7 @@ def draw_global_header(
     title = trajectory.get("scenario_title", "Blender Live Demo").upper()
     subtitle = trajectory.get("scenario_subtitle", "scripted build trace + real preview bundles")
 
-    draw.text((34, 20), "CLI-ANYTHING / BLENDER / LIVE PREVIEW PROTOCOL", fill="#88a9c8", font=fonts["small"])
+    draw.text((34, 20), "TARUNAI CONNECT / BLENDER / LIVE PREVIEW PROTOCOL", fill="#88a9c8", font=fonts["small"])
     draw.text((34, 36), title, fill=COLORS["white"], font=fonts["display"])
     draw.text((34, 68), subtitle, fill="#97abc2", font=fonts["body"])
 

@@ -116,21 +116,21 @@ The harness uses JSON project files:
 
 ### Scan Comparison
 ```bash
-cli-anything-cloudcompare project new -o survey.json
-cli-anything-cloudcompare -p survey.json cloud add scan_before.las
-cli-anything-cloudcompare -p survey.json cloud add scan_after.las
-cli-anything-cloudcompare -p survey.json distance c2c --compare 1 --reference 0 -o diff.las
+tarunai-connect-cloudcompare project new -o survey.json
+tarunai-connect-cloudcompare -p survey.json cloud add scan_before.las
+tarunai-connect-cloudcompare -p survey.json cloud add scan_after.las
+tarunai-connect-cloudcompare -p survey.json distance c2c --compare 1 --reference 0 -o diff.las
 ```
 
 ### Point Cloud Cleanup Pipeline
 ```bash
-cli-anything-cloudcompare -p project.json cloud filter-sor 0 -o clean.las
-cli-anything-cloudcompare -p project.json cloud subsample 0 -o thin.las --method SPATIAL --param 0.02
+tarunai-connect-cloudcompare -p project.json cloud filter-sor 0 -o clean.las
+tarunai-connect-cloudcompare -p project.json cloud subsample 0 -o thin.las --method SPATIAL --param 0.02
 ```
 
 ### ICP Registration
 ```bash
-cli-anything-cloudcompare -p project.json transform icp --aligned 1 --reference 0 -o aligned.las
+tarunai-connect-cloudcompare -p project.json transform icp --aligned 1 --reference 0 -o aligned.las
 ```
 
 ## Agent Usage Notes

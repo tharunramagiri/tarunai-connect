@@ -1,16 +1,16 @@
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-iterm2",
+    name="tarunai-connect-iterm2",
     version="1.0.0",
     description="A stateful CLI harness for iTerm2 — control a running iTerm2 instance programmatically.",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="voidfreud",
     python_requires=">=3.10",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     package_data={
-        "cli_anything.iterm2_ctl": ["skills/*.md", "skills/references/*.md"],
+        "tarunai_connect.iterm2_ctl": ["skills/*.md", "skills/references/*.md"],
     },
     install_requires=[
         "click>=8.0.0",
@@ -19,7 +19,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cli-anything-iterm2=cli_anything.iterm2_ctl.iterm2_ctl_cli:main",
+            "tarunai-connect-iterm2=tarunai_connect.iterm2_ctl.iterm2_ctl_cli:main",
         ],
     },
     classifiers=[

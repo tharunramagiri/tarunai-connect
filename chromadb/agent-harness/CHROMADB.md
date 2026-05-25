@@ -25,7 +25,7 @@ between CLI invocations. Each command makes independent HTTP calls.
 agent-harness/
 ├── setup.py                          # Package setup with click, prompt-toolkit, requests
 ├── CHROMADB.md                       # This file -- SOP and architecture
-└── cli_anything/
+└── tarunai_connect/
     └── chromadb/
         ├── __init__.py
         ├── __main__.py               # python -m entry point

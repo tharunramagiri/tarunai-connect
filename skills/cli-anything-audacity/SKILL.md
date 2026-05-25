@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-audacity"
+name: "tarunai-connect-audacity"
 description: >-
   Command-line interface for Audacity - A stateful command-line interface for audio editing, following the same patterns as the GIMP and Ble...
 ---
 
-# cli-anything-audacity
+# tarunai-connect-audacity
 
 A stateful command-line interface for audio editing, following the same patterns as the GIMP and Blender CLIs in this repo.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-audacity package:
+This CLI is installed as part of the tarunai-connect-audacity package:
 
 ```bash
-pip install cli-anything-audacity
+pip install tarunai-connect-audacity
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-audacity
 
 ```bash
 # Show help
-cli-anything-audacity --help
+tarunai-connect-audacity --help
 
 # Start interactive REPL mode
-cli-anything-audacity
+tarunai-connect-audacity
 
 # Create a new project
-cli-anything-audacity project new -o project.json
+tarunai-connect-audacity project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-audacity --json project info -p project.json
+tarunai-connect-audacity --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-audacity --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-audacity
+tarunai-connect-audacity
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -173,9 +173,9 @@ Session management commands.
 Create a new audacity project file.
 
 ```bash
-cli-anything-audacity project new -o myproject.json
+tarunai-connect-audacity project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-audacity --json project new -o myproject.json
+tarunai-connect-audacity --json project new -o myproject.json
 ```
 
 
@@ -184,7 +184,7 @@ cli-anything-audacity --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-audacity
+tarunai-connect-audacity
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -196,7 +196,7 @@ cli-anything-audacity
 Export the project to a final output format.
 
 ```bash
-cli-anything-audacity --project myproject.json export render output.pdf --overwrite
+tarunai-connect-audacity --project myproject.json export render output.pdf --overwrite
 ```
 
 
@@ -217,10 +217,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-audacity project info -p project.json
+tarunai-connect-audacity project info -p project.json
 
 # JSON output for agents
-cli-anything-audacity --json project info -p project.json
+tarunai-connect-audacity --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -237,7 +237,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-obsidian
+setup.py for tarunai-connect-obsidian
 
 Install with: pip install -e .
 """
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/obsidian/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/obsidian/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-obsidian",
+    name="tarunai-connect-obsidian",
     version="1.1.0",
     author="Doruk Ozgen",
     author_email="",
     description="CLI harness for Obsidian — Knowledge management and note-taking via Obsidian Local REST API. Recommended: Obsidian with Local REST API plugin enabled",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -44,11 +44,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-obsidian=cli_anything.obsidian.obsidian_cli:main",
+            "tarunai-connect-obsidian=tarunai_connect.obsidian.obsidian_cli:main",
         ],
     },
     package_data={
-        "cli_anything.obsidian": ["skills/*.md"],
+        "tarunai_connect.obsidian": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

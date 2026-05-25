@@ -3,7 +3,7 @@
 Last updated: 2026-04-22 UTC
 
 This file records the programmatic video artifacts built from real
-`cli-anything-freecad` trajectories and real FreeCAD preview bundles.
+`tarunai-connect-freecad` trajectories and real FreeCAD preview bundles.
 
 ## Curiosity V6
 
@@ -30,7 +30,7 @@ Polished split-screen re-render:
 Render command:
 
 ```bash
-python3 /root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py \
+python3 /root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py \
   render \
   --timeline /root/preview-artifacts/20260421/freecad-curiosity-v6/trajectory.json \
   --speed 8
@@ -78,7 +78,7 @@ Polished render command:
 python3 - <<'PY'
 import importlib.util
 from pathlib import Path
-script = Path('/root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py')
+script = Path('/root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py')
 spec = importlib.util.spec_from_file_location('freecad_live_preview_demo', script)
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
@@ -103,7 +103,7 @@ Polished split-screen changes:
 - the ending now uses the real combo motion sequence:
   - one full turntable rotation
   - followed by forward travel
-- ending frames are pulled from `cli-anything-freecad motion render-video`
+- ending frames are pulled from `tarunai-connect-freecad motion render-video`
   output via:
   `/root/preview-artifacts/20260421/freecad-curiosity-v6/showcase-motion/`
 
@@ -145,7 +145,7 @@ Final rendered artifact:
 Render command:
 
 ```bash
-python3 /root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py \
+python3 /root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py \
   motion-showcase \
   --timeline /root/preview-artifacts/20260421/freecad-curiosity-v6/trajectory.json \
   --output-dir /root/preview-artifacts/20260422/freecad-curiosity-v6-true-motion \
@@ -158,7 +158,7 @@ Method:
 - add the staged showcase ground/markers as real geometry
 - generate `13` motion key poses across `6.0s`
 - store those keyframes in the project `motions` collection
-- invoke `cli-anything-freecad motion render-video`
+- invoke `tarunai-connect-freecad motion render-video`
 - render every frame through real FreeCAD GUI capture and encode with `ffmpeg`
 
 Artifacts:
@@ -205,7 +205,7 @@ Final rendered artifact:
 Render command:
 
 ```bash
-python3 /root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py \
+python3 /root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py \
   motion-showcase \
   --motion-style spin \
   --timeline /root/preview-artifacts/20260421/freecad-curiosity-v6/trajectory.json \
@@ -219,7 +219,7 @@ Method:
 - add the staged showcase ground/markers as real geometry
 - generate `19` turntable key poses across `7.0s`
 - rotate the rover around its stage-centered pivot
-- invoke `cli-anything-freecad motion render-video`
+- invoke `tarunai-connect-freecad motion render-video`
 - render every frame through real FreeCAD GUI capture and encode with `ffmpeg`
 
 Artifacts:
@@ -265,7 +265,7 @@ Final rendered artifact:
 Render command:
 
 ```bash
-python3 /root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py \
+python3 /root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py \
   motion-showcase \
   --motion-style combo \
   --timeline /root/preview-artifacts/20260421/freecad-curiosity-v6/trajectory.json \

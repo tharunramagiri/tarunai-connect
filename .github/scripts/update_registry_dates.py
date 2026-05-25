@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-USER_AGENT = "CLI-Anything registry date updater"
+USER_AGENT = "tarunAI Connect registry date updater"
 GITHUB_REPO_RE = re.compile(r"https://github\.com/([^/]+/[^/#?]+?)(?:\.git)?(?:[/?#].*)?$")
 GIT_URL_RE = re.compile(r"https://github\.com/[^\s#]+")
 SUBDIRECTORY_RE = re.compile(r"#subdirectory=([^\s]+)")
@@ -69,9 +69,9 @@ def get_last_modified(target_path: Path) -> str | None:
     """Get the most recent git commit date for CLI-specific files in a repo path."""
     relative_target = target_path.relative_to(REPO_ROOT).as_posix()
     shared_file_globs = (
-        f"{relative_target}/cli_anything/**/utils/repl_skin.py",
-        f"{relative_target}/cli_anything/**/skills/SKILL.md",
-        f"{relative_target}/cli_anything/**/SKILL.md",
+        f"{relative_target}/tarunai_connect/**/utils/repl_skin.py",
+        f"{relative_target}/tarunai_connect/**/skills/SKILL.md",
+        f"{relative_target}/tarunai_connect/**/SKILL.md",
     )
 
     timestamp = _git_log_timestamp(target_path, excluded_globs=shared_file_globs)

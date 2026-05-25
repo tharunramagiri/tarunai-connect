@@ -64,9 +64,9 @@ DOMShell exposes these MCP tools:
 
 ## Key Design Decisions
 
-### 1. MCP Backend Pattern (First in CLI-Anything)
+### 1. MCP Backend Pattern (First in tarunAI Connect)
 
-This is the first CLI-Anything harness to use an MCP server as a backend.
+This is the first tarunAI Connect harness to use an MCP server as a backend.
 
 **Backend wrapper** (`domshell_backend.py`):
 - Uses `mcp` Python SDK with `stdio` transport
@@ -284,7 +284,7 @@ Complex pages may have thousands of accessible elements:
 - [DOMShell Benchmark](https://github.com/apireno/DOMShell/tree/main/experiments/claude_domshell_vs_cic)
 - [Chrome Accessibility Tree](https://developer.chrome.com/docs/accessibility/tree)
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
-- [CLI-Anything HARNESS.md](https://github.com/HKUDS/CLI-Anything/tree/main/cli-anything-plugin/HARNESS.md)
+- [tarunAI Connect HARNESS.md](https://github.com/tharunramagiri/tarunai-connect/tree/main/tarunai-connect-plugin/HARNESS.md)
 
 ## Applying This Pattern
 

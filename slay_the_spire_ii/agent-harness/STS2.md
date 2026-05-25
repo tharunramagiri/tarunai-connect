@@ -3,7 +3,7 @@
 ## Architecture Summary
 
 Slay the Spire 2 is a real-time roguelike deckbuilder running as a native
-Steam game. Unlike other CLI-Anything harnesses that wrap desktop applications
+Steam game. Unlike other tarunAI Connect harnesses that wrap desktop applications
 via subprocess, this harness communicates with a live game process through an
 in-game bridge mod (`STS2_Bridge`) that exposes a local HTTP API.
 
@@ -23,7 +23,7 @@ in-game bridge mod (`STS2_Bridge`) that exposes a local HTTP API.
 └─────────────────────┼──────────────────────┘
                       │
         ┌─────────────┴────────────────┐
-        │      cli-anything-sts2       │
+        │      tarunai-connect-sts2       │
         │  state · play-card · rest …  │
         └──────────────────────────────┘
 ```

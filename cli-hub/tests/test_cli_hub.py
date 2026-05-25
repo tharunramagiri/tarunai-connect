@@ -48,8 +48,8 @@ SAMPLE_REGISTRY = {
             "requires": "gimp",
             "homepage": "https://gimp.org",
             "install_cmd": "pip install git+https://github.com/tharunramagiri/TarunAI Connect.git#subdirectory=gimp/agent-harness",
-            "entry_point": "cli-anything-gimp",
-            "skill_md": "skills/cli-anything-gimp/SKILL.md",
+            "entry_point": "tarunai-connect-gimp",
+            "skill_md": "skills/tarunai-connect-gimp/SKILL.md",
             "category": "image",
             "contributor": "test-user",
             "contributor_url": "https://github.com/test-user",
@@ -62,7 +62,7 @@ SAMPLE_REGISTRY = {
             "requires": "blender",
             "homepage": "https://blender.org",
             "install_cmd": "pip install git+https://github.com/tharunramagiri/TarunAI Connect.git#subdirectory=blender/agent-harness",
-            "entry_point": "cli-anything-blender",
+            "entry_point": "tarunai-connect-blender",
             "skill_md": None,
             "category": "3d",
             "contributor": "test-user",
@@ -76,7 +76,7 @@ SAMPLE_REGISTRY = {
             "requires": "sox",
             "homepage": "https://audacityteam.org",
             "install_cmd": "pip install git+https://github.com/tharunramagiri/TarunAI Connect.git#subdirectory=audacity/agent-harness",
-            "entry_point": "cli-anything-audacity",
+            "entry_point": "tarunai-connect-audacity",
             "skill_md": None,
             "category": "audio",
             "contributor": "test-user",
@@ -108,7 +108,7 @@ def _make_preview_bundle(tmp_path: Path, *, with_trajectory: bool = False) -> Pa
         "recipe": "quick",
         "status": "ok",
         "created_at": "2026-04-19T10:45:30Z",
-        "generator": {"entry_point": "cli-anything-shotcut", "command": "cli-anything-shotcut preview capture --recipe quick"},
+        "generator": {"entry_point": "tarunai-connect-shotcut", "command": "tarunai-connect-shotcut preview capture --recipe quick"},
         "source": {"project_path": "/tmp/demo.mlt", "project_fingerprint": "sha256:test"},
         "summary_path": "summary.json",
         "artifacts": [
@@ -154,7 +154,7 @@ def _make_preview_bundle(tmp_path: Path, *, with_trajectory: bool = False) -> Pa
                     "status": "ok",
                     "cached": False,
                     "publish_reason": "capture",
-                    "command": "cli-anything-shotcut preview capture --recipe quick",
+                    "command": "tarunai-connect-shotcut preview capture --recipe quick",
                 }
             ],
         }
@@ -182,7 +182,7 @@ def _make_preview_session(tmp_path: Path, *, with_trajectory: bool = False) -> P
         "current_link": "current",
         "current_bundle_id": "20260419T104530Z_deadbeef_quick",
         "watch_command": "tarunai-connect previews" watch /tmp/live-session --open",
-        "publish_command": "cli-anything-shotcut preview live push --recipe quick",
+        "publish_command": "tarunai-connect-shotcut preview live push --recipe quick",
         "inspect_command": "tarunai-connect previews" inspect /tmp/live-session",
         "history": [
             {
@@ -210,7 +210,7 @@ def _make_preview_session(tmp_path: Path, *, with_trajectory: bool = False) -> P
                     "status": "ok",
                     "cached": False,
                     "publish_reason": "live-start",
-                    "command": "cli-anything-shotcut preview live start --recipe quick",
+                    "command": "tarunai-connect-shotcut preview live start --recipe quick",
                     "command_started_at": "2026-04-19T10:45:28Z",
                     "command_finished_at": "2026-04-19T10:45:30Z",
                     "source_fingerprint": "sha256:test-a",
@@ -226,7 +226,7 @@ def _make_preview_session(tmp_path: Path, *, with_trajectory: bool = False) -> P
                     "status": "ok",
                     "cached": True,
                     "publish_reason": "manual-push",
-                    "command": "cli-anything-shotcut preview live push --recipe quick",
+                    "command": "tarunai-connect-shotcut preview live push --recipe quick",
                     "command_started_at": "2026-04-19T10:47:07Z",
                     "command_finished_at": "2026-04-19T10:47:10Z",
                     "source_fingerprint": "sha256:test-b",
@@ -240,7 +240,7 @@ def _make_preview_session(tmp_path: Path, *, with_trajectory: bool = False) -> P
                 "trajectory_protocol_version": "preview-trajectory/v1",
                 "trajectory_step_count": 2,
                 "current_step_id": "step-002",
-                "latest_command": "cli-anything-shotcut preview live push --recipe quick",
+                "latest_command": "tarunai-connect-shotcut preview live push --recipe quick",
                 "latest_publish_reason": "manual-push",
             }
         )
@@ -416,7 +416,7 @@ class TestPreviewBundle:
         assert "Trajectory" in text
         assert "Current step: step-002" in text
         assert "Recent publish: manual-push" in text
-        assert "cli-anything-shotcut preview live push --recipe quick" in text
+        assert "tarunai-connect-shotcut preview live push --recipe quick" in text
 
     def test_render_live_html(self, tmp_path):
         session_dir = _make_preview_session(tmp_path)
@@ -1151,7 +1151,7 @@ class TestCLI:
     @patch("tarunai_connect.cli.track_visit")
     @patch("tarunai_connect.cli.detect_invocation_context")
     @patch("tarunai_connect.cli.track_install")
-    @patch("tarunai_connect.cli.install_cli", return_value=(True, "Installed GIMP (cli-anything-gimp)"))
+    @patch("tarunai_connect.cli.install_cli", return_value=(True, "Installed GIMP (tarunai-connect-gimp)"))
     @patch("tarunai_connect.cli.get_cli", return_value=SAMPLE_REGISTRY["clis"][0])
     def test_install_command(self, mock_get, mock_install, mock_track, mock_detect, mock_visit, mock_first_run):
         mock_detect.return_value = self.human_detection

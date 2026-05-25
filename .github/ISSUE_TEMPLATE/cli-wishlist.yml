@@ -1,5 +1,5 @@
 name: "\U0001F31F CLI Wishlist"
-description: "Suggest a software, codebase, or service you'd like CLI-Anything to support."
+description: "Suggest a software, codebase, or service you'd like tarunAI Connect to support."
 title: "[Wishlist] "
 labels: ["wishlist"]
 body:
@@ -8,7 +8,7 @@ body:
       value: |
         ## Request a New CLI
 
-        Is there a software, codebase, or service you wish had a CLI-Anything harness? Let us know!
+        Is there a software, codebase, or service you wish had a tarunAI Connect harness? Let us know!
 
   - type: dropdown
     id: type
@@ -49,7 +49,7 @@ body:
   - type: textarea
     id: why
     attributes:
-      label: Why should CLI-Anything support this?
+      label: Why should tarunAI Connect support this?
       placeholder: "e.g., Darktable has a large photography community and supports Lua scripting, making CLI integration feasible..."
     validations:
       required: true

@@ -47,57 +47,57 @@ Message types: `0=log`, `1=blockStart`, `2=blockEnd`, `3=clientInfo`,
 ## CLI Command Groups
 
 ```
-cli-anything-nslogger read     # Parse and display .nsloggerdata / .rawnsloggerdata
-cli-anything-nslogger filter   # Filter messages from a file (level, tag, thread, text, regex, type, time, seq)
-cli-anything-nslogger export   # Export messages to text/JSON/CSV
-cli-anything-nslogger stats    # Summary statistics for a file
-cli-anything-nslogger listen   # Listen for live NSLogger connections
-cli-anything-nslogger generate # Generate sample .rawnsloggerdata for testing
-cli-anything-nslogger tail     # Show last N messages from a file
-cli-anything-nslogger clients  # List all client_info records in a file
-cli-anything-nslogger blocks   # Show block start/end structure as indented tree
-cli-anything-nslogger merge    # Merge multiple files sorted by timestamp
+tarunai-connect-nslogger read     # Parse and display .nsloggerdata / .rawnsloggerdata
+tarunai-connect-nslogger filter   # Filter messages from a file (level, tag, thread, text, regex, type, time, seq)
+tarunai-connect-nslogger export   # Export messages to text/JSON/CSV
+tarunai-connect-nslogger stats    # Summary statistics for a file
+tarunai-connect-nslogger listen   # Listen for live NSLogger connections
+tarunai-connect-nslogger generate # Generate sample .rawnsloggerdata for testing
+tarunai-connect-nslogger tail     # Show last N messages from a file
+tarunai-connect-nslogger clients  # List all client_info records in a file
+tarunai-connect-nslogger blocks   # Show block start/end structure as indented tree
+tarunai-connect-nslogger merge    # Merge multiple files sorted by timestamp
 ```
 
 ## Typical Agent Workflow
 
 ```bash
 # Inspect a captured log file
-cli-anything-nslogger read session.rawnsloggerdata
+tarunai-connect-nslogger read session.rawnsloggerdata
 
 # Find all errors
-cli-anything-nslogger filter --level 0 session.rawnsloggerdata
+tarunai-connect-nslogger filter --level 0 session.rawnsloggerdata
 
 # Filter within a time window
-cli-anything-nslogger filter --after "10:30:00" --before "10:45:00" session.rawnsloggerdata
+tarunai-connect-nslogger filter --after "10:30:00" --before "10:45:00" session.rawnsloggerdata
 
 # Filter by sequence range
-cli-anything-nslogger filter --from-seq 100 --to-seq 200 session.rawnsloggerdata
+tarunai-connect-nslogger filter --from-seq 100 --to-seq 200 session.rawnsloggerdata
 
 # Show last 50 messages
-cli-anything-nslogger tail --count 50 session.rawnsloggerdata
+tarunai-connect-nslogger tail --count 50 session.rawnsloggerdata
 
 # List connected clients
-cli-anything-nslogger clients session.rawnsloggerdata
+tarunai-connect-nslogger clients session.rawnsloggerdata
 
 # Show block/call structure
-cli-anything-nslogger blocks session.rawnsloggerdata
+tarunai-connect-nslogger blocks session.rawnsloggerdata
 
 # Merge two capture files
-cli-anything-nslogger merge a.rawnsloggerdata b.rawnsloggerdata --format json
+tarunai-connect-nslogger merge a.rawnsloggerdata b.rawnsloggerdata --format json
 
 # Export for further analysis
-cli-anything-nslogger export --format json session.rawnsloggerdata > logs.json
+tarunai-connect-nslogger export --format json session.rawnsloggerdata > logs.json
 
 # Get statistics
-cli-anything-nslogger stats session.rawnsloggerdata
+tarunai-connect-nslogger stats session.rawnsloggerdata
 
 # Listen for live iOS logs via Bonjour, matching NSLogger.app
-cli-anything-nslogger listen --bonjour --name bazinga --debug
+tarunai-connect-nslogger listen --bonjour --name bazinga --debug
 
 # Mirror live logs to disk while still printing stdout
-cli-anything-nslogger listen --bonjour --name bazinga --output app.log
+tarunai-connect-nslogger listen --bonjour --name bazinga --output app.log
 
 # Direct TCP/TLS mode for manually configured clients
-cli-anything-nslogger listen --port 50000 --ssl --debug
+tarunai-connect-nslogger listen --port 50000 --ssl --debug
 ```

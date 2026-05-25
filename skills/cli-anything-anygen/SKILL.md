@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-anygen"
+name: "tarunai-connect-anygen"
 description: >-
   Command-line interface for Anygen - A stateful command-line interface for AnyGen OpenAPI — generate professional slides, documents, webs...
 ---
 
-# cli-anything-anygen
+# tarunai-connect-anygen
 
 A stateful command-line interface for AnyGen OpenAPI — generate professional slides, documents, websites, diagrams, and more from natural language prompts. Designed for AI agents and power users.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-anygen package:
+This CLI is installed as part of the tarunai-connect-anygen package:
 
 ```bash
-pip install cli-anything-anygen
+pip install tarunai-connect-anygen
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-anygen
 
 ```bash
 # Show help
-cli-anything-anygen --help
+tarunai-connect-anygen --help
 
 # Start interactive REPL mode
-cli-anything-anygen
+tarunai-connect-anygen
 
 # Create a new project
-cli-anything-anygen project new -o project.json
+tarunai-connect-anygen project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-anygen --json project info -p project.json
+tarunai-connect-anygen --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-anygen --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-anygen
+tarunai-connect-anygen
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -111,9 +111,9 @@ Session management — history, undo, redo.
 Create a new anygen project file.
 
 ```bash
-cli-anything-anygen project new -o myproject.json
+tarunai-connect-anygen project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-anygen --json project new -o myproject.json
+tarunai-connect-anygen --json project new -o myproject.json
 ```
 
 
@@ -122,7 +122,7 @@ cli-anything-anygen --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-anygen
+tarunai-connect-anygen
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -146,10 +146,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-anygen project info -p project.json
+tarunai-connect-anygen project info -p project.json
 
 # JSON output for agents
-cli-anything-anygen --json project info -p project.json
+tarunai-connect-anygen --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -166,7 +166,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

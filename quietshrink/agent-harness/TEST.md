@@ -2,11 +2,11 @@
 
 ## Harness unit tests (this repo)
 
-The harness ships with 15 unit/smoke tests under `cli_anything/quietshrink/tests/test_cli.py`. They exercise the harness layer (command wiring, JSON output schema, error paths, subprocess interface) without invoking ffmpeg or the bash CLI.
+The harness ships with 15 unit/smoke tests under `tarunai_connect/quietshrink/tests/test_cli.py`. They exercise the harness layer (command wiring, JSON output schema, error paths, subprocess interface) without invoking ffmpeg or the bash CLI.
 
 ```bash
 pip install -e '.[dev]'
-pytest cli_anything/quietshrink/tests/ -v
+pytest tarunai_connect/quietshrink/tests/ -v
 ```
 
 Test groups:
@@ -48,15 +48,15 @@ After installing both the harness (`pip install …`) and the bash CLI (`install
 
 ```bash
 # Verify environment
-cli-anything-quietshrink doctor --json
+tarunai-connect-quietshrink doctor --json
 # Expected: { "checks": [...], "ready": true }
 
 # Probe a real video
-cli-anything-quietshrink probe ~/Desktop/recording.mov --json
+tarunai-connect-quietshrink probe ~/Desktop/recording.mov --json
 # Expected: codec, dimensions, duration, size
 
 # Compress
-cli-anything-quietshrink compress input.mov output.mov --json
+tarunai-connect-quietshrink compress input.mov output.mov --json
 # Expected: input_size, output_size, saved_percent, encoding_speed
 ```
 

@@ -1,12 +1,12 @@
 ---
-name: "cli-anything-eth2-quickstart"
+name: "tarunai-connect-eth2-quickstart"
 description: >-
   Use eth2-quickstart to autonomously deploy a hardened Ethereum node, install
   execution and consensus clients, configure validator metadata, expose RPC
   safely, and inspect node health with structured JSON output.
 ---
 
-# cli-anything-eth2-quickstart
+# tarunai-connect-eth2-quickstart
 
 Agent-native harness for the `chimera-defi/eth2-quickstart` automation repo.
 This CLI wraps the repo's canonical shell scripts instead of replacing them.
@@ -26,10 +26,10 @@ Use this skill when the task involves:
 
 ```bash
 # Canonical machine-readable health
-cli-anything-eth2-quickstart --json health-check
+tarunai-connect-eth2-quickstart --json health-check
 
 # Phase 2 install with explicit client choices
-cli-anything-eth2-quickstart --json install-clients \
+tarunai-connect-eth2-quickstart --json install-clients \
   --network mainnet \
   --execution-client geth \
   --consensus-client lighthouse \
@@ -37,7 +37,7 @@ cli-anything-eth2-quickstart --json install-clients \
   --confirm
 
 # Guided node setup
-cli-anything-eth2-quickstart --json setup-node \
+tarunai-connect-eth2-quickstart --json setup-node \
   --phase auto \
   --execution-client geth \
   --consensus-client prysm \
@@ -45,13 +45,13 @@ cli-anything-eth2-quickstart --json setup-node \
   --confirm
 
 # Validator metadata only; no key import
-cli-anything-eth2-quickstart --json configure-validator \
+tarunai-connect-eth2-quickstart --json configure-validator \
   --consensus-client prysm \
   --fee-recipient 0x1111111111111111111111111111111111111111 \
-  --graffiti "CLI-Anything"
+  --graffiti "tarunAI Connect"
 
 # Install nginx-backed RPC exposure
-cli-anything-eth2-quickstart --json start-rpc \
+tarunai-connect-eth2-quickstart --json start-rpc \
   --web-stack nginx \
   --server-name rpc.example.org \
   --confirm

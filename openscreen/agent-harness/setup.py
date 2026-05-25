@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/openscreen/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/openscreen/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-openscreen",
+    name="tarunai-connect-openscreen",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description=(
         "CLI harness for Openscreen — screen recording editor. "
@@ -16,8 +16,8 @@ setup(
     ),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -39,11 +39,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-openscreen=cli_anything.openscreen.openscreen_cli:cli",
+            "tarunai-connect-openscreen=tarunai_connect.openscreen.openscreen_cli:cli",
         ],
     },
     package_data={
-        "cli_anything.openscreen": ["skills/*.md"],
+        "tarunai_connect.openscreen": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

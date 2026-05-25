@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This harness provides a CLI-Anything interface for PM2 process management.
+This harness provides a tarunAI Connect interface for PM2 process management.
 It wraps the PM2 CLI via subprocess calls and exposes process lifecycle, logs,
 and system commands through a unified Click CLI with interactive REPL mode.
 
@@ -16,7 +16,7 @@ and system commands through a unified Click CLI with interactive REPL mode.
 ## Architecture
 
 ```
-cli-anything-pm2 (Click CLI)
+tarunai-connect-pm2 (Click CLI)
     |
     +-- pm2_cli.py          # Click groups + REPL dispatcher
     |
@@ -28,7 +28,7 @@ cli-anything-pm2 (Click CLI)
     |
     +-- utils/
     |   +-- pm2_backend.py   # subprocess wrapper (_run_pm2, pm2_jlist, etc.)
-    |   +-- repl_skin.py     # cli-anything branded REPL UI
+    |   +-- repl_skin.py     # tarunai-connect branded REPL UI
     |
     +-- tests/
     |   +-- test_core.py     # Unit tests (mocked subprocess)
@@ -63,8 +63,8 @@ All commands support two output modes controlled by the `--json` flag:
 
 ## Interaction Modes
 
-1. **Subcommand CLI**: `cli-anything-pm2 [--json] <group> <command> [args]`
-2. **Interactive REPL**: `cli-anything-pm2` (no subcommand) launches the REPL
+1. **Subcommand CLI**: `tarunai-connect-pm2 [--json] <group> <command> [args]`
+2. **Interactive REPL**: `tarunai-connect-pm2` (no subcommand) launches the REPL
 
 ## Key Design Decisions
 
@@ -91,11 +91,11 @@ All commands support two output modes controlled by the `--json` flag:
 
 ```bash
 # Run all tests
-python -m pytest cli_anything/pm2/tests/ -v
+python -m pytest tarunai_connect/pm2/tests/ -v
 
 # Run only unit tests (no pm2 needed)
-python -m pytest cli_anything/pm2/tests/test_core.py -v
+python -m pytest tarunai_connect/pm2/tests/test_core.py -v
 
 # Run only E2E tests (pm2 must be installed and running)
-python -m pytest cli_anything/pm2/tests/test_full_e2e.py -v
+python -m pytest tarunai_connect/pm2/tests/test_full_e2e.py -v
 ```

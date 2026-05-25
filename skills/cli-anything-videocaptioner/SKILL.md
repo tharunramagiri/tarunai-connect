@@ -1,17 +1,17 @@
 ---
-name: "cli-anything-videocaptioner"
+name: "tarunai-connect-videocaptioner"
 description: >-
   AI-powered video captioning — transcribe speech, optimize/translate subtitles, and burn them into video via the stable VideoCaptioner backend. Free ASR and translation included.
 ---
 
-# cli-anything-videocaptioner
+# tarunai-connect-videocaptioner
 
 AI-powered video captioning tool. Transcribe speech → optimize subtitles → translate → burn into video.
 
 ## Installation
 
 ```bash
-pip install cli-anything-videocaptioner
+pip install tarunai-connect-videocaptioner
 ```
 
 **Prerequisites:**
@@ -25,33 +25,33 @@ pip install cli-anything-videocaptioner
 
 ```bash
 # Show help
-cli-anything-videocaptioner --help
+tarunai-connect-videocaptioner --help
 
 # Start interactive REPL mode
-cli-anything-videocaptioner
+tarunai-connect-videocaptioner
 
 # Transcribe a video (free, no setup)
-cli-anything-videocaptioner transcribe video.mp4 --asr bijian
+tarunai-connect-videocaptioner transcribe video.mp4 --asr bijian
 
 # Translate subtitles (free Bing translator)
-cli-anything-videocaptioner subtitle input.srt --translator bing --target-language en
+tarunai-connect-videocaptioner subtitle input.srt --translator bing --target-language en
 
 # Full pipeline: transcribe → translate → burn subtitles
-cli-anything-videocaptioner process video.mp4 --asr bijian --translator bing --target-language en --subtitle-mode hard
+tarunai-connect-videocaptioner process video.mp4 --asr bijian --translator bing --target-language en --subtitle-mode hard
 
 # Review subtitle/script consistency before a final hard-burn
-cli-anything-videocaptioner synthesize video.mp4 -s subtitles.srt \
+tarunai-connect-videocaptioner synthesize video.mp4 -s subtitles.srt \
   --subtitle-mode hard \
   --review-script approved_script.txt
 
 # Render a one-frame subtitle preview for review
-cli-anything-videocaptioner review subtitles.srt \
+tarunai-connect-videocaptioner review subtitles.srt \
   --script approved_script.txt \
   --preview-video video.mp4 \
   --preview-output review_5s.png
 
 # JSON output (for agent consumption)
-cli-anything-videocaptioner --json transcribe video.mp4 --asr bijian
+tarunai-connect-videocaptioner --json transcribe video.mp4 --asr bijian
 ```
 
 ### REPL Mode
@@ -59,7 +59,7 @@ cli-anything-videocaptioner --json transcribe video.mp4 --asr bijian
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-videocaptioner
+tarunai-connect-videocaptioner
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -122,7 +122,7 @@ download <URL> [-o DIR]
 
 All commands support `--json` for machine-readable output:
 ```bash
-cli-anything-videocaptioner --json transcribe video.mp4 --asr bijian
+tarunai-connect-videocaptioner --json transcribe video.mp4 --asr bijian
 # {"output_path": "/path/to/output.srt"}
 ```
 

@@ -1,12 +1,12 @@
 # Attribution
 
-This harness adapts the CLI-Anything methodology for NotebookLM.
+This harness adapts the tarunAI Connect methodology for NotebookLM.
 
 ## Acknowledgements
 
-- **CLI-Anything**
-  - Project: https://github.com/HKUDS/CLI-Anything
-  - Methodology: https://github.com/HKUDS/CLI-Anything/blob/main/cli-anything-plugin/HARNESS.md
+- **tarunAI Connect**
+  - Project: https://github.com/tharunramagiri/tarunai-connect
+  - Methodology: https://github.com/tharunramagiri/tarunai-connect/blob/main/tarunai-connect-plugin/HARNESS.md
   - We follow its agent-native CLI conventions, including REPL-first design, JSON output, package layout, and test documentation patterns.
 
 - **notebooklm-py**

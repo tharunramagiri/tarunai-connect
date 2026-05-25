@@ -1,10 +1,10 @@
 ---
-name: "cli-anything-slay-the-spire-ii"
+name: "tarunai-connect-slay-the-spire-ii"
 description: >-
   Command-line interface for Slay the Spire 2 - Control the real game through a local bridge mod HTTP API. Reads normalized game state and sends action commands for combat, navigation, rewards, and menu management.
 ---
 
-# cli-anything-slay-the-spire-ii
+# tarunai-connect-slay-the-spire-ii
 
 A stateful command-line interface for controlling the real Slay the Spire 2
 game through the local `STS2_Bridge` mod. The CLI reads normalized game state
@@ -16,14 +16,14 @@ This CLI requires a bridge mod that runs inside the game process. Both the CLI
 and the bridge are distributed from the same repository:
 
 ```
-https://github.com/HKUDS/CLI-Anything
+https://github.com/tharunramagiri/tarunai-connect
 ```
 
 ### 1. Install the CLI
 
 ```bash
-git clone https://github.com/HKUDS/CLI-Anything.git
-cd CLI-Anything/slay_the_spire_ii/agent-harness
+git clone https://github.com/tharunramagiri/tarunai-connect.git
+cd tarunAI Connect/slay_the_spire_ii/agent-harness
 pip install -e .
 ```
 
@@ -34,7 +34,7 @@ the game directory. Full instructions are in the repository README, but the
 short version is:
 
 ```bash
-cd CLI-Anything/slay_the_spire_ii/agent-harness/bridge/plugin
+cd tarunAI Connect/slay_the_spire_ii/agent-harness/bridge/plugin
 ./build.sh
 cd ../install
 ./install_bridge.sh
@@ -53,7 +53,7 @@ Launch Slay the Spire 2 via Steam, enable the `STS2_Bridge` mod in the mod
 manager, then verify the connection:
 
 ```bash
-cli-anything-sts2 state
+tarunai-connect-sts2 state
 ```
 
 If this returns JSON, the CLI and bridge are connected.
@@ -69,13 +69,13 @@ If this returns JSON, the CLI and bridge are connected.
 
 ```bash
 # Read normalized game state (always start here)
-cli-anything-sts2 state
+tarunai-connect-sts2 state
 
 # Start interactive REPL mode (default)
-cli-anything-sts2
+tarunai-connect-sts2
 
 # Show all available commands
-cli-anything-sts2 --help
+tarunai-connect-sts2 --help
 ```
 
 ## Command Groups

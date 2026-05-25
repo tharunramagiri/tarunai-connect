@@ -3,7 +3,7 @@
 ## Overview
 
 This harness wraps the official **NVIDIA Nsight Graphics** command-line tools
-into a Click-based CLI named `cli-anything-nsight-graphics`.
+into a Click-based CLI named `tarunai-connect-nsight-graphics`.
 
 V1 is intentionally **orchestration-focused**:
 
@@ -25,7 +25,7 @@ agent-harness/
 ├── HARNESS.md
 ├── NSIGHT_GRAPHICS.md
 ├── setup.py
-└── cli_anything/
+└── tarunai_connect/
     └── nsight_graphics/
         ├── __init__.py
         ├── __main__.py

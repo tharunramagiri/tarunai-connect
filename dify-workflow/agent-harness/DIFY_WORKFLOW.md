@@ -2,14 +2,14 @@
 
 ## Overview
 
-This harness adds `cli-anything-dify-workflow`, a CLI-Anything wrapper around the
+This harness adds `tarunai-connect-dify-workflow`, a tarunAI Connect wrapper around the
 existing `dify-workflow` CLI from the open-source
 `dify-ai-workflow-tools` project.
 
 The upstream CLI already provides the real workflow authoring engine for Dify DSL
 files. This harness focuses on:
 
-- CLI-Anything packaging under the shared `cli_anything` namespace
+- tarunAI Connect packaging under the shared `tarunai_connect` namespace
 - AI-discoverable `SKILL.md`
 - unified REPL skin
 - registry integration for CLI-Hub
@@ -19,7 +19,7 @@ files. This harness focuses on:
 
 ```text
 AI Agent
-  -> cli-anything-dify-workflow
+  -> tarunai-connect-dify-workflow
      -> installed dify-workflow CLI / dify_workflow Python package
         -> local Dify YAML/JSON DSL files
 ```
@@ -27,8 +27,8 @@ AI Agent
 ## Why a Wrapper Harness
 
 The upstream project is already a mature CLI and does not need to be rewritten
-inside CLI-Anything. Following existing wrapper patterns in this repository,
-this harness exposes the upstream CLI through a CLI-Anything package so agents
+inside tarunAI Connect. Following existing wrapper patterns in this repository,
+this harness exposes the upstream CLI through a tarunAI Connect package so agents
 can discover it from CLI-Hub and load its skill metadata.
 
 ## Requirements

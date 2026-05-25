@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-obs-studio"
+name: "tarunai-connect-obs-studio"
 description: >-
   Command-line interface for Obs Studio - A stateful command-line interface for OBS Studio scene collection editing, following the same patter...
 ---
 
-# cli-anything-obs_studio
+# tarunai-connect-obs_studio
 
 A stateful command-line interface for OBS Studio scene collection editing, following the same patterns as the Blender CLI harness. Uses a JSON scene collection format. No OBS installation required for editing.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-obs_studio package:
+This CLI is installed as part of the tarunai-connect-obs_studio package:
 
 ```bash
-pip install cli-anything-obs_studio
+pip install tarunai-connect-obs_studio
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-obs_studio
 
 ```bash
 # Show help
-cli-anything-obs_studio --help
+tarunai-connect-obs_studio --help
 
 # Start interactive REPL mode
-cli-anything-obs_studio
+tarunai-connect-obs_studio
 
 # Create a new project
-cli-anything-obs_studio project new -o project.json
+tarunai-connect-obs_studio project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-obs_studio --json project info -p project.json
+tarunai-connect-obs_studio --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-obs_studio --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-obs_studio
+tarunai-connect-obs_studio
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -168,9 +168,9 @@ Session management commands.
 Create a new obs_studio project file.
 
 ```bash
-cli-anything-obs_studio project new -o myproject.json
+tarunai-connect-obs_studio project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-obs_studio --json project new -o myproject.json
+tarunai-connect-obs_studio --json project new -o myproject.json
 ```
 
 
@@ -179,7 +179,7 @@ cli-anything-obs_studio --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-obs_studio
+tarunai-connect-obs_studio
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -203,10 +203,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-obs_studio project info -p project.json
+tarunai-connect-obs_studio project info -p project.json
 
 # JSON output for agents
-cli-anything-obs_studio --json project info -p project.json
+tarunai-connect-obs_studio --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -223,7 +223,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

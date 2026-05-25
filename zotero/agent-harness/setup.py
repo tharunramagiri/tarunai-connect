@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 
-PACKAGE_NAME = "cli-anything-zotero"
+PACKAGE_NAME = "tarunai-connect-zotero"
 PACKAGE_VERSION = "0.1.0"
 
 
@@ -27,20 +27,20 @@ from setuptools import find_namespace_packages, setup
 
 
 ROOT = Path(__file__).parent
-README = ROOT / "cli_anything" / "zotero" / "README.md"
+README = ROOT / "tarunai_connect" / "zotero" / "README.md"
 LONG_DESCRIPTION = README.read_text(encoding="utf-8") if README.exists() else ""
 
 
 setup(
     name=PACKAGE_NAME,
     version=PACKAGE_VERSION,
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="Agent-native CLI harness for Zotero using SQLite, connector, and Local API backends",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     python_requires=">=3.10",
     install_requires=[
         "click>=8.0.0",
@@ -55,11 +55,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-zotero=cli_anything.zotero.zotero_cli:entrypoint",
+            "tarunai-connect-zotero=tarunai_connect.zotero.zotero_cli:entrypoint",
         ],
     },
     package_data={
-        "cli_anything.zotero": [
+        "tarunai_connect.zotero": [
             "README.md",
             "skills/SKILL.md",
             "tests/TEST.md",

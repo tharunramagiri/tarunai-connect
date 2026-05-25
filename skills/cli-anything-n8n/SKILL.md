@@ -1,27 +1,27 @@
 ---
-name: "cli-anything-n8n"
+name: "tarunai-connect-n8n"
 description: >-
   Command-line interface for n8n workflow automation platform.
   Manages workflows, executions, credentials, variables, and tags.
   Based on n8n Public API v1.1.1 (n8n >= 1.0.0).
 ---
 
-# cli-anything-n8n
+# tarunai-connect-n8n
 
-CLI harness for n8n workflow automation — built with the CLI-Anything pattern.
+CLI harness for n8n workflow automation — built with the tarunAI Connect pattern.
 Verified against n8n OpenAPI spec v1.1.1.
 
 ## Installation
 
 ```bash
-pip install cli-anything-n8n
+pip install tarunai-connect-n8n
 ```
 
 ## Configuration
 
 ```bash
-cli-anything-n8n config set base_url https://your-n8n-instance.com
-cli-anything-n8n config set api_key your-api-key
+tarunai-connect-n8n config set base_url https://your-n8n-instance.com
+tarunai-connect-n8n config set api_key your-api-key
 
 # Or environment variables
 export N8N_BASE_URL=https://your-n8n-instance.com

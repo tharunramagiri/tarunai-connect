@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in CLI-Anything
+description: Report a bug in tarunAI Connect
 title: "[Bug]: "
 labels: ["type: bug"]
 body:
@@ -53,7 +53,7 @@ body:
       description: Provide clear steps to reproduce the bug.
       placeholder: |
         1. Install the harness with `pip install -e .`
-        2. Run `cli-anything-gimp project create test.xcf`
+        2. Run `tarunai-connect-gimp project create test.xcf`
         3. See error...
     validations:
       required: true

@@ -14,22 +14,22 @@
 ```bash
 cd minimax/agent-harness
 python3 -m py_compile \
-  cli_anything/minimax/minimax_cli.py \
-  cli_anything/minimax/core/session.py \
-  cli_anything/minimax/utils/minimax_backend.py \
-  cli_anything/minimax/tests/test_core.py \
-  cli_anything/minimax/tests/test_full_e2e.py
-python3 -m pytest cli_anything/minimax/tests/test_core.py cli_anything/minimax/tests/test_full_e2e.py -v
+  tarunai_connect/minimax/minimax_cli.py \
+  tarunai_connect/minimax/core/session.py \
+  tarunai_connect/minimax/utils/minimax_backend.py \
+  tarunai_connect/minimax/tests/test_core.py \
+  tarunai_connect/minimax/tests/test_full_e2e.py
+python3 -m pytest tarunai_connect/minimax/tests/test_core.py tarunai_connect/minimax/tests/test_full_e2e.py -v
 python3 -m pip install -e .
-CLI_ANYTHING_FORCE_INSTALLED=1 python3 -m pytest \
-  cli_anything/minimax/tests/test_full_e2e.py::TestCLISubprocessSmoke -v -s
+TARUNAI_CONNECT_FORCE_INSTALLED=1 python3 -m pytest \
+  tarunai_connect/minimax/tests/test_full_e2e.py::TestCLISubprocessSmoke -v -s
 ```
 
 ## Results
 
 - `py_compile`: passed.
 - Full MiniMax unit/E2E suite: `25 passed in 2.82s`.
-- Force-installed CLI smoke suite: `5 passed in 3.90s`, using `/root/miniconda3/bin/cli-anything-minimax`.
+- Force-installed CLI smoke suite: `5 passed in 3.90s`, using `/root/miniconda3/bin/tarunai-connect-minimax`.
 
 ## Real Backend Validation
 
@@ -39,10 +39,10 @@ CLI_ANYTHING_FORCE_INSTALLED=1 python3 -m pytest \
 cd minimax/agent-harness
 python3 -m pip install -e .
 export MINIMAX_API_KEY="sk-your-real-key"
-cli-anything-minimax --json test
-cli-anything-minimax --json chat --prompt "Say ok only" --max-tokens 10
-cli-anything-minimax stream --prompt "Say ok only" --max-tokens 10
-cli-anything-minimax --json tts --text "MiniMax validation" --output /tmp/minimax-validation.mp3
+tarunai-connect-minimax --json test
+tarunai-connect-minimax --json chat --prompt "Say ok only" --max-tokens 10
+tarunai-connect-minimax stream --prompt "Say ok only" --max-tokens 10
+tarunai-connect-minimax --json tts --text "MiniMax validation" --output /tmp/minimax-validation.mp3
 test -s /tmp/minimax-validation.mp3
-python3 -m pytest cli_anything/minimax/tests/test_full_e2e.py -v -s
+python3 -m pytest tarunai_connect/minimax/tests/test_full_e2e.py -v -s
 ```

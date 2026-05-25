@@ -6,11 +6,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Welcome to CLI-Anything!
+        ## Welcome to tarunAI Connect!
 
         New contributors are required to contribute a new CLI harness as their first contribution. Once your CLI is merged, you'll be granted access to review and merge PRs.
 
-        Please read [CONTRIBUTING.md](https://github.com/HKUDS/CLI-Anything/blob/main/CONTRIBUTING.md) before starting.
+        Please read [CONTRIBUTING.md](https://github.com/tharunramagiri/tarunAI Connect/blob/main/CONTRIBUTING.md) before starting.
 
   - type: textarea
     id: experience

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-inkscape
+setup.py for tarunai-connect-inkscape
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/inkscape/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/inkscape/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-inkscape",
+    name="tarunai-connect-inkscape",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Inkscape - SVG vector graphics with export via inkscape --export-filename. Requires: inkscape (apt install inkscape)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-inkscape=cli_anything.inkscape.inkscape_cli:main",
+            "tarunai-connect-inkscape=tarunai_connect.inkscape.inkscape_cli:main",
         ],
     },
     package_data={
-        "cli_anything.inkscape": ["skills/*.md"],
+        "tarunai_connect.inkscape": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

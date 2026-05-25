@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-gimp
+setup.py for tarunai-connect-gimp
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/gimp/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/gimp/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-gimp",
+    name="tarunai-connect-gimp",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for GIMP - Raster image processing via gimp -i -b (batch mode). Recommended: gimp (apt install gimp)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -50,11 +50,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-gimp=cli_anything.gimp.gimp_cli:main",
+            "tarunai-connect-gimp=tarunai_connect.gimp.gimp_cli:main",
         ],
     },
     package_data={
-        "cli_anything.gimp": ["skills/*.md"],
+        "tarunai_connect.gimp": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

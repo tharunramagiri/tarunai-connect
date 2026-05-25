@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""setup.py for cli-anything-videocaptioner"""
+"""setup.py for tarunai-connect-videocaptioner"""
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/videocaptioner/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/videocaptioner/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-videocaptioner",
+    name="tarunai-connect-videocaptioner",
     version="1.0.0",
     author="Weifeng",
     author_email="",
@@ -15,7 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/WEIFENG2333/VideoCaptioner",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -40,11 +40,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-videocaptioner=cli_anything.videocaptioner.videocaptioner_cli:main",
+            "tarunai-connect-videocaptioner=tarunai_connect.videocaptioner.videocaptioner_cli:main",
         ],
     },
     package_data={
-        "cli_anything.videocaptioner": ["skills/*.md"],
+        "tarunai_connect.videocaptioner": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

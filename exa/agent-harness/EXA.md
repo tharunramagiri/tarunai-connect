@@ -2,7 +2,7 @@
 
 ## Overview
 
-`cli-anything-exa` is a CLI harness for the [Exa API](https://exa.ai), an AI-native search
+`tarunai-connect-exa` is a CLI harness for the [Exa API](https://exa.ai), an AI-native search
 engine built on neural embeddings rather than keyword matching. This harness makes
 core Exa capabilities available to any AI coding agent (Claude Code, Codex, OpenCode, etc.)
 via a structured command-line interface.
@@ -15,7 +15,7 @@ Authentication uses `EXA_API_KEY` from the environment — no server process is 
 ## Command Hierarchy
 
 ```
-cli-anything-exa [--json]
+tarunai-connect-exa [--json]
 ├── search   <query>          Neural/keyword/deep web search
 ├── contents <url> [url …]   Fetch full-text or highlighted page content
 └── server   status           Verify API key and connectivity
@@ -63,7 +63,7 @@ API's space-separated values.
 exa/agent-harness/
 ├── setup.py
 ├── EXA.md                         (this file)
-└── cli_anything/exa/
+└── tarunai_connect/exa/
     ├── __init__.py
     ├── __main__.py
     ├── exa_cli.py                 Entry point, Click command tree, REPL

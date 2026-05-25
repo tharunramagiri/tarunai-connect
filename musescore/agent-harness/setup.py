@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
-"""setup.py for cli-anything-musescore
+"""setup.py for tarunai-connect-musescore
 
 Install with: pip install -e .
 """
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/musescore/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/musescore/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-musescore",
+    name="tarunai-connect-musescore",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for MuseScore 4 — transpose, export PDF/audio/MIDI, extract parts, manage instruments",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -43,11 +43,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-musescore=cli_anything.musescore.musescore_cli:main",
+            "tarunai-connect-musescore=tarunai_connect.musescore.musescore_cli:main",
         ],
     },
     package_data={
-        "cli_anything.musescore": ["skills/*.md"],
+        "tarunai_connect.musescore": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

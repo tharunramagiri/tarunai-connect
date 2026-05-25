@@ -25,7 +25,7 @@ Screen recording compression is a frequent agent task: "compress this screencast
 ## Install
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=quietshrink/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=quietshrink/agent-harness
 ```
 
 The harness depends on the bash `quietshrink` CLI being available in `$PATH`. Install it with:
@@ -38,16 +38,16 @@ curl -fsSL https://raw.githubusercontent.com/achiya-automation/quietshrink/main/
 
 ```bash
 # Inspect a file
-cli-anything-quietshrink probe recording.mov --json
+tarunai-connect-quietshrink probe recording.mov --json
 
 # Compress (default: transparent quality)
-cli-anything-quietshrink compress recording.mov compressed.mov --json
+tarunai-connect-quietshrink compress recording.mov compressed.mov --json
 
 # List quality presets
-cli-anything-quietshrink presets --json
+tarunai-connect-quietshrink presets --json
 
 # Verify environment
-cli-anything-quietshrink doctor --json
+tarunai-connect-quietshrink doctor --json
 ```
 
 ## Source

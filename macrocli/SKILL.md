@@ -1,13 +1,13 @@
 ---
-name: cli-anything
-description: Use when the user wants OpenClaw to build, refine, test, or validate a CLI-Anything harness for a GUI application or source repository. Adapts the CLI-Anything methodology to OpenClaw without changing the generated Python harness format.
+name: tarunai-connect
+description: Use when the user wants OpenClaw to build, refine, test, or validate a tarunAI Connect harness for a GUI application or source repository. Adapts the tarunAI Connect methodology to OpenClaw without changing the generated Python harness format.
 ---
 
-# CLI-Anything for OpenClaw
+# tarunAI Connect for OpenClaw
 
-Use this skill when the user wants OpenClaw to act like the `CLI-Anything` builder.
+Use this skill when the user wants OpenClaw to act like the `tarunAI Connect` builder.
 
-If this skill is being used from inside the `CLI-Anything` repository, read `../cli-anything-plugin/HARNESS.md` before implementation. That file is the full methodology source of truth. If it is not available, follow the condensed rules below.
+If this skill is being used from inside the `tarunAI Connect` repository, read `../tarunai-connect-plugin/HARNESS.md` before implementation. That file is the full methodology source of truth. If it is not available, follow the condensed rules below.
 
 ## Inputs
 
@@ -31,7 +31,7 @@ Produce this structure:
 └── agent-harness/
     ├── <SOFTWARE>.md
     ├── setup.py
-    └── cli_anything/
+    └── tarunai_connect/
         └── <software>/
             ├── README.md
             ├── __init__.py
@@ -68,13 +68,13 @@ Plan tests before writing them. Keep both:
 - `test_core.py` for unit coverage
 - `test_full_e2e.py` for workflow and backend validation
 
-When possible, test the installed command via subprocess using `cli-anything-<software>` rather than only module imports.
+When possible, test the installed command via subprocess using `tarunai-connect-<software>` rather than only module imports.
 
 ### Validate
 
 Check that the harness:
 
-- uses the `cli_anything.<software>` namespace package layout
+- uses the `tarunai_connect.<software>` namespace package layout
 - has an installable `setup.py` entry point
 - supports JSON output
 - has a REPL default path
@@ -86,9 +86,9 @@ Prefer the real software backend over reimplementation. Wrap the actual executab
 
 ## Packaging Rules
 
-- Use `find_namespace_packages(include=["cli_anything.*"])`
-- Keep `cli_anything/` as a namespace package without a top-level `__init__.py`
-- Expose `cli-anything-<software>` through `console_scripts`
+- Use `find_namespace_packages(include=["tarunai_connect.*"])`
+- Keep `tarunai_connect/` as a namespace package without a top-level `__init__.py`
+- Expose `tarunai-connect-<software>` through `console_scripts`
 
 ## Workflow
 

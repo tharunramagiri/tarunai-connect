@@ -1,18 +1,18 @@
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/krita/README.md", encoding="utf-8") as fh:
+with open("tarunai_connect/krita/README.md", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-krita",
+    name="tarunai-connect-krita",
     version="1.0.0",
     description="CLI harness for Krita digital painting application",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="cli-anything contributors",
-    url="https://github.com/HKUDS/CLI-Anything",
+    author="tarunai-connect contributors",
+    url="https://github.com/tharunramagiri/tarunai-connect",
     license="MIT",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -37,11 +37,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-krita=cli_anything.krita.krita_cli:main",
+            "tarunai-connect-krita=tarunai_connect.krita.krita_cli:main",
         ],
     },
     package_data={
-        "cli_anything.krita": ["skills/*.md"],
+        "tarunai_connect.krita": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

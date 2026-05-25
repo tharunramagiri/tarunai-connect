@@ -1,13 +1,13 @@
 ---
-name: "cli-anything-mailchimp"
+name: "tarunai-connect-mailchimp"
 description: CLI harness for the Mailchimp Marketing API v3.0 — 303 commands across 30 resource groups (lists, campaigns, reports, automations, ecommerce, templates, and more). Supports JSON output and interactive REPL mode.
 ---
 
-# cli-anything-mailchimp
+# tarunai-connect-mailchimp
 
 ## Identity
 
-An agent-native CLI for the [Mailchimp Marketing API v3.0](https://mailchimp.com/developer/marketing/docs/fundamentals/), built on the [CLI-Anything](https://github.com/HKUDS/CLI-Anything) framework.
+An agent-native CLI for the [Mailchimp Marketing API v3.0](https://mailchimp.com/developer/marketing/docs/fundamentals/), built on the [tarunAI Connect](https://github.com/tharunramagiri/tarunai-connect) framework.
 
 ## What This CLI Does
 
@@ -26,8 +26,8 @@ An agent-native CLI for the [Mailchimp Marketing API v3.0](https://mailchimp.com
 ## Installation
 
 ```bash
-# From the CLI-Anything repo (once merged):
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=mailchimp/agent-harness
+# From the tarunAI Connect repo (once merged):
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=mailchimp/agent-harness
 
 # During development:
 cd mailchimp/agent-harness && pip install -e .
@@ -39,10 +39,10 @@ cd mailchimp/agent-harness && pip install -e .
 
 | Command | Description |
 |---|---|
-| `cli-anything-mailchimp ping` | Health check — confirms API connectivity |
-| `cli-anything-mailchimp root list` | Get account info |
-| `cli-anything-mailchimp --json <cmd>` | Output any command as JSON |
-| `cli-anything-mailchimp` | Launch interactive REPL |
+| `tarunai-connect-mailchimp ping` | Health check — confirms API connectivity |
+| `tarunai-connect-mailchimp root list` | Get account info |
+| `tarunai-connect-mailchimp --json <cmd>` | Output any command as JSON |
+| `tarunai-connect-mailchimp` | Launch interactive REPL |
 
 ### Lists (Audiences)
 
@@ -149,14 +149,14 @@ All commands support `--json` at the root level:
 
 ```bash
 # List all audiences as JSON
-cli-anything-mailchimp --json lists list
+tarunai-connect-mailchimp --json lists list
 
 # Get a campaign report as JSON
-cli-anything-mailchimp --json reports get abc123def
+tarunai-connect-mailchimp --json reports get abc123def
 
 # Pipe to jq — use the native Mailchimp field name for the resource
-cli-anything-mailchimp --json lists list | jq '.lists[].name'
-cli-anything-mailchimp --json campaigns list | jq '.campaigns[].id'
+tarunai-connect-mailchimp --json lists list | jq '.lists[].name'
+tarunai-connect-mailchimp --json campaigns list | jq '.campaigns[].id'
 ```
 
 **Envelope shapes** (native Mailchimp API response — use the resource-specific key):
@@ -180,34 +180,34 @@ cli-anything-mailchimp --json campaigns list | jq '.campaigns[].id'
 
 ```bash
 # Get account health
-cli-anything-mailchimp --json ping | jq '.health_status'
+tarunai-connect-mailchimp --json ping | jq '.health_status'
 
 # List all audience IDs and names
-cli-anything-mailchimp --json lists list | jq '.lists[] | {id, name}'
+tarunai-connect-mailchimp --json lists list | jq '.lists[] | {id, name}'
 
 # Find all subscribed members in an audience
-cli-anything-mailchimp --json lists list-lists-id-members <list_id> --status subscribed | jq '.members[].email_address'
+tarunai-connect-mailchimp --json lists list-lists-id-members <list_id> --status subscribed | jq '.members[].email_address'
 
 # Create a campaign and get its send checklist
-cli-anything-mailchimp --json campaigns create --data '{"type":"regular","settings":{"subject_line":"Hello","from_name":"Me","reply_to":"me@example.com"}}' | jq '.id'
-cli-anything-mailchimp --json campaigns list-send-checklist <campaign_id> | jq '.items[] | select(.result == false)'
+tarunai-connect-mailchimp --json campaigns create --data '{"type":"regular","settings":{"subject_line":"Hello","from_name":"Me","reply_to":"me@example.com"}}' | jq '.id'
+tarunai-connect-mailchimp --json campaigns list-send-checklist <campaign_id> | jq '.items[] | select(.result == false)'
 
 # Get unsubscribes for a sent campaign
-cli-anything-mailchimp --json reports list-unsubscribed <campaign_id> | jq '.unsubscribes[].email_address'
+tarunai-connect-mailchimp --json reports list-unsubscribed <campaign_id> | jq '.unsubscribes[].email_address'
 
 # Add a member to an audience (subscriber hash = MD5 of lowercased email)
-cli-anything-mailchimp --json lists create-members <list_id> --data '{"email_address":"user@example.com","status":"subscribed"}'
+tarunai-connect-mailchimp --json lists create-members <list_id> --data '{"email_address":"user@example.com","status":"subscribed"}'
 
 # Search for a member across all audiences
-cli-anything-mailchimp --json search-members list --query "user@example.com" | jq '.exact_matches.members[]'
+tarunai-connect-mailchimp --json search-members list --query "user@example.com" | jq '.exact_matches.members[]'
 ```
 
 ## Interactive REPL
 
-Run `cli-anything-mailchimp` with no arguments to enter the REPL:
+Run `tarunai-connect-mailchimp` with no arguments to enter the REPL:
 
 ```
-◆  cli-anything · Mailchimp
+◆  tarunai-connect · Mailchimp
    v0.1.0
    Type help for commands, quit to exit
 

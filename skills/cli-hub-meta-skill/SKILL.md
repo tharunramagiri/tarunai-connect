@@ -16,7 +16,7 @@ Commands:
 1. The agent has `tarunai-connect` available (it's a pip package).
 2. **Find your tool**: `tarunai-connect search <keyword>` or `tarunai-connect list -c <category>`
 3. **Install**: `tarunai-connect install <name>`
-4. **Use**: invoke the `entry_point` for that CLI (e.g., `cli-anything-gimp` for GIMP)
+4. **Use**: invoke the `entry_point` for that CLI (e.g., `tarunai-connect-gimp` for GIMP)
 5. For preview-capable harnesses, call the tool's preview command first, then `tarunai-connect previews ...` to inspect or open the result
 
 ## Example
@@ -24,7 +24,7 @@ Commands:
 ```
 tarunai-connect search video
 tarunai-connect install kdenlive
-cli-anything-kdenlive --help
+tarunai-connect-kdenlive --help
 ```
 
 ## Links

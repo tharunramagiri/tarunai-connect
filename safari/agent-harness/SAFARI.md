@@ -8,8 +8,8 @@ Software: **[safari-mcp](https://github.com/achiya-automation/safari-mcp)** (npm
 Target: **Safari on macOS** via safari-mcp's Node.js MCP server.
 
 This document covers the Phase 1 codebase analysis, command map, and
-rendering-gap assessment required by the CLI-Anything methodology
-(see [`../cli-anything-plugin/HARNESS.md`](../cli-anything-plugin/HARNESS.md)).
+rendering-gap assessment required by the tarunAI Connect methodology
+(see [`../tarunai-connect-plugin/HARNESS.md`](../tarunai-connect-plugin/HARNESS.md)).
 
 ---
 
@@ -97,7 +97,7 @@ inherits this and does not attempt to fake history.
 
 Safari MCP exposes **84 tools**. The CLI generates one Click subcommand
 per tool automatically from the bundled tool schema — there is **no
-hand-written mapping**. Run `cli-anything-safari tools list` for the
+hand-written mapping**. Run `tarunai-connect-safari tools list` for the
 complete set; the short table below groups them by purpose.
 
 | Purpose                        | Representative tools                                         |
@@ -128,7 +128,7 @@ complete set; the short table below groups them by purpose.
 | Computed style                 | `get-computed-style`                                         |
 | Single-element read            | `get-element`, `query-all`                                   |
 
-Every one of these is reachable as `cli-anything-safari tool <short-name>`
+Every one of these is reachable as `tarunai-connect-safari tool <short-name>`
 with the full MCP schema driving the Click options (argument names,
 types, enum choices, required/optional, and descriptions).
 
@@ -152,7 +152,7 @@ format for us to translate.
 **Status: N/A.**
 
 No effect/filter system in browser automation. The
-[`filter-translation.md`](../cli-anything-plugin/guides/filter-translation.md)
+[`filter-translation.md`](../tarunai-connect-plugin/guides/filter-translation.md)
 guide does not apply.
 
 ## 5. Timecode Precision
@@ -160,7 +160,7 @@ guide does not apply.
 **Status: N/A.**
 
 No video/audio in browser automation. The
-[`timecode-precision.md`](../cli-anything-plugin/guides/timecode-precision.md)
+[`timecode-precision.md`](../tarunai-connect-plugin/guides/timecode-precision.md)
 guide does not apply.
 
 ## 6. Session Locking
@@ -168,7 +168,7 @@ guide does not apply.
 **Status: N/A (no persistent session).**
 
 Unlike document-based harnesses, this harness does not persist session
-state to disk. The [`session-locking.md`](../cli-anything-plugin/guides/session-locking.md)
+state to disk. The [`session-locking.md`](../tarunai-connect-plugin/guides/session-locking.md)
 pattern (`_locked_save_json` with `fcntl.flock`) is not needed because
 there are no session JSON saves. The in-memory `Session` object holds
 only the last URL and current tab index for REPL display, both of
@@ -180,7 +180,7 @@ which are reset on every CLI invocation.
 
 HARNESS.md's #1 rule: **Use the real software — don't reimplement it.**
 
-This harness complies: every `cli-anything-safari tool <name>` call
+This harness complies: every `tarunai-connect-safari tool <name>` call
 spawns `npx -y safari-mcp` as a subprocess and routes the call through
 the real safari-mcp server, which in turn drives the real Safari
 application. There is no pure-Python fallback, no "mock Safari", and no
@@ -200,7 +200,7 @@ attempt to reimplement DOM interaction in Python.
 
 ## 8. Validator Checklist — Why Some Items Are N/A
 
-The [`validate.md`](../cli-anything-plugin/commands/validate.md) checklist
+The [`validate.md`](../tarunai-connect-plugin/commands/validate.md) checklist
 lists a few "required files" that do not apply to this harness:
 
 | Required by validate.md  | Status    | Reason                                             |
@@ -224,16 +224,16 @@ Shotcut), not for interactive browsers.
 
 ## 9. Architecture Decisions Unique to This Harness
 
-Unlike every other CLI-Anything harness, this one is **schema-driven**:
+Unlike every other tarunAI Connect harness, this one is **schema-driven**:
 
 1. **Schema extraction** (offline): [`scripts/extract_tools.py`](scripts/extract_tools.py)
    parses safari-mcp's Zod source with a depth-aware scanner and
-   produces [`cli_anything/safari/resources/tools.json`](cli_anything/safari/resources/tools.json).
-2. **Dynamic Click registration**: [`cli_anything/safari/safari_cli.py`](cli_anything/safari/safari_cli.py)
+   produces [`tarunai_connect/safari/resources/tools.json`](tarunai_connect/safari/resources/tools.json).
+2. **Dynamic Click registration**: [`tarunai_connect/safari/safari_cli.py`](tarunai_connect/safari/safari_cli.py)
    loads `tools.json` at import time and calls `_build_tool_command`
    for every tool, producing a Click command with option names, types,
    choices, and required/optional flags pulled from the schema.
-3. **Parity test**: [`cli_anything/safari/tests/test_parity.py`](cli_anything/safari/tests/test_parity.py)
+3. **Parity test**: [`tarunai_connect/safari/tests/test_parity.py`](tarunai_connect/safari/tests/test_parity.py)
    iterates the registry and verifies every tool is reachable via
    Click with the correct shape. It pins the expected tool count (84)
    so upstream drift fails loudly.
@@ -250,7 +250,7 @@ correct without manual synchronization when safari-mcp adds tools.
 - [safari-mcp GitHub](https://github.com/achiya-automation/safari-mcp)
 - [safari-mcp on npm](https://www.npmjs.com/package/safari-mcp)
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
-- [CLI-Anything HARNESS.md](../cli-anything-plugin/HARNESS.md)
-- [MCP Backend Pattern Guide](../cli-anything-plugin/guides/mcp-backend.md)
+- [tarunAI Connect HARNESS.md](../tarunai-connect-plugin/HARNESS.md)
+- [MCP Backend Pattern Guide](../tarunai-connect-plugin/guides/mcp-backend.md)
 - [Sibling: browser/agent-harness (DOMShell/Chrome)](../browser/agent-harness/)
 - [Local HARNESS.md](HARNESS.md) — harness-specific deep dive

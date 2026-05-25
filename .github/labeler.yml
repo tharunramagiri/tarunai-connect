@@ -1,4 +1,4 @@
-cli-anything-hub:
+tarunai-connect-hub:
   - changed-files:
       - any-glob-to-any-file:
           - "cli-hub/**"
@@ -7,10 +7,10 @@ cli-anything-hub:
           - "public_registry.json"
           - "matrix_registry.json"
 
-cli-anything-skill:
+tarunai-connect-skill:
   - changed-files:
       - any-glob-to-any-file:
-          - "cli-anything-plugin/**"
+          - "tarunai-connect-plugin/**"
           - "codex-skill/**"
           - "cli-hub-meta-skill/**"
           - "openclaw-skill/**"

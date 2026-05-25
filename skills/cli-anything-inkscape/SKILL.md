@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-inkscape"
+name: "tarunai-connect-inkscape"
 description: >-
   Command-line interface for Inkscape - A stateful command-line interface for vector graphics editing, following the same patterns as the GI...
 ---
 
-# cli-anything-inkscape
+# tarunai-connect-inkscape
 
 A stateful command-line interface for vector graphics editing, following the same patterns as the GIMP and Blender CLI harnesses. Directly manipulates SVG (XML) documents with a JSON project format for state tracking.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-inkscape package:
+This CLI is installed as part of the tarunai-connect-inkscape package:
 
 ```bash
-pip install cli-anything-inkscape
+pip install tarunai-connect-inkscape
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-inkscape
 
 ```bash
 # Show help
-cli-anything-inkscape --help
+tarunai-connect-inkscape --help
 
 # Start interactive REPL mode
-cli-anything-inkscape
+tarunai-connect-inkscape
 
 # Create a new document
-cli-anything-inkscape document new -o project.json
+tarunai-connect-inkscape document new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-inkscape --json document info -p project.json
+tarunai-connect-inkscape --json document info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-inkscape --json document info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-inkscape
+tarunai-connect-inkscape
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -52,7 +52,7 @@ You can also start the REPL with a nonexistent project path. The CLI now seeds a
 new in-memory document instead of failing immediately:
 
 ```bash
-cli-anything-inkscape --project /abs/path/new-title.inkscape-cli.json
+tarunai-connect-inkscape --project /abs/path/new-title.inkscape-cli.json
 ```
 
 
@@ -209,9 +209,9 @@ Session management commands.
 Create a new inkscape project file.
 
 ```bash
-cli-anything-inkscape document new -o myproject.json
+tarunai-connect-inkscape document new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-inkscape --json document new -o myproject.json
+tarunai-connect-inkscape --json document new -o myproject.json
 ```
 
 
@@ -220,7 +220,7 @@ cli-anything-inkscape --json document new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-inkscape
+tarunai-connect-inkscape
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -232,7 +232,7 @@ cli-anything-inkscape
 Export the project to a final output format.
 
 ```bash
-cli-anything-inkscape --project myproject.json export pdf output.pdf --overwrite
+tarunai-connect-inkscape --project myproject.json export pdf output.pdf --overwrite
 ```
 
 ### Wrapped Text Layout
@@ -241,13 +241,13 @@ For title cards, chips, and portrait-safe panels, prefer wrapped text boxes
 instead of manually inserting line breaks:
 
 ```bash
-cli-anything-inkscape --project title.json text add \
+tarunai-connect-inkscape --project title.json text add \
   --text "Real capture + Veo cold open + Gemini score + thumbnail plate" \
   --x 180 --y 470 --font-size 118 \
   --box-width 1180 --box-height 260 --line-height 1.05
 
-cli-anything-inkscape --project title.json text set 0 box-width 980
-cli-anything-inkscape --project title.json text set 0 line-height 1.15
+tarunai-connect-inkscape --project title.json text set 0 box-width 980
+tarunai-connect-inkscape --project title.json text set 0 line-height 1.15
 ```
 
 Notes:
@@ -273,10 +273,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-inkscape project info -p project.json
+tarunai-connect-inkscape project info -p project.json
 
 # JSON output for agents
-cli-anything-inkscape --json project info -p project.json
+tarunai-connect-inkscape --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -294,7 +294,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

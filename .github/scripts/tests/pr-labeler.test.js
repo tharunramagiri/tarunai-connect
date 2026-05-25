@@ -9,8 +9,8 @@ const fixtures = require("./pr-labeler-fixtures.json");
 const REPO_ROOT = path.resolve(__dirname, "../../..");
 const LABELER_CONFIG_PATH = path.join(REPO_ROOT, ".github/labeler.yml");
 const EXPECTED_LABELS = [
-  "cli-anything-hub",
-  "cli-anything-skill",
+  "tarunai-connect-hub",
+  "tarunai-connect-skill",
   "documentation",
   "existing-cli-fix",
   "github-actions",
@@ -172,8 +172,8 @@ test("labeler config and script agree on the supported label set", () => {
     assert(scriptLabels.has(label), `${label} must be creatable by pr-labeler.js`);
   }
 
-  assert(configLabels.has("cli-anything-hub"));
-  assert(configLabels.has("cli-anything-skill"));
+  assert(configLabels.has("tarunai-connect-hub"));
+  assert(configLabels.has("tarunai-connect-skill"));
   assert(configLabels.has("github-actions"));
 });
 
@@ -183,7 +183,7 @@ test("registry-only maintenance is not treated as a new CLI", () => {
     files: [{filename: "registry.json", status: "modified"}],
   });
 
-  assert.deepStrictEqual(labels, ["cli-anything-hub"]);
+  assert.deepStrictEqual(labels, ["tarunai-connect-hub"]);
 });
 
 test("mixed README and harness changes are not documentation-only", () => {
@@ -191,7 +191,7 @@ test("mixed README and harness changes are not documentation-only", () => {
     title: "fix(blender): update docs and render behavior",
     files: [
       {filename: "README.md", status: "modified"},
-      {filename: "blender/agent-harness/cli_anything/blender/core/render.py", status: "modified"},
+      {filename: "blender/agent-harness/tarunai_connect/blender/core/render.py", status: "modified"},
     ],
   });
 

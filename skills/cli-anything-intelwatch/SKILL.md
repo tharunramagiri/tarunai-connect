@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-intelwatch"
+name: "tarunai-connect-intelwatch"
 description: >-
   Zero friction. Full context. Competitive intelligence, M&A due diligence, and OSINT directly from your terminal. Uses Node.js/npx.
 ---
 
-# cli-anything-intelwatch
+# tarunai-connect-intelwatch
 
 Intelwatch bridges the gap between hacker OSINT and B2B Sales/M&A data. It executes complex financial data aggregation, technology stack detection, and AI-powered due diligence in seconds.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-intelwatch package:
+This CLI is installed as part of the tarunai-connect-intelwatch package:
 
 ```bash
-pip install cli-anything-intelwatch
+pip install tarunai-connect-intelwatch
 ```
 
 **Prerequisites:**
@@ -26,13 +26,13 @@ pip install cli-anything-intelwatch
 
 ```bash
 # Show help
-cli-anything-intelwatch --help
+tarunai-connect-intelwatch --help
 
 # Generate a deep profile for a company
-cli-anything-intelwatch profile kpmg.fr
+tarunai-connect-intelwatch profile kpmg.fr
 
 # Generate a profile with AI Due Diligence
-cli-anything-intelwatch profile kpmg.fr --ai
+tarunai-connect-intelwatch profile kpmg.fr --ai
 ```
 
 ## For AI Agents
@@ -46,5 +46,5 @@ When using this CLI programmatically:
 
 ## Example Scenarios
 
-- **M&A Due Diligence:** `cli-anything-intelwatch profile company-name.com --ai`
-- **Sales Intelligence:** `cli-anything-intelwatch profile target-client.com`
+- **M&A Due Diligence:** `tarunai-connect-intelwatch profile company-name.com --ai`
+- **Sales Intelligence:** `tarunai-connect-intelwatch profile target-client.com`

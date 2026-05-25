@@ -3,7 +3,7 @@
 ## Overview
 
 CloudAnalyzer is a **CLI-first** Python package for point cloud QA. Unlike most
-CLI-Anything harnesses that bridge a GUI application to the command line,
+tarunAI Connect harnesses that bridge a GUI application to the command line,
 this harness wraps an existing CLI tool to provide:
 
 1. Standardized Click interface with `--json` on every command

@@ -1,6 +1,6 @@
 # QGIS harness architecture notes
 
-This harness targets the real QGIS runtime already present on the machine and follows the cli-anything harness model: keep authoring state inside a long-lived Python process, and use existing backend CLIs where QGIS already exposes them cleanly.
+This harness targets the real QGIS runtime already present on the machine and follows the tarunai-connect harness model: keep authoring state inside a long-lived Python process, and use existing backend CLIs where QGIS already exposes them cleanly.
 
 ## Backend split
 
@@ -122,6 +122,6 @@ The test suite should cover three layers:
 
 1. direct module tests against PyQGIS helpers
 2. real E2E flows against the actual QGIS runtime
-3. subprocess tests against the installed `cli-anything-qgis` executable
+3. subprocess tests against the installed `tarunai-connect-qgis` executable
 
 That combination checks both the library layer and the packaging/runtime contract.

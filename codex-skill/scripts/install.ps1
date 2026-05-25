@@ -12,7 +12,7 @@ $codexHome = if ($env:CODEX_HOME) {
 }
 
 $destRoot = Join-Path $codexHome "skills"
-$destDir = Join-Path $destRoot "cli-anything"
+$destDir = Join-Path $destRoot "tarunai-connect"
 
 New-Item -ItemType Directory -Path $destRoot -Force | Out-Null
 

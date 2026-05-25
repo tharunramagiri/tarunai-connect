@@ -1,11 +1,11 @@
 ---
-name: "cli-anything-quietshrink"
+name: "tarunai-connect-quietshrink"
 description: Compress macOS screen recordings with zero CPU stress using Apple Silicon's hardware HEVC encoder. Typically reduces file size 70-90% while staying visually lossless. Computer stays silent during encoding.
 ---
 
 # quietshrink — Agent Skill
 
-You have access to `cli-anything-quietshrink`, a CLI for compressing video files on macOS Apple Silicon. It uses the Media Engine (hardware HEVC encoder), not the CPU, so encoding is fast and silent.
+You have access to `tarunai-connect-quietshrink`, a CLI for compressing video files on macOS Apple Silicon. It uses the Media Engine (hardware HEVC encoder), not the CPU, so encoding is fast and silent.
 
 ## When to use it
 
@@ -20,21 +20,21 @@ You have access to `cli-anything-quietshrink`, a CLI for compressing video files
 
 ```bash
 # Compress with default transparent quality
-cli-anything-quietshrink compress <input> [output]
+tarunai-connect-quietshrink compress <input> [output]
 
 # Compress with specific preset
-cli-anything-quietshrink compress -q tiny <input>     # smallest
-cli-anything-quietshrink compress -q transparent <input>  # default, visually lossless
-cli-anything-quietshrink compress -q pristine <input>     # near-source quality
+tarunai-connect-quietshrink compress -q tiny <input>     # smallest
+tarunai-connect-quietshrink compress -q transparent <input>  # default, visually lossless
+tarunai-connect-quietshrink compress -q pristine <input>     # near-source quality
 
 # Inspect a file before compressing
-cli-anything-quietshrink probe <input>
+tarunai-connect-quietshrink probe <input>
 
 # List quality presets
-cli-anything-quietshrink presets
+tarunai-connect-quietshrink presets
 
 # Verify environment
-cli-anything-quietshrink doctor
+tarunai-connect-quietshrink doctor
 ```
 
 All commands accept `--json` for machine-readable output.

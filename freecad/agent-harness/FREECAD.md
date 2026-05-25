@@ -18,7 +18,7 @@ It supports Part design, Sketcher, Assembly, TechDraw, Mesh, and many other work
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│  cli-anything-freecad (CLI + REPL)                   │
+│  tarunai-connect-freecad (CLI + REPL)                   │
 │  ┌──────────────┐  ┌──────────────┐  ┌────────────┐ │
 │  │ document.py   │  │ parts.py     │  │ sketch.py  │ │
 │  │ create/save   │  │ primitives   │  │ 2D shapes  │ │
@@ -65,7 +65,7 @@ The CLI maintains project state as a JSON document:
     "metadata": {
         "created": "2026-03-22T...",
         "modified": "2026-03-22T...",
-        "software": "cli-anything-freecad 1.1.0"
+        "software": "tarunai-connect-freecad 1.1.0"
     }
 }
 ```

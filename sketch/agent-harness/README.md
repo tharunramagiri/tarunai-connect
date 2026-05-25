@@ -1,6 +1,6 @@
 # sketch-harness
 
-CLI tool to generate `.sketch` files from JSON design specs — a [CLI-Anything](https://github.com/anthropics/CLI-Anything) harness for Sketch.
+CLI tool to generate `.sketch` files from JSON design specs — a [tarunAI Connect](https://github.com/anthropics/tarunAI Connect) harness for Sketch.
 
 ## Installation
 

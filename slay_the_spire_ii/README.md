@@ -1,9 +1,9 @@
-# CLI-Anything-Slay-the-Spire-2
+# tarunAI Connect-Slay-the-Spire-2
 
-`CLI-Anything-Slay-the-Spire-2` is a CLI harness that connects the real Steam version of *Slay the Spire 2* to a stateful command-line interface, making it agent-native.
+`tarunAI Connect-Slay-the-Spire-2` is a CLI harness that connects the real Steam version of *Slay the Spire 2* to a stateful command-line interface, making it agent-native.
 
 <p align="center">
-  <img src="assets/example_gif.gif" alt="CLI-Anything-Slay-the-Spire-2 demo" width="900">
+  <img src="assets/example_gif.gif" alt="tarunAI Connect-Slay-the-Spire-2 demo" width="900">
 </p>
 
 It works like this:
@@ -17,13 +17,13 @@ This project controls the real running game. It is not a headless simulator and 
 ## What Is Included
 
 - `agent-harness/`
-  - The CLI harness package (`cli_anything/slay_the_spire_ii/`), installable via `pip install -e .`.
+  - The CLI harness package (`tarunai_connect/slay_the_spire_ii/`), installable via `pip install -e .`.
 - `agent-harness/bridge/plugin/`
   - `.NET 9` source for the bridge mod. **This mod is required** — the CLI cannot function without it.
 - `agent-harness/bridge/install/`
   - Install bundle and scripts for the bridge mod.
 
-**Important:** Unlike other CLI-Anything harnesses that wrap standalone applications, this harness requires a custom bridge mod to be built and installed into the game. The bridge mod exposes the game's internal state via HTTP, which the CLI then consumes.
+**Important:** Unlike other tarunAI Connect harnesses that wrap standalone applications, this harness requires a custom bridge mod to be built and installed into the game. The bridge mod exposes the game's internal state via HTTP, which the CLI then consumes.
 
 ## Requirements
 
@@ -44,7 +44,7 @@ cd slay_the_spire_ii/agent-harness
 pip install -e .
 ```
 
-This installs the `cli-anything-sts2` command.
+This installs the `tarunai-connect-sts2` command.
 
 ### 2. Build the bridge mod
 
@@ -101,11 +101,11 @@ http://localhost:15526/
 ### 5. Verify the setup
 
 ```bash
-cli-anything-sts2 --help
-cli-anything-sts2 state
+tarunai-connect-sts2 --help
+tarunai-connect-sts2 state
 ```
 
-If `cli-anything-sts2 state` returns JSON, the CLI and the bridge are connected correctly.
+If `tarunai-connect-sts2 state` returns JSON, the CLI and the bridge are connected correctly.
 
 ## Usage
 
@@ -114,16 +114,16 @@ If `cli-anything-sts2 state` returns JSON, the CLI and the bridge are connected 
 1. Build and install `STS2_Bridge`
 2. Launch the real game and enable the mod
 3. Run `pip install -e .` from `slay_the_spire_ii/agent-harness`
-4. Run `cli-anything-sts2 state`
+4. Run `tarunai-connect-sts2 state`
 
 ### Start from the main menu
 
 ```bash
-cli-anything-sts2 state
-cli-anything-sts2 continue-game
-cli-anything-sts2 start-game --character IRONCLAD --ascension 0
-cli-anything-sts2 abandon-game
-cli-anything-sts2 return-to-main-menu
+tarunai-connect-sts2 state
+tarunai-connect-sts2 continue-game
+tarunai-connect-sts2 start-game --character IRONCLAD --ascension 0
+tarunai-connect-sts2 abandon-game
+tarunai-connect-sts2 return-to-main-menu
 ```
 
 `start-game --character` currently recognizes:
@@ -137,15 +137,15 @@ cli-anything-sts2 return-to-main-menu
 ### Manual control during a run
 
 ```bash
-cli-anything-sts2 state
-cli-anything-sts2 choose-map 0
-cli-anything-sts2 play-card 0 --target jaw_worm_0
-cli-anything-sts2 end-turn
-cli-anything-sts2 claim-reward 0
-cli-anything-sts2 pick-card-reward 0
-cli-anything-sts2 rest 0
-cli-anything-sts2 event 0
-cli-anything-sts2
+tarunai-connect-sts2 state
+tarunai-connect-sts2 choose-map 0
+tarunai-connect-sts2 play-card 0 --target jaw_worm_0
+tarunai-connect-sts2 end-turn
+tarunai-connect-sts2 claim-reward 0
+tarunai-connect-sts2 pick-card-reward 0
+tarunai-connect-sts2 rest 0
+tarunai-connect-sts2 event 0
+tarunai-connect-sts2
 ```
 
 Common command groups:
@@ -159,7 +159,7 @@ Common command groups:
 For the full command surface:
 
 ```bash
-cli-anything-sts2 --help
+tarunai-connect-sts2 --help
 ```
 
 ## Configuration
@@ -174,7 +174,7 @@ cli-anything-sts2 --help
 Example:
 
 ```bash
-cli-anything-sts2 --base-url http://127.0.0.1:15526 --timeout 20 state
+tarunai-connect-sts2 --base-url http://127.0.0.1:15526 --timeout 20 state
 ```
 
 ### Bridge build
@@ -184,7 +184,7 @@ cli-anything-sts2 --base-url http://127.0.0.1:15526 --timeout 20 state
 
 ## Troubleshooting
 
-### `cli-anything-sts2 state` cannot connect
+### `tarunai-connect-sts2 state` cannot connect
 
 This usually means one of the following is still missing:
 
@@ -211,4 +211,4 @@ This project was informed by:
 
 - [`wuhao21/sts2-cli`](https://github.com/wuhao21/sts2-cli)
 - [`Gennadiyev/STS2MCP`](https://github.com/Gennadiyev/STS2MCP)
-- [`HKUDS/CLI-Anything`](https://github.com/HKUDS/CLI-Anything)
+- [`tharunramagiri/tarunai-connect`](https://github.com/tharunramagiri/tarunai-connect)

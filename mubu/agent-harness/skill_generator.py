@@ -1,7 +1,7 @@
 """
-SKILL.md Generator for CLI-Anything
+SKILL.md Generator for tarunAI Connect
 
-This module extracts metadata from CLI-Anything harnesses and generates
+This module extracts metadata from tarunAI Connect harnesses and generates
 SKILL.md files following the skill-creator methodology.
 """
 
@@ -180,7 +180,7 @@ def generate_examples(software_name: str, command_groups: list[CommandGroup]) ->
         Example(
             title="Interactive REPL Session",
             description="Start an interactive session with persistent document and node context.",
-            code=f"""cli-anything-{software_name}
+            code=f"""tarunai-connect-{software_name}
 # Enter commands interactively
 # Use 'help' to see builtins
 # Use session commands to persist current-doc/current-node""",
@@ -193,7 +193,7 @@ def generate_examples(software_name: str, command_groups: list[CommandGroup]) ->
             Example(
                 title="Discover Current Daily Note",
                 description="Resolve the current daily note from an explicit folder reference.",
-                code=f"""cli-anything-{software_name} --json discover daily-current '<daily-folder-ref>'""",
+                code=f"""tarunai-connect-{software_name} --json discover daily-current '<daily-folder-ref>'""",
             )
         )
     if "mutate" in group_names:
@@ -202,7 +202,7 @@ def generate_examples(software_name: str, command_groups: list[CommandGroup]) ->
                 title="Dry-Run Atomic Update",
                 description="Inspect the exact outgoing payload before a live mutation.",
                 code=(
-                    f"cli-anything-{software_name} mutate update-text "
+                    f"tarunai-connect-{software_name} mutate update-text "
                     "'<doc-ref>' --node-id <node-id> --text 'new text' --json"
                 ),
             )
@@ -212,11 +212,11 @@ def generate_examples(software_name: str, command_groups: list[CommandGroup]) ->
 
 def extract_cli_metadata(harness_path: str) -> SkillMetadata:
     harness_root = Path(harness_path)
-    cli_anything_dir = harness_root / "cli_anything"
-    if not cli_anything_dir.exists():
-        raise ValueError(f"cli_anything directory not found in {harness_root}")
+    tarunai_connect_dir = harness_root / "tarunai_connect"
+    if not tarunai_connect_dir.exists():
+        raise ValueError(f"tarunai_connect directory not found in {harness_root}")
 
-    software_dirs = [path for path in cli_anything_dir.iterdir() if path.is_dir() and (path / "__init__.py").exists()]
+    software_dirs = [path for path in tarunai_connect_dir.iterdir() if path.is_dir() and (path / "__init__.py").exists()]
     if not software_dirs:
         raise ValueError(f"No CLI package found in {harness_root}")
 
@@ -236,7 +236,7 @@ def extract_cli_metadata(harness_path: str) -> SkillMetadata:
     cli_file = software_dir / f"{software_name}_cli.py"
     command_groups = extract_commands_from_cli(cli_file) if cli_file.exists() else []
     examples = generate_examples(software_name, command_groups)
-    skill_name = f"cli-anything-{software_name}"
+    skill_name = f"tarunai-connect-{software_name}"
     if skill_intro:
         intro_snippet = skill_intro[:100]
         suffix = "..." if len(skill_intro) > 100 else ""
@@ -286,8 +286,8 @@ def generate_skill_md_simple(metadata: SkillMetadata) -> str:
         "## Entry Points",
         "",
         "```bash",
-        f"cli-anything-{metadata.software_name}",
-        f"python -m cli_anything.{metadata.software_name}",
+        f"tarunai-connect-{metadata.software_name}",
+        f"python -m tarunai_connect.{metadata.software_name}",
         "```",
         "",
         "When invoked without a subcommand, the CLI enters an interactive REPL session.",
@@ -405,12 +405,12 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None, te
     metadata = extract_cli_metadata(harness_path)
     content = generate_skill_md(metadata, template_path)
     harness_root = Path(harness_path)
-    skill_id = f"cli-anything-{harness_root.parent.name.replace('_', '-')}"
+    skill_id = f"tarunai-connect-{harness_root.parent.name.replace('_', '-')}"
     if output_path is None:
         output = harness_root.parent.parent / "skills" / skill_id / "SKILL.md"
     else:
         output = Path(output_path)
-    mirror = harness_root / "cli_anything" / metadata.software_name / "skills" / "SKILL.md"
+    mirror = harness_root / "tarunai_connect" / metadata.software_name / "skills" / "SKILL.md"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding="utf-8")
     if mirror != output:
@@ -420,7 +420,7 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None, te
 
 
 def main(argv: Optional[list[str]] = None) -> int:
-    parser = argparse.ArgumentParser(description="Generate SKILL.md for CLI-Anything harnesses")
+    parser = argparse.ArgumentParser(description="Generate SKILL.md for tarunAI Connect harnesses")
     parser.add_argument("harness_path", help="Path to the agent-harness directory")
     parser.add_argument("-o", "--output", help="Output path for SKILL.md", default=None)
     parser.add_argument("-t", "--template", help="Path to a custom Jinja2 template", default=None)

@@ -1,2 +1,2 @@
 include DIFY_WORKFLOW.md
-recursive-include cli_anything *.md
+recursive-include tarunai_connect *.md

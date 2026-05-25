@@ -1,4 +1,4 @@
 interface:
-  display_name: "CLI-Anything"
-  short_description: "Build or refine CLI-Anything harnesses from Codex."
-  default_prompt: "Use CLI-Anything to build, refine, test, or validate a harness for the user's target software or source repository."
+  display_name: "tarunAI Connect"
+  short_description: "Build or refine tarunAI Connect harnesses from Codex."
+  default_prompt: "Use tarunAI Connect to build, refine, test, or validate a harness for the user's target software or source repository."

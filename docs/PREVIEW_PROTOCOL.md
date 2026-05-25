@@ -3,7 +3,7 @@
 Last updated: 2026-04-23 UTC
 
 This document proposes a minimal, cross-harness protocol for previewing
-intermediate results in CLI-Anything workflows.
+intermediate results in tarunAI Connect workflows.
 
 The short version:
 
@@ -20,7 +20,7 @@ across video, CAD, 3D, GPU debugging, and similar workflows.
 
 ## Why This Exists
 
-CLI-Anything already has strong rules for final rendering:
+tarunAI Connect already has strong rules for final rendering:
 
 - use the real software
 - manipulate native formats
@@ -115,13 +115,13 @@ native tools that inspect those real outputs.
 When a project path is known:
 
 ```text
-<project_dir>/.cli-anything/previews/<software>/<recipe>/<bundle_id>/
+<project_dir>/.tarunai-connect/previews/<software>/<recipe>/<bundle_id>/
 ```
 
 When there is no stable project path yet:
 
 ```text
-~/.cli-anything/previews/<software>/<recipe>/<bundle_id>/
+~/.tarunai-connect/previews/<software>/<recipe>/<bundle_id>/
 ```
 
 Rationale:
@@ -194,9 +194,9 @@ Recommended optional fields:
   "status": "ok",
   "created_at": "2026-04-19T10:45:30Z",
   "generator": {
-    "entry_point": "cli-anything-shotcut",
+    "entry_point": "tarunai-connect-shotcut",
     "harness_version": "1.0.0",
-    "command": "cli-anything-shotcut --json -p demo.mlt preview capture --recipe quick"
+    "command": "tarunai-connect-shotcut --json -p demo.mlt preview capture --recipe quick"
   },
   "source": {
     "project_path": "/work/demo.mlt",
@@ -343,15 +343,15 @@ Recommended top-level shape:
     {
       "step_id": "step-0001",
       "step_index": 1,
-      "command": "cli-anything-blender --project scene.blend-cli.json preview live start --recipe quick",
+      "command": "tarunai-connect-blender --project scene.blend-cli.json preview live start --recipe quick",
       "command_started_at": "2026-04-23T10:10:00Z",
       "command_finished_at": "2026-04-23T10:10:07Z",
       "publish_reason": "live-start",
       "source_fingerprint": "sha256:...",
       "bundle_id": "20260423T101007Z_deadbeef_quick",
-      "bundle_dir": "/work/.cli-anything/previews/blender/quick/20260423T101007Z_deadbeef_quick",
-      "manifest_path": "/work/.cli-anything/previews/blender/quick/20260423T101007Z_deadbeef_quick/manifest.json",
-      "summary_path": "/work/.cli-anything/previews/blender/quick/20260423T101007Z_deadbeef_quick/summary.json",
+      "bundle_dir": "/work/.tarunai-connect/previews/blender/quick/20260423T101007Z_deadbeef_quick",
+      "manifest_path": "/work/.tarunai-connect/previews/blender/quick/20260423T101007Z_deadbeef_quick/manifest.json",
+      "summary_path": "/work/.tarunai-connect/previews/blender/quick/20260423T101007Z_deadbeef_quick/summary.json",
       "status": "ok",
       "cached": false,
       "stage_label": "service-rig"
@@ -450,7 +450,7 @@ default recipes should stay cheap.
 
 ## Rendering Rule
 
-The same rendering rule as the rest of CLI-Anything still applies:
+The same rendering rule as the rest of tarunAI Connect still applies:
 
 - use the real software or real backend for rendering
 - use native project formats
@@ -481,7 +481,7 @@ Lists supported recipes and what each emits.
 Example:
 
 ```bash
-cli-anything-shotcut preview recipes
+tarunai-connect-shotcut preview recipes
 ```
 
 ### `preview capture`
@@ -611,7 +611,7 @@ The generic viewer lives in `cli-hub`.
 
 The split is intentional:
 
-- `cli-anything-<software> preview ...` publishes preview state
+- `tarunai-connect-<software> preview ...` publishes preview state
 - `cli-hub previews ...` inspects existing preview state
 
 Canonical viewer commands:
@@ -678,7 +678,7 @@ This repo already has one proven "copy canonical helper into harness" pattern:
 
 The preview protocol should follow the same approach in v1:
 
-- canonical helper lives in `cli-anything-plugin/`
+- canonical helper lives in `tarunai-connect-plugin/`
 - pilot harnesses vendor-copy a small helper as `utils/preview_bundle.py`
 - the helper handles:
   - bundle directory creation
@@ -704,15 +704,15 @@ Goal:
 Scope:
 
 - add this document
-- add canonical helper under `cli-anything-plugin/`
-- update `cli-anything-plugin/HARNESS.md` with preview requirements
+- add canonical helper under `tarunai-connect-plugin/`
+- update `tarunai-connect-plugin/HARNESS.md` with preview requirements
 - add `cli-hub` preview inspection commands
 
 Concrete file plan:
 
 - `docs/PREVIEW_PROTOCOL.md`
-- `cli-anything-plugin/preview_bundle.py`
-- `cli-anything-plugin/HARNESS.md`
+- `tarunai-connect-plugin/preview_bundle.py`
+- `tarunai-connect-plugin/HARNESS.md`
 - `cli-hub/cli_hub/preview.py`
 - `cli-hub/cli_hub/cli.py`
 - `cli-hub/tests/test_cli_hub.py`
@@ -753,20 +753,20 @@ Scope:
 
 Concrete file plan:
 
-- `shotcut/agent-harness/cli_anything/shotcut/utils/preview_bundle.py`
-- `shotcut/agent-harness/cli_anything/shotcut/core/preview.py`
-- `shotcut/agent-harness/cli_anything/shotcut/shotcut_cli.py`
-- `shotcut/agent-harness/cli_anything/shotcut/tests/test_core.py`
-- `shotcut/agent-harness/cli_anything/shotcut/tests/test_full_e2e.py`
-- `openscreen/agent-harness/cli_anything/openscreen/utils/preview_bundle.py`
-- `openscreen/agent-harness/cli_anything/openscreen/core/preview.py`
-- `openscreen/agent-harness/cli_anything/openscreen/openscreen_cli.py`
-- `openscreen/agent-harness/cli_anything/openscreen/tests/test_core.py`
-- `openscreen/agent-harness/cli_anything/openscreen/tests/test_full_e2e.py`
+- `shotcut/agent-harness/tarunai_connect/shotcut/utils/preview_bundle.py`
+- `shotcut/agent-harness/tarunai_connect/shotcut/core/preview.py`
+- `shotcut/agent-harness/tarunai_connect/shotcut/shotcut_cli.py`
+- `shotcut/agent-harness/tarunai_connect/shotcut/tests/test_core.py`
+- `shotcut/agent-harness/tarunai_connect/shotcut/tests/test_full_e2e.py`
+- `openscreen/agent-harness/tarunai_connect/openscreen/utils/preview_bundle.py`
+- `openscreen/agent-harness/tarunai_connect/openscreen/core/preview.py`
+- `openscreen/agent-harness/tarunai_connect/openscreen/openscreen_cli.py`
+- `openscreen/agent-harness/tarunai_connect/openscreen/tests/test_core.py`
+- `openscreen/agent-harness/tarunai_connect/openscreen/tests/test_full_e2e.py`
 
 Shotcut workable MVP design:
 
-- command: `cli-anything-shotcut preview capture --recipe quick`
+- command: `tarunai-connect-shotcut preview capture --recipe quick`
 - recipe `quick` does:
   - low-res render using existing `core/export.py`
   - default preset: `h264-fast`
@@ -781,12 +781,12 @@ Shotcut workable MVP design:
 
 Existing code it reuses:
 
-- render path in [core/export.py](/root/CLI-Anything/shotcut/agent-harness/cli_anything/shotcut/core/export.py:369)
-- thumbnail extraction in [core/media.py](/root/CLI-Anything/shotcut/agent-harness/cli_anything/shotcut/core/media.py:189)
+- render path in [core/export.py](/root/tarunAI Connect/shotcut/agent-harness/tarunai_connect/shotcut/core/export.py:369)
+- thumbnail extraction in [core/media.py](/root/tarunAI Connect/shotcut/agent-harness/tarunai_connect/shotcut/core/media.py:189)
 
 Openscreen workable MVP design:
 
-- command: `cli-anything-openscreen preview capture --recipe quick`
+- command: `tarunai-connect-openscreen preview capture --recipe quick`
 - recipe `quick` does:
   - low-res render via existing `core/export.render()`
   - extract 5 PNG frames at 0%, 25%, 50%, 75%, and 95%
@@ -796,8 +796,8 @@ Openscreen workable MVP design:
 
 Existing code it reuses:
 
-- export path in [core/export.py](/root/CLI-Anything/openscreen/agent-harness/cli_anything/openscreen/core/export.py:52)
-- frame extraction in [core/media.py](/root/CLI-Anything/openscreen/agent-harness/cli_anything/openscreen/core/media.py:41)
+- export path in [core/export.py](/root/tarunAI Connect/openscreen/agent-harness/tarunai_connect/openscreen/core/export.py:52)
+- frame extraction in [core/media.py](/root/tarunAI Connect/openscreen/agent-harness/tarunai_connect/openscreen/core/media.py:41)
 
 Why this works:
 
@@ -830,21 +830,21 @@ Scope:
 
 Concrete file plan:
 
-- `blender/agent-harness/cli_anything/blender/utils/preview_bundle.py`
-- `blender/agent-harness/cli_anything/blender/core/preview.py`
-- `blender/agent-harness/cli_anything/blender/blender_cli.py`
-- `blender/agent-harness/cli_anything/blender/tests/test_core.py`
-- `blender/agent-harness/cli_anything/blender/tests/test_full_e2e.py`
-- `freecad/agent-harness/cli_anything/freecad/utils/preview_bundle.py`
-- `freecad/agent-harness/cli_anything/freecad/core/preview.py`
-- `freecad/agent-harness/cli_anything/freecad/utils/freecad_backend.py`
-- `freecad/agent-harness/cli_anything/freecad/freecad_cli.py`
-- `freecad/agent-harness/cli_anything/freecad/tests/test_core.py`
-- `freecad/agent-harness/cli_anything/freecad/tests/test_full_e2e.py`
+- `blender/agent-harness/tarunai_connect/blender/utils/preview_bundle.py`
+- `blender/agent-harness/tarunai_connect/blender/core/preview.py`
+- `blender/agent-harness/tarunai_connect/blender/blender_cli.py`
+- `blender/agent-harness/tarunai_connect/blender/tests/test_core.py`
+- `blender/agent-harness/tarunai_connect/blender/tests/test_full_e2e.py`
+- `freecad/agent-harness/tarunai_connect/freecad/utils/preview_bundle.py`
+- `freecad/agent-harness/tarunai_connect/freecad/core/preview.py`
+- `freecad/agent-harness/tarunai_connect/freecad/utils/freecad_backend.py`
+- `freecad/agent-harness/tarunai_connect/freecad/freecad_cli.py`
+- `freecad/agent-harness/tarunai_connect/freecad/tests/test_core.py`
+- `freecad/agent-harness/tarunai_connect/freecad/tests/test_full_e2e.py`
 
 Blender workable MVP design:
 
-- command: `cli-anything-blender preview capture --recipe quick`
+- command: `tarunai-connect-blender preview capture --recipe quick`
 - recipe `quick` does:
   - apply `eevee_preview` or `workbench` style render settings
   - render one still image at low resolution
@@ -858,15 +858,15 @@ Preferred implementation detail:
 
 Existing code it reuses:
 
-- render presets documented in [BLENDER.md](/root/CLI-Anything/blender/agent-harness/BLENDER.md:64)
-- render configuration in [core/scene.py](/root/CLI-Anything/blender/agent-harness/cli_anything/blender/core/scene.py:12)
-- script generation in [core/render.py](/root/CLI-Anything/blender/agent-harness/cli_anything/blender/core/render.py:182)
-- real headless execution in [utils/blender_backend.py](/root/CLI-Anything/blender/agent-harness/cli_anything/blender/utils/blender_backend.py:37)
+- render presets documented in [BLENDER.md](/root/tarunAI Connect/blender/agent-harness/BLENDER.md:64)
+- render configuration in [core/scene.py](/root/tarunAI Connect/blender/agent-harness/tarunai_connect/blender/core/scene.py:12)
+- script generation in [core/render.py](/root/tarunAI Connect/blender/agent-harness/tarunai_connect/blender/core/render.py:182)
+- real headless execution in [utils/blender_backend.py](/root/tarunAI Connect/blender/agent-harness/tarunai_connect/blender/utils/blender_backend.py:37)
 
 FreeCAD workable MVP design:
 
-- command: `cli-anything-freecad preview capture --recipe quick`
-- command: `cli-anything-freecad preview capture --recipe quad`
+- command: `tarunai-connect-freecad preview capture --recipe quick`
+- command: `tarunai-connect-freecad preview capture --recipe quad`
 - recipe `quick` does:
   - export one low-res isometric PNG
 - recipe `quad` does:
@@ -884,8 +884,8 @@ Implementation detail:
 
 Existing code it reuses:
 
-- image export support in [core/export.py](/root/CLI-Anything/freecad/agent-harness/cli_anything/freecad/core/export.py:86)
-- export CLI in [freecad_cli.py](/root/CLI-Anything/freecad/agent-harness/cli_anything/freecad/freecad_cli.py:1920)
+- image export support in [core/export.py](/root/tarunAI Connect/freecad/agent-harness/tarunai_connect/freecad/core/export.py:86)
+- export CLI in [freecad_cli.py](/root/tarunAI Connect/freecad/agent-harness/tarunai_connect/freecad/freecad_cli.py:1920)
 
 Why this works:
 
@@ -917,16 +917,16 @@ Scope:
 
 Concrete file plan:
 
-- `renderdoc/agent-harness/cli_anything/renderdoc/utils/preview_bundle.py`
-- `renderdoc/agent-harness/cli_anything/renderdoc/core/preview.py`
-- `renderdoc/agent-harness/cli_anything/renderdoc/renderdoc_cli.py`
-- `renderdoc/agent-harness/cli_anything/renderdoc/tests/test_core.py`
-- `renderdoc/agent-harness/cli_anything/renderdoc/tests/test_full_e2e.py`
+- `renderdoc/agent-harness/tarunai_connect/renderdoc/utils/preview_bundle.py`
+- `renderdoc/agent-harness/tarunai_connect/renderdoc/core/preview.py`
+- `renderdoc/agent-harness/tarunai_connect/renderdoc/renderdoc_cli.py`
+- `renderdoc/agent-harness/tarunai_connect/renderdoc/tests/test_core.py`
+- `renderdoc/agent-harness/tarunai_connect/renderdoc/tests/test_full_e2e.py`
 
 RenderDoc workable MVP design:
 
 - command:
-  `cli-anything-renderdoc -c frame.rdc preview capture --event-id 123`
+  `tarunai-connect-renderdoc -c frame.rdc preview capture --event-id 123`
 - capture recipe does:
   - extract capture thumbnail
   - save render target outputs at the target event
@@ -934,7 +934,7 @@ RenderDoc workable MVP design:
   - write summary with API, event id, output count, viewport size
 
 - command:
-  `cli-anything-renderdoc -c frame.rdc preview diff --event-a 100 --event-b 200`
+  `tarunai-connect-renderdoc -c frame.rdc preview diff --event-a 100 --event-b 200`
 - diff recipe does:
   - run existing pipeline diff JSON
   - save output targets for `event-a`
@@ -945,9 +945,9 @@ RenderDoc workable MVP design:
 
 Existing code it reuses:
 
-- capture thumbnail in [renderdoc_cli.py](/root/CLI-Anything/renderdoc/agent-harness/cli_anything/renderdoc/renderdoc_cli.py:178)
-- output target dumping in [renderdoc_cli.py](/root/CLI-Anything/renderdoc/agent-harness/cli_anything/renderdoc/renderdoc_cli.py:340)
-- pipeline diff in [renderdoc_cli.py](/root/CLI-Anything/renderdoc/agent-harness/cli_anything/renderdoc/renderdoc_cli.py:761)
+- capture thumbnail in [renderdoc_cli.py](/root/tarunAI Connect/renderdoc/agent-harness/tarunai_connect/renderdoc/renderdoc_cli.py:178)
+- output target dumping in [renderdoc_cli.py](/root/tarunAI Connect/renderdoc/agent-harness/tarunai_connect/renderdoc/renderdoc_cli.py:340)
+- pipeline diff in [renderdoc_cli.py](/root/tarunAI Connect/renderdoc/agent-harness/tarunai_connect/renderdoc/renderdoc_cli.py:761)
 
 Why this works:
 

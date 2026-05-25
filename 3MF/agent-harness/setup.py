@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-3mf
+setup.py for tarunai-connect-3mf
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/threemf/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/threemf/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-3mf",
+    name="tarunai-connect-3mf",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for 3MF — Detect and resize cylindrical holes, repair meshes, compare 3D printing files",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -47,11 +47,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-3mf=cli_anything.threemf.threemf_cli:main",
+            "tarunai-connect-3mf=tarunai_connect.threemf.threemf_cli:main",
         ],
     },
     package_data={
-        "cli_anything.threemf": ["skills/*.md"],
+        "tarunai_connect.threemf": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

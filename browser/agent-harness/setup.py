@@ -3,7 +3,7 @@ from pathlib import Path
 from setuptools import setup, find_namespace_packages
 
 ROOT = Path(__file__).parent
-README = ROOT / "cli_anything/browser/README.md"
+README = ROOT / "tarunai_connect/browser/README.md"
 
 def read_readme():
     try:
@@ -12,23 +12,23 @@ def read_readme():
         return ""
 
 setup(
-    name="cli-anything-browser",
+    name="tarunai-connect-browser",
     version="1.0.0",
 
-    author="CLI Anything Contributors",
+    author="tarunAI Connect Contributors",
     description="CLI harness for browser automation via DOMShell MCP server",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
 
-    url="https://github.com/HKUDS/CLI-Anything",
+    url="https://github.com/tharunramagiri/tarunai-connect",
     project_urls={
-        "Homepage": "https://github.com/HKUDS/CLI-Anything",
-        "Issues": "https://github.com/HKUDS/CLI-Anything/issues",
+        "Homepage": "https://github.com/tharunramagiri/tarunai-connect",
+        "Issues": "https://github.com/tharunramagiri/tarunai-connect/issues",
     },
 
     license="MIT",
 
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     python_requires=">=3.10",
 
     install_requires=[
@@ -48,12 +48,12 @@ setup(
 
     entry_points={
         "console_scripts": [
-            "cli-anything-browser=cli_anything.browser.browser_cli:main",
+            "tarunai-connect-browser=tarunai_connect.browser.browser_cli:main",
         ],
     },
 
     package_data={
-        "cli_anything.browser": ["skills/*.md"],
+        "tarunai_connect.browser": ["skills/*.md"],
     },
 
     include_package_data=True,

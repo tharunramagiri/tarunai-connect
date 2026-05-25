@@ -1,6 +1,6 @@
 ---
-name: "cli-anything-dify-workflow"
-description: Wrapper for the Dify workflow DSL CLI. Create, inspect, validate, edit, and export Dify workflow files through a CLI-Anything harness.
+name: "tarunai-connect-dify-workflow"
+description: Wrapper for the Dify workflow DSL CLI. Create, inspect, validate, edit, and export Dify workflow files through a tarunAI Connect harness.
 ---
 
 # Dify Workflow CLI Skill
@@ -13,10 +13,10 @@ Install the upstream Dify workflow CLI first:
 python -m pip install "dify-ai-workflow-tools @ git+https://github.com/Akabane71/dify-workflow-cli.git@main"
 ```
 
-Then install the CLI-Anything harness:
+Then install the tarunAI Connect harness:
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=dify-workflow/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=dify-workflow/agent-harness
 ```
 
 ## Usage
@@ -24,13 +24,13 @@ pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=dify-work
 The harness forwards to the upstream `dify-workflow` CLI.
 
 ```bash
-cli-anything-dify-workflow guide
-cli-anything-dify-workflow list-node-types
-cli-anything-dify-workflow create -o workflow.yaml --mode workflow --template llm
-cli-anything-dify-workflow inspect workflow.yaml -j
-cli-anything-dify-workflow validate workflow.yaml -j
-cli-anything-dify-workflow edit add-node -f workflow.yaml --type code --title "Process"
-cli-anything-dify-workflow config set-model -f app.yaml --provider openai --name gpt-4o
+tarunai-connect-dify-workflow guide
+tarunai-connect-dify-workflow list-node-types
+tarunai-connect-dify-workflow create -o workflow.yaml --mode workflow --template llm
+tarunai-connect-dify-workflow inspect workflow.yaml -j
+tarunai-connect-dify-workflow validate workflow.yaml -j
+tarunai-connect-dify-workflow edit add-node -f workflow.yaml --type code --title "Process"
+tarunai-connect-dify-workflow config set-model -f app.yaml --provider openai --name gpt-4o
 ```
 
 ## Command Groups

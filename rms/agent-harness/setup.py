@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""setup.py for cli-anything-rms"""
+"""setup.py for tarunai-connect-rms"""
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/rms/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/rms/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-rms",
+    name="tarunai-connect-rms",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Teltonika RMS — device management, monitoring, and more. Requires: RMS_API_TOKEN",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
@@ -38,11 +38,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-rms=cli_anything.rms.rms_cli:main",
+            "tarunai-connect-rms=tarunai_connect.rms.rms_cli:main",
         ],
     },
     package_data={
-        "cli_anything.rms": ["skills/*.md"],
+        "tarunai_connect.rms": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

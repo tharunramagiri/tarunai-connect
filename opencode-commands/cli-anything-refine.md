@@ -2,7 +2,7 @@
 description: Refine an existing CLI harness to expand coverage and add missing capabilities
 subtask: true
 ---
-# cli-anything-refine Command
+# tarunai-connect-refine Command
 
 Refine an existing CLI harness to improve coverage of the software's functions and usage patterns.
 
@@ -17,7 +17,7 @@ Refine an existing CLI harness to improve coverage of the software's functions a
 
 - `$1` is the **software path** (required). Local path to the software source code (e.g., `/home/user/gimp`, `./blender`). Must be the same source tree used during the original build.
 
-  **Note:** Only local paths are accepted. If you need to work from a GitHub repo, clone it first with `/cli-anything`, then refine.
+  **Note:** Only local paths are accepted. If you need to work from a GitHub repo, clone it first with `/tarunai-connect`, then refine.
 
 - `$2` is the **focus area** (optional). A natural-language description of the functionality area to focus on. When provided, skip broad gap analysis and instead target the specified capability area.
 
@@ -34,7 +34,7 @@ Refine an existing CLI harness to improve coverage of the software's functions a
 
 ## What This Command Does
 
-This command is used **after** a CLI harness has already been built with `/cli-anything`. It analyzes gaps between the software's full capabilities and what the current CLI covers, then iteratively expands coverage. If a focus is given, the agent narrows its analysis and implementation to that specific functionality area.
+This command is used **after** a CLI harness has already been built with `/tarunai-connect`. It analyzes gaps between the software's full capabilities and what the current CLI covers, then iteratively expands coverage. If a focus is given, the agent narrows its analysis and implementation to that specific functionality area.
 
 ### Step 1: Inventory Current Coverage
 - Read the existing CLI entry point (`<software>_cli.py`) and all core modules

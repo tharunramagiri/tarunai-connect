@@ -26,16 +26,16 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 BLENDER_HARNESS_ROOT = REPO_ROOT / "blender" / "agent-harness"
 sys.path.insert(0, str(BLENDER_HARNESS_ROOT))
 
-from cli_anything.blender.core import preview as preview_mod
-from cli_anything.blender.core.animation import add_keyframe, set_current_frame, set_frame_range, set_fps
-from cli_anything.blender.core.lighting import add_camera, add_light
-from cli_anything.blender.core.materials import assign_material, create_material, set_material_property
-from cli_anything.blender.core.modifiers import add_modifier
-from cli_anything.blender.core.objects import add_object
-from cli_anything.blender.core.render import render_scene, set_render_settings
-from cli_anything.blender.core.scene import create_scene, save_scene
-from cli_anything.blender.core.session import Session
-from cli_anything.blender.utils import blender_backend
+from tarunai_connect.blender.core import preview as preview_mod
+from tarunai_connect.blender.core.animation import add_keyframe, set_current_frame, set_frame_range, set_fps
+from tarunai_connect.blender.core.lighting import add_camera, add_light
+from tarunai_connect.blender.core.materials import assign_material, create_material, set_material_property
+from tarunai_connect.blender.core.modifiers import add_modifier
+from tarunai_connect.blender.core.objects import add_object
+from tarunai_connect.blender.core.render import render_scene, set_render_settings
+from tarunai_connect.blender.core.scene import create_scene, save_scene
+from tarunai_connect.blender.core.session import Session
+from tarunai_connect.blender.utils import blender_backend
 
 
 def _object_index(project: Dict, name: str) -> int:

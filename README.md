@@ -17,7 +17,7 @@
 
 ---
 
-**tarunAI Connect** is a CLI framework that auto-generates stateful CLI interfaces for GUI applications, making them agent-native. Forked from CLI-Anything and rebranded for the tarunAI ecosystem.
+**tarunAI Connect** is a CLI framework that auto-generates stateful CLI interfaces for GUI applications, making them agent-native.
 
 With 40+ ready-to-use harnesses for applications like GIMP, Blender, Inkscape, LibreOffice, Audacity, OBS Studio, and more, tarunAI Connect lets AI agents directly control desktop software.
 
@@ -34,7 +34,7 @@ tarunai-connect list
 tarunai-connect install gimp
 
 # Use it
-cli-anything-gimp --help
+tarunai-connect exec gimp --help
 ```
 
 ## What's Inside
@@ -62,7 +62,7 @@ tarunAI Connect is designed to be agent-friendly:
 pip install tarunai-connect
 tarunai-connect list --json    # Machine-readable listing
 tarunai-connect install gimp
-cli-anything-gimp --json project list
+tarunai-connect exec gimp --json project list
 ```
 
 ## License

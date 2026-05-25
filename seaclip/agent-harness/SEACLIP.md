@@ -45,38 +45,38 @@ pip install -e .
 
 ```bash
 # Health check
-cli-anything-seaclip --json server health
+tarunai-connect-seaclip --json server health
 
 # Issue management
-cli-anything-seaclip --json issue list
-cli-anything-seaclip --json issue list --status backlog --priority high
-cli-anything-seaclip --json issue create --title "Fix login bug" --priority high
-cli-anything-seaclip --json issue move ISSUE_UUID --column done
-cli-anything-seaclip --json issue status ISSUE_UUID --set in_progress
-cli-anything-seaclip --json issue delete ISSUE_UUID
+tarunai-connect-seaclip --json issue list
+tarunai-connect-seaclip --json issue list --status backlog --priority high
+tarunai-connect-seaclip --json issue create --title "Fix login bug" --priority high
+tarunai-connect-seaclip --json issue move ISSUE_UUID --column done
+tarunai-connect-seaclip --json issue status ISSUE_UUID --set in_progress
+tarunai-connect-seaclip --json issue delete ISSUE_UUID
 
 # Agent roster
-cli-anything-seaclip --json agent list
+tarunai-connect-seaclip --json agent list
 
 # Pipeline control
-cli-anything-seaclip --json pipeline start --issue UUID --mode auto
-cli-anything-seaclip --json pipeline status --issue UUID
-cli-anything-seaclip --json pipeline resume --issue UUID
-cli-anything-seaclip --json pipeline stop --issue UUID
+tarunai-connect-seaclip --json pipeline start --issue UUID --mode auto
+tarunai-connect-seaclip --json pipeline status --issue UUID
+tarunai-connect-seaclip --json pipeline resume --issue UUID
+tarunai-connect-seaclip --json pipeline stop --issue UUID
 
 # Scheduler
-cli-anything-seaclip --json scheduler list
-cli-anything-seaclip --json scheduler add --name "nightly" --cron "0 2 * * *" --repo https://github.com/org/repo
-cli-anything-seaclip --json scheduler sync SCHEDULE_ID
+tarunai-connect-seaclip --json scheduler list
+tarunai-connect-seaclip --json scheduler add --name "nightly" --cron "0 2 * * *" --repo https://github.com/org/repo
+tarunai-connect-seaclip --json scheduler sync SCHEDULE_ID
 
 # Activity feed
-cli-anything-seaclip --json activity list --limit 20
+tarunai-connect-seaclip --json activity list --limit 20
 ```
 
 ### Interactive REPL
 
 ```bash
-cli-anything-seaclip
+tarunai-connect-seaclip
 # Type help for commands, quit to exit
 ```
 
@@ -121,7 +121,7 @@ cli-anything-seaclip
 ```bash
 cd agent-harness
 pip install -e .
-python -m pytest cli_anything/seaclip/tests/ -v
+python -m pytest tarunai_connect/seaclip/tests/ -v
 ```
 
 Unit tests run without a live backend (all HTTP/SQLite calls are mocked).

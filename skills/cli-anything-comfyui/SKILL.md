@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-comfyui"
+name: "tarunai-connect-comfyui"
 description: >-
   Command-line interface for ComfyUI - AI image generation workflow management via ComfyUI REST API. Designed for AI agents and power users who need to queue workflows, manage models, download generated images, and monitor the generation queue without a GUI.
 ---
 
-# cli-anything-comfyui
+# tarunai-connect-comfyui
 
 AI image generation workflow management via the ComfyUI REST API. Designed for AI agents and power users who need to queue workflows, manage models, download generated images, and monitor the generation queue without a GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-comfyui package:
+This CLI is installed as part of the tarunai-connect-comfyui package:
 
 ```bash
-pip install cli-anything-comfyui
+pip install tarunai-connect-comfyui
 ```
 
 **Prerequisites:**
@@ -26,16 +26,16 @@ pip install cli-anything-comfyui
 
 ```bash
 # Show help
-cli-anything-comfyui --help
+tarunai-connect-comfyui --help
 
 # Start interactive REPL mode
-cli-anything-comfyui repl
+tarunai-connect-comfyui repl
 
 # Check server stats
-cli-anything-comfyui system stats
+tarunai-connect-comfyui system stats
 
 # Run with JSON output (for agent consumption)
-cli-anything-comfyui --json system stats
+tarunai-connect-comfyui --json system stats
 ```
 
 ### REPL Mode
@@ -43,7 +43,7 @@ cli-anything-comfyui --json system stats
 Start an interactive session for exploratory use:
 
 ```bash
-cli-anything-comfyui repl
+tarunai-connect-comfyui repl
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -109,49 +109,49 @@ Server status and information.
 
 ```bash
 # Server stats
-cli-anything-comfyui system stats
+tarunai-connect-comfyui system stats
 
 # Server info
-cli-anything-comfyui system info
+tarunai-connect-comfyui system info
 ```
 
 ### Discover Available Models
 
 ```bash
 # List checkpoints
-cli-anything-comfyui models checkpoints
+tarunai-connect-comfyui models checkpoints
 
 # List LoRAs
-cli-anything-comfyui models loras
+tarunai-connect-comfyui models loras
 
 # List all node types
-cli-anything-comfyui models list-nodes
+tarunai-connect-comfyui models list-nodes
 ```
 
 ### Queue and Monitor Generation
 
 ```bash
 # Queue a workflow
-cli-anything-comfyui queue prompt --workflow my_workflow.json
+tarunai-connect-comfyui queue prompt --workflow my_workflow.json
 
 # Check queue status
-cli-anything-comfyui queue status
+tarunai-connect-comfyui queue status
 
 # View execution history
-cli-anything-comfyui --json queue history
+tarunai-connect-comfyui --json queue history
 ```
 
 ### Download Generated Images
 
 ```bash
 # List generated images
-cli-anything-comfyui images list
+tarunai-connect-comfyui images list
 
 # Download a specific image
-cli-anything-comfyui images download --filename ComfyUI_00001_.png --output ./out.png
+tarunai-connect-comfyui images download --filename ComfyUI_00001_.png --output ./out.png
 
 # Download all images from a prompt
-cli-anything-comfyui images download-all --prompt-id <id> --output-dir ./outputs
+tarunai-connect-comfyui images download-all --prompt-id <id> --output-dir ./outputs
 ```
 
 ## Output Formats
@@ -163,10 +163,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-comfyui system stats
+tarunai-connect-comfyui system stats
 
 # JSON output for agents
-cli-anything-comfyui --json system stats
+tarunai-connect-comfyui --json system stats
 ```
 
 ## For AI Agents
@@ -183,7 +183,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

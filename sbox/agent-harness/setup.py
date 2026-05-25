@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-sbox
+setup.py for tarunai-connect-sbox
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/sbox/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/sbox/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-sbox",
+    name="tarunai-connect-sbox",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for s&box (Source 2): scenes, prefabs, materials, sounds, codegen, asset graph, project validation. Recommended: s&box installed via Steam.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-sbox=cli_anything.sbox.sbox_cli:main",
+            "tarunai-connect-sbox=tarunai_connect.sbox.sbox_cli:main",
         ],
     },
     package_data={
-        "cli_anything.sbox": ["skills/*.md", "tests/*.md", "README.md"],
+        "tarunai_connect.sbox": ["skills/*.md", "tests/*.md", "README.md"],
     },
     include_package_data=True,
     zip_safe=False,

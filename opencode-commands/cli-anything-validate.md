@@ -1,7 +1,7 @@
 ---
 description: Validate a CLI harness against HARNESS.md standards and best practices
 ---
-# cli-anything-validate Command
+# tarunai-connect-validate Command
 
 Validate a CLI harness against HARNESS.md standards and best practices.
 
@@ -19,13 +19,13 @@ Validate a CLI harness against HARNESS.md standards and best practices.
 
   If a GitHub URL is provided, clone the repo locally first, then work on the local copy.
 
-  The software name is derived from the directory name. The agent locates the CLI harness at `/root/cli-anything/<software-name>/agent-harness/`.
+  The software name is derived from the directory name. The agent locates the CLI harness at `/root/tarunai-connect/<software-name>/agent-harness/`.
 
 ## What This Command Validates
 
 ### 1. Directory Structure
-- `agent-harness/cli_anything/<software>/` exists (namespace sub-package)
-- `cli_anything/` has NO `__init__.py` (PEP 420 namespace package)
+- `agent-harness/tarunai_connect/<software>/` exists (namespace sub-package)
+- `tarunai_connect/` has NO `__init__.py` (PEP 420 namespace package)
 - `<software>/` HAS `__init__.py` (regular sub-package)
 - `core/`, `utils/`, `tests/` subdirectories present
 - `setup.py` in agent-harness/ uses `find_namespace_packages`
@@ -63,8 +63,8 @@ Validate a CLI harness against HARNESS.md standards and best practices.
 - E2E tests use real files
 - Workflow tests simulate real-world scenarios
 - `test_full_e2e.py` has a `TestCLISubprocess` class
-- `TestCLISubprocess` uses `_resolve_cli("cli-anything-<software>")` (no hardcoded paths)
-- `_resolve_cli` prints which backend is used and supports `CLI_ANYTHING_FORCE_INSTALLED`
+- `TestCLISubprocess` uses `_resolve_cli("tarunai-connect-<software>")` (no hardcoded paths)
+- `_resolve_cli` prints which backend is used and supports `TARUNAI_CONNECT_FORCE_INSTALLED`
 - Subprocess `_run` does NOT set `cwd` (installed commands work from any directory)
 - All tests pass (100% pass rate)
 
@@ -75,11 +75,11 @@ Validate a CLI harness against HARNESS.md standards and best practices.
 - All commands documented with examples
 
 ### 7. PyPI Packaging Standards
-- `setup.py` uses `find_namespace_packages(include=["cli_anything.*"])`
-- Package name follows `cli-anything-<software>` convention
-- Entry point: `cli-anything-<software>=cli_anything.<software>.<software>_cli:main`
-- `cli_anything/` has NO `__init__.py` (namespace package rule)
-- All imports use `cli_anything.<software>.*` prefix
+- `setup.py` uses `find_namespace_packages(include=["tarunai_connect.*"])`
+- Package name follows `tarunai-connect-<software>` convention
+- Entry point: `tarunai-connect-<software>=tarunai_connect.<software>.<software>_cli:main`
+- `tarunai_connect/` has NO `__init__.py` (namespace package rule)
+- All imports use `tarunai_connect.<software>.*` prefix
 - Dependencies listed in install_requires
 - Python version requirement specified (>=3.10)
 
@@ -97,7 +97,7 @@ The command generates a detailed report:
 ```
 CLI Harness Validation Report
 Software: gimp
-Path: /root/cli-anything/gimp/agent-harness/cli_anything/gimp
+Path: /root/tarunai-connect/gimp/agent-harness/tarunai_connect/gimp
 
 Directory Structure (5/5 checks passed)
 Required Files (9/9 files present)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-shotcut
+setup.py for tarunai-connect-shotcut
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/shotcut/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/shotcut/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-shotcut",
+    name="tarunai-connect-shotcut",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Shotcut - Video editing and rendering via melt/ffmpeg. Requires: melt (apt install melt), ffmpeg (apt install ffmpeg)",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-shotcut=cli_anything.shotcut.shotcut_cli:cli",
+            "tarunai-connect-shotcut=tarunai_connect.shotcut.shotcut_cli:cli",
         ],
     },
     package_data={
-        "cli_anything.shotcut": ["skills/*.md"],
+        "tarunai_connect.shotcut": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

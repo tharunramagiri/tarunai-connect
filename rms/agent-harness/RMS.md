@@ -13,7 +13,7 @@ for device management, monitoring, alerting, and administration.
 
 - Teltonika RMS account with 2FA enabled
 - Personal Access Token (PAT) created in account settings
-- Token set as `RMS_API_TOKEN` env var or via `cli-anything-rms config set api_token <token>`
+- Token set as `RMS_API_TOKEN` env var or via `tarunai-connect-rms config set api_token <token>`
 
 ## Resource Map
 
@@ -48,7 +48,7 @@ for device management, monitoring, alerting, and administration.
 
 ## Session State
 
-Stored at `~/.cli-anything-rms/session.json`:
+Stored at `~/.tarunai-connect-rms/session.json`:
 - `last_device_id`: Last accessed device for convenience
 - `history`: Command history (max 50 entries)
 - `preferences`: Default limit, sort order

@@ -6,7 +6,7 @@
 
 ## Threat Model
 
-CLI-Anything bridges AI agents and real desktop software. Unlike traditional
+tarunAI Connect bridges AI agents and real desktop software. Unlike traditional
 CLIs where a human reviews every command, **an AI agent may autonomously
 construct and execute commands** based on untrusted input (user prompts,
 uploaded files, or other agents' output). This makes input validation
@@ -45,7 +45,7 @@ common hardware-accelerated variants. If your workflow requires an
 unlisted codec, extend the frozensets in `melt_backend.py`:
 
 ```python
-from cli_anything.kdenlive.utils.melt_backend import ALLOWED_VCODECS
+from tarunai_connect.kdenlive.utils.melt_backend import ALLOWED_VCODECS
 # ALLOWED_VCODECS is a frozenset — create a new one to extend
 ALLOWED_VCODECS = ALLOWED_VCODECS | {"my_custom_codec"}
 ```

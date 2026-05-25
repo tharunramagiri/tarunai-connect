@@ -1,22 +1,22 @@
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-firefly-iii",
+    name="tarunai-connect-firefly-iii",
     version="1.0.0",
-    description="Firefly III CLI - Personal finance management via CLI-Anything",
+    description="Firefly III CLI - Personal finance management via tarunAI Connect",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    author="CLI-Anything Community",
-    author_email="community@cli-anything.cc",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    author="tarunAI Connect Community",
+    author_email="community@tarunai-connect.cc",
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     entry_points={
         "console_scripts": [
-            "cli-anything-firefly-iii=cli_anything.firefly_iii.firefly_iii_cli:main",
+            "tarunai-connect-firefly-iii=tarunai_connect.firefly_iii.firefly_iii_cli:main",
         ],
     },
     package_data={
-        "cli_anything.firefly_iii": ["skills/*.md"],
+        "tarunai_connect.firefly_iii": ["skills/*.md"],
     },
     install_requires=[
         "click>=8.0",
@@ -42,6 +42,6 @@ setup(
         "Programming Language :: Python :: 3.12",
         "Topic :: Office/Business :: Financial",
     ],
-    keywords="firefly-iii cli finance personal-finance cli-anything",
+    keywords="firefly-iii cli finance personal-finance tarunai-connect",
     license="MIT",
 )

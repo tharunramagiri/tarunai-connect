@@ -1,10 +1,10 @@
 ---
-name: "cli-anything-seaclip"
+name: "tarunai-connect-seaclip"
 description: >-
   Command-line interface for SeaClip-Lite - A stateless CLI for managing issues, pipelines, agents, schedules, and activity on the SeaClip-Lite project management board.
 ---
 
-# cli-anything-seaclip
+# tarunai-connect-seaclip
 
 A stateless command-line interface for SeaClip-Lite project management.
 Communicates via HTTP API and direct SQLite reads. No local state or session.
@@ -25,15 +25,15 @@ pip install -e .
 
 ```bash
 # Show help
-cli-anything-seaclip --help
+tarunai-connect-seaclip --help
 
 # Start interactive REPL mode
-cli-anything-seaclip
+tarunai-connect-seaclip
 
 # Run with JSON output (for agent consumption)
-cli-anything-seaclip --json server health
-cli-anything-seaclip --json issue list
-cli-anything-seaclip --json agent list
+tarunai-connect-seaclip --json server health
+tarunai-connect-seaclip --json issue list
+tarunai-connect-seaclip --json agent list
 ```
 
 ### REPL Mode
@@ -41,7 +41,7 @@ cli-anything-seaclip --json agent list
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-seaclip
+tarunai-connect-seaclip
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -113,10 +113,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-seaclip issue list
+tarunai-connect-seaclip issue list
 
 # JSON output for agents
-cli-anything-seaclip --json issue list
+tarunai-connect-seaclip --json issue list
 ```
 
 ## For AI Agents

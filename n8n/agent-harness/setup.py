@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup script for cli-anything-n8n
+Setup script for tarunai-connect-n8n
 
 Install (dev mode):
     pip install -e .
@@ -16,12 +16,12 @@ from pathlib import Path
 from setuptools import setup, find_namespace_packages
 
 ROOT = Path(__file__).parent
-README = ROOT / "cli_anything/n8n/README.md"
+README = ROOT / "tarunai_connect/n8n/README.md"
 
 long_description = README.read_text(encoding="utf-8") if README.exists() else ""
 
 setup(
-    name="cli-anything-n8n",
+    name="tarunai-connect-n8n",
     version="2.4.7",
     description="CLI harness for n8n workflow automation — n8n REST API v1.1.1",
     long_description=long_description,
@@ -29,17 +29,17 @@ setup(
 
     author="Juan Jose Sanchez Bernal",
     author_email="info@webcomunica.solutions",
-    url="https://github.com/HKUDS/CLI-Anything",
+    url="https://github.com/tharunramagiri/tarunai-connect",
 
     project_urls={
-        "Source": "https://github.com/HKUDS/CLI-Anything",
-        "Tracker": "https://github.com/HKUDS/CLI-Anything/issues",
-        "PyPI": "https://pypi.org/project/cli-anything-n8n/",
+        "Source": "https://github.com/tharunramagiri/tarunai-connect",
+        "Tracker": "https://github.com/tharunramagiri/tarunai-connect/issues",
+        "PyPI": "https://pypi.org/project/tarunai-connect-n8n/",
     },
 
     license="MIT",
 
-    packages=find_namespace_packages(include=("cli_anything.*",)),
+    packages=find_namespace_packages(include=("tarunai_connect.*",)),
 
     python_requires=">=3.10",
 
@@ -58,11 +58,11 @@ setup(
 
     entry_points={
         "console_scripts": [
-            "cli-anything-n8n=cli_anything.n8n.n8n_cli:main",
+            "tarunai-connect-n8n=tarunai_connect.n8n.n8n_cli:main",
         ],
     },
     package_data={
-        "cli_anything.n8n": ["skills/*.md"],
+        "tarunai_connect.n8n": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,
@@ -72,7 +72,7 @@ setup(
         "n8n",
         "workflow",
         "automation",
-        "cli-anything",
+        "tarunai-connect",
     ],
 
     classifiers=[

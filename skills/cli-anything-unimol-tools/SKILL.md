@@ -1,13 +1,13 @@
 ---
-name: "cli-anything-unimol-tools"
+name: "tarunai-connect-unimol-tools"
 description: >-
   Interactive CLI for Uni-Mol molecular property prediction training and inference workflows.
 ---
 
 # Uni-Mol Tools - Molecular Property Prediction CLI
 
-**Package**: `cli-anything-unimol-tools`
-**Command**: `python3 -m cli_anything.unimol_tools`
+**Package**: `tarunai-connect-unimol-tools`
+**Command**: `python3 -m tarunai_connect.unimol_tools`
 
 ## Description
 
@@ -100,7 +100,7 @@ CC(C)O,1
 
 Add `--json` flag to any command for machine-readable output:
 ```bash
-python3 -m cli_anything.unimol_tools --json models list
+python3 -m tarunai_connect.unimol_tools --json models list
 ```
 
 Output format:
@@ -116,7 +116,7 @@ Output format:
 
 Launch without commands for interactive REPL:
 ```bash
-python3 -m cli_anything.unimol_tools
+python3 -m tarunai_connect.unimol_tools
 ```
 
 Features:
@@ -128,7 +128,7 @@ Features:
 ## Test Data
 
 Example datasets available at:
-https://github.com/545487677/CLI-Anything-unimol-tools/tree/main/unimol_tools/examples
+https://github.com/545487677/tarunAI Connect-unimol-tools/tree/main/unimol_tools/examples
 
 Includes data for all 5 task types.
 
@@ -179,4 +179,4 @@ bash run_tests.sh --full -v    # Full test suite
 
 - **Uni-Mol Tools**: https://github.com/dptech-corp/Uni-Mol/tree/main/unimol_tools
 - **Uni-Mol Paper**: https://arxiv.org/abs/2209.11126
-- **CLI-Anything**: https://github.com/HKUDS/CLI-Anything
+- **tarunAI Connect**: https://github.com/tharunramagiri/tarunai-connect

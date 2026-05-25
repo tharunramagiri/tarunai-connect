@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-rekordbox
+setup.py for tarunai-connect-rekordbox
 
 Install: pip install -e .
 Publish: python -m build && twine upload dist/*
 """
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/rekordbox/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/rekordbox/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-rekordbox",
+    name="tarunai-connect-rekordbox",
     version="0.1.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Pioneer Rekordbox - DJ library + live-deck control via SQLCipher direct DB access and virtual MIDI. Requires: rekordbox 6/7, optional virtual MIDI driver (loopMIDI / LoopBe / teVirtualMIDI on Windows).",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-rekordbox=cli_anything.rekordbox.rekordbox_cli:main",
+            "tarunai-connect-rekordbox=tarunai_connect.rekordbox.rekordbox_cli:main",
         ],
     },
     package_data={
-        "cli_anything.rekordbox": ["skills/*.md", "data/*.csv"],
+        "tarunai_connect.rekordbox": ["skills/*.md", "data/*.csv"],
     },
     include_package_data=True,
     zip_safe=False,

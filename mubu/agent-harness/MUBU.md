@@ -51,10 +51,10 @@ Mutate:
 
 Packaging:
 
-- `cli-anything-mubu`
-- `python -m cli_anything.mubu`
+- `tarunai-connect-mubu`
+- `python -m tarunai_connect.mubu`
 - editable install root: `agent-harness/`
-- canonical source root: `agent-harness/cli_anything/mubu/...`
+- canonical source root: `agent-harness/tarunai_connect/mubu/...`
 - compatibility wrappers remain at the project root
 - packaged skill regeneration: `python3 agent-harness/skill_generator.py agent-harness`
 
@@ -69,10 +69,10 @@ REPL mode:
 - persisted `current_doc`
 - persisted `current_node`
 - persisted local command history
-- session JSON stored at `~/.config/cli-anything-mubu/session.json`
-- REPL history stored at `~/.config/cli-anything-mubu/history.txt`
+- session JSON stored at `~/.config/tarunai-connect-mubu/session.json`
+- REPL history stored at `~/.config/tarunai-connect-mubu/history.txt`
 - startup banner exposes the packaged `SKILL.md` absolute path
-- override via `CLI_ANYTHING_MUBU_STATE_DIR`
+- override via `TARUNAI_CONNECT_MUBU_STATE_DIR`
 
 ## Safety Model
 

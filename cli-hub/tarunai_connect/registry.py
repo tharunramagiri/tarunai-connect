@@ -6,8 +6,8 @@ from pathlib import Path
 
 import requests
 
-REGISTRY_URL = "https://hkuds.github.io/CLI-Anything/registry.json"
-PUBLIC_REGISTRY_URL = "https://hkuds.github.io/CLI-Anything/public_registry.json"
+REGISTRY_URL = "https://raw.githubusercontent.com/tharunramagiri/tarunai-connect/main/registry.json"
+PUBLIC_REGISTRY_URL = "https://raw.githubusercontent.com/tharunramagiri/tarunai-connect/main/public_registry.json"
 CACHE_DIR = Path.home() / ".tarunai-connect"
 CACHE_FILE = CACHE_DIR / "registry_cache.json"
 PUBLIC_CACHE_FILE = CACHE_DIR / "public_registry_cache.json"

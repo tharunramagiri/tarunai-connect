@@ -154,8 +154,8 @@ Behavior notes:
 ### Recommended CLI Path
 
 ```bash
-cli-anything-zotero --json app enable-local-api
-cli-anything-zotero --json app enable-local-api --launch
+tarunai-connect-zotero --json app enable-local-api
+tarunai-connect-zotero --json app enable-local-api --launch
 ```
 
 What this does:
@@ -180,8 +180,8 @@ Then restart Zotero.
 Use either:
 
 ```bash
-cli-anything-zotero --json app status
-cli-anything-zotero --json app ping
+tarunai-connect-zotero --json app status
+tarunai-connect-zotero --json app ping
 ```
 
 `app status` should show:

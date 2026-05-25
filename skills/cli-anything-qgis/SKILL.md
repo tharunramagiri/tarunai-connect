@@ -1,9 +1,9 @@
 ---
-name: "cli-anything-qgis"
+name: "tarunai-connect-qgis"
 description: Stateful QGIS CLI for projects, writable layers, features, layouts, exports, and qgis_process operations using the real QGIS runtime.
 ---
 
-# cli-anything-qgis
+# tarunai-connect-qgis
 
 Use this skill when you need to inspect or modify QGIS projects from the terminal through the real QGIS runtime.
 
@@ -17,7 +17,7 @@ Use this skill when you need to inspect or modify QGIS projects from the termina
 
 - Prefer `--json` for all machine-driven use.
 - For one-shot commands, pass `--project <path>` when operating on an existing project.
-- Running `cli-anything-qgis` with no subcommand starts a stateful REPL.
+- Running `tarunai-connect-qgis` with no subcommand starts a stateful REPL.
 - Layout export is backed by real QGIS processing algorithms:
   - `native:printlayouttopdf`
   - `native:printlayouttoimage`
@@ -78,8 +78,8 @@ Use this skill when you need to inspect or modify QGIS projects from the termina
 ### Create a project and add a writable layer
 
 ```bash
-cli-anything-qgis --json project new -o demo.qgz --title "Demo" --crs EPSG:4326
-cli-anything-qgis --json --project demo.qgz layer create-vector \
+tarunai-connect-qgis --json project new -o demo.qgz --title "Demo" --crs EPSG:4326
+tarunai-connect-qgis --json --project demo.qgz layer create-vector \
   --name places \
   --geometry point \
   --field name:string \
@@ -89,29 +89,29 @@ cli-anything-qgis --json --project demo.qgz layer create-vector \
 ### Add features and inspect them
 
 ```bash
-cli-anything-qgis --json --project demo.qgz feature add \
+tarunai-connect-qgis --json --project demo.qgz feature add \
   --layer places \
   --wkt "POINT(1 2)" \
   --attr name=HQ \
   --attr score=5
 
-cli-anything-qgis --json --project demo.qgz feature list --layer places --limit 10
+tarunai-connect-qgis --json --project demo.qgz feature list --layer places --limit 10
 ```
 
 ### Create and export a layout
 
 ```bash
-cli-anything-qgis --json --project demo.qgz layout create --name Main
-cli-anything-qgis --json --project demo.qgz layout add-map --layout Main --x 10 --y 20 --width 180 --height 120
-cli-anything-qgis --json --project demo.qgz layout add-label --layout Main --text "Demo map" --x 10 --y 8 --width 100 --height 10
-cli-anything-qgis --json --project demo.qgz export pdf output.pdf --layout Main --overwrite
+tarunai-connect-qgis --json --project demo.qgz layout create --name Main
+tarunai-connect-qgis --json --project demo.qgz layout add-map --layout Main --x 10 --y 20 --width 180 --height 120
+tarunai-connect-qgis --json --project demo.qgz layout add-label --layout Main --text "Demo map" --x 10 --y 8 --width 100 --height 10
+tarunai-connect-qgis --json --project demo.qgz export pdf output.pdf --layout Main --overwrite
 ```
 
 ### Inspect or run processing algorithms
 
 ```bash
-cli-anything-qgis --json process help native:buffer
-cli-anything-qgis --json --project demo.qgz process run native:buffer \
+tarunai-connect-qgis --json process help native:buffer
+tarunai-connect-qgis --json --project demo.qgz process run native:buffer \
   --param INPUT=/tmp/demo_data.gpkg|layername=places \
   --param DISTANCE=1 \
   --param SEGMENTS=8 \
@@ -125,7 +125,7 @@ cli-anything-qgis --json --project demo.qgz process run native:buffer \
 ### REPL
 
 ```bash
-cli-anything-qgis
+tarunai-connect-qgis
 ```
 
 Example interactive flow:

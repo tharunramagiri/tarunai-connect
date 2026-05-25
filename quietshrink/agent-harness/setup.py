@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Setup for cli-anything-quietshrink agent harness."""
+"""Setup for tarunai-connect-quietshrink agent harness."""
 
 from setuptools import setup, find_namespace_packages
 from pathlib import Path
@@ -8,7 +8,7 @@ readme = Path(__file__).parent / "QUIETSHRINK.md"
 long_description = readme.read_text(encoding="utf-8") if readme.exists() else ""
 
 setup(
-    name="cli-anything-quietshrink",
+    name="tarunai-connect-quietshrink",
     version="1.0.0",
     author="quietshrink contributors",
     description=(
@@ -19,7 +19,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/achiya-automation/quietshrink",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -40,14 +40,14 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-quietshrink=cli_anything.quietshrink.quietshrink_cli:cli",
+            "tarunai-connect-quietshrink=tarunai_connect.quietshrink.quietshrink_cli:cli",
         ],
     },
     package_data={
-        "cli_anything.quietshrink": ["skills/*.md"],
+        "tarunai_connect.quietshrink": ["skills/*.md"],
     },
     exclude_package_data={
-        "cli_anything.quietshrink": ["tests/*"],
+        "tarunai_connect.quietshrink": ["tests/*"],
     },
     include_package_data=True,
     zip_safe=False,

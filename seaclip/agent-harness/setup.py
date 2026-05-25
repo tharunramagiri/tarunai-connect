@@ -1,15 +1,15 @@
-"""Setup for cli-anything-seaclip — CLI harness for SeaClip-Lite."""
+"""Setup for tarunai-connect-seaclip — CLI harness for SeaClip-Lite."""
 
 from setuptools import setup, find_namespace_packages
 
 setup(
-    name="cli-anything-seaclip",
+    name="tarunai-connect-seaclip",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
-    description="CLI-Anything harness for SeaClip-Lite project management",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    description="tarunAI Connect harness for SeaClip-Lite project management",
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -34,11 +34,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-seaclip=cli_anything.seaclip.seaclip_cli:main",
+            "tarunai-connect-seaclip=tarunai_connect.seaclip.seaclip_cli:main",
         ],
     },
     package_data={
-        "cli_anything.seaclip": ["skills/*.md"],
+        "tarunai_connect.seaclip": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

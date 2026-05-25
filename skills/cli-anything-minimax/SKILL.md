@@ -1,17 +1,17 @@
 ---
-name: "cli-anything-minimax"
+name: "tarunai-connect-minimax"
 description: >-
   Command-line interface for MiniMax AI — chat (MiniMax-M2.7) and TTS (speech-2.8-hd) via the MiniMax API.
 ---
 
-# cli-anything-minimax
+# tarunai-connect-minimax
 
 A CLI harness for **MiniMax AI** — providing chat completions and text-to-speech synthesis through the MiniMax API.
 
 ## Installation
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=minimax/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=minimax/agent-harness
 ```
 
 **Prerequisites:**
@@ -24,25 +24,25 @@ pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=minimax/a
 
 ```bash
 # Show help
-cli-anything-minimax --help
+tarunai-connect-minimax --help
 
 # Start interactive REPL
-cli-anything-minimax
+tarunai-connect-minimax
 
 # Chat with MiniMax-M2.7
-cli-anything-minimax chat --prompt "What is AI?"
+tarunai-connect-minimax chat --prompt "What is AI?"
 
 # High-speed model
-cli-anything-minimax chat --prompt "Quick answer" --model MiniMax-M2.7-highspeed
+tarunai-connect-minimax chat --prompt "Quick answer" --model MiniMax-M2.7-highspeed
 
 # Stream chat response
-cli-anything-minimax stream --prompt "Write a poem about code"
+tarunai-connect-minimax stream --prompt "Write a poem about code"
 
 # Synthesize speech
-cli-anything-minimax tts --text "Hello world" --output hello.mp3
+tarunai-connect-minimax tts --text "Hello world" --output hello.mp3
 
 # JSON output for agents
-cli-anything-minimax --json chat --prompt "Hello"
+tarunai-connect-minimax --json chat --prompt "Hello"
 ```
 
 ## Command Groups
@@ -93,21 +93,21 @@ cli-anything-minimax --json chat --prompt "Hello"
 ```bash
 export MINIMAX_API_KEY="your-api-key"
 # or
-cli-anything-minimax config set api_key "your-api-key"
+tarunai-connect-minimax config set api_key "your-api-key"
 ```
 
 ### Chat
 
 ```bash
-cli-anything-minimax chat --prompt "Explain quantum computing"
-cli-anything-minimax stream --prompt "Write a Python quicksort"
+tarunai-connect-minimax chat --prompt "Explain quantum computing"
+tarunai-connect-minimax stream --prompt "Write a Python quicksort"
 ```
 
 ### TTS
 
 ```bash
-cli-anything-minimax tts --text "Hello!" --output hello.mp3
-cli-anything-minimax tts --text "Fast" --model speech-2.8-turbo --voice English_Insightful_Speaker --output fast.mp3
+tarunai-connect-minimax tts --text "Hello!" --output hello.mp3
+tarunai-connect-minimax tts --text "Fast" --model speech-2.8-turbo --voice English_Insightful_Speaker --output fast.mp3
 ```
 
 ## Chat Models

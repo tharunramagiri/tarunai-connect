@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-ollama"
+name: "tarunai-connect-ollama"
 description: >-
   Command-line interface for Ollama - Local LLM inference and model management via Ollama REST API. Designed for AI agents and power users who need to manage models, generate text, chat, and create embeddings without a GUI.
 ---
 
-# cli-anything-ollama
+# tarunai-connect-ollama
 
 Local LLM inference and model management via the Ollama REST API. Designed for AI agents and power users who need to manage models, generate text, chat, and create embeddings without a GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-ollama package:
+This CLI is installed as part of the tarunai-connect-ollama package:
 
 ```bash
-pip install cli-anything-ollama
+pip install tarunai-connect-ollama
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-ollama
 
 ```bash
 # Show help
-cli-anything-ollama --help
+tarunai-connect-ollama --help
 
 # Start interactive REPL mode
-cli-anything-ollama
+tarunai-connect-ollama
 
 # List available models
-cli-anything-ollama model list
+tarunai-connect-ollama model list
 
 # Run with JSON output (for agent consumption)
-cli-anything-ollama --json model list
+tarunai-connect-ollama --json model list
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-ollama --json model list
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-ollama
+tarunai-connect-ollama
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -113,13 +113,13 @@ Session state commands.
 
 ```bash
 # List available models
-cli-anything-ollama model list
+tarunai-connect-ollama model list
 
 # Pull a model
-cli-anything-ollama model pull llama3.2
+tarunai-connect-ollama model pull llama3.2
 
 # Show model details
-cli-anything-ollama model show llama3.2
+tarunai-connect-ollama model show llama3.2
 ```
 
 
@@ -127,10 +127,10 @@ cli-anything-ollama model show llama3.2
 
 ```bash
 # Stream text (default)
-cli-anything-ollama generate text --model llama3.2 --prompt "Explain quantum computing in one sentence"
+tarunai-connect-ollama generate text --model llama3.2 --prompt "Explain quantum computing in one sentence"
 
 # Non-streaming with JSON output (for agents)
-cli-anything-ollama --json generate text --model llama3.2 --prompt "Hello" --no-stream
+tarunai-connect-ollama --json generate text --model llama3.2 --prompt "Hello" --no-stream
 ```
 
 
@@ -138,23 +138,23 @@ cli-anything-ollama --json generate text --model llama3.2 --prompt "Hello" --no-
 
 ```bash
 # Single-turn chat
-cli-anything-ollama generate chat --model llama3.2 --message "user:What is Python?"
+tarunai-connect-ollama generate chat --model llama3.2 --message "user:What is Python?"
 
 # Multi-turn chat
-cli-anything-ollama generate chat --model llama3.2 \
+tarunai-connect-ollama generate chat --model llama3.2 \
   --message "user:What is Python?" \
   --message "user:How does it compare to JavaScript?"
 
 # Chat from JSON file
-cli-anything-ollama generate chat --model llama3.2 --file messages.json
+tarunai-connect-ollama generate chat --model llama3.2 --file messages.json
 ```
 
 
 ### Embeddings
 
 ```bash
-cli-anything-ollama embed text --model nomic-embed-text --input "Hello world"
-cli-anything-ollama embed text --model nomic-embed-text --input "Hello" --input "World"
+tarunai-connect-ollama embed text --model nomic-embed-text --input "Hello world"
+tarunai-connect-ollama embed text --model nomic-embed-text --input "Hello" --input "World"
 ```
 
 
@@ -163,7 +163,7 @@ cli-anything-ollama embed text --model nomic-embed-text --input "Hello" --input 
 Start an interactive session for exploratory use.
 
 ```bash
-cli-anything-ollama
+tarunai-connect-ollama
 # Enter commands interactively
 # Use 'help' to see available commands
 ```
@@ -172,7 +172,7 @@ cli-anything-ollama
 ### Connect to Remote Host
 
 ```bash
-cli-anything-ollama --host http://192.168.1.100:11434 model list
+tarunai-connect-ollama --host http://192.168.1.100:11434 model list
 ```
 
 
@@ -193,10 +193,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-ollama model list
+tarunai-connect-ollama model list
 
 # JSON output for agents
-cli-anything-ollama --json model list
+tarunai-connect-ollama --json model list
 ```
 
 ## For AI Agents
@@ -213,7 +213,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

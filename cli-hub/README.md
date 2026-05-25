@@ -44,7 +44,7 @@ harnesses.
 
 Use this split:
 
-- `cli-anything-<software> preview ...` creates or updates preview state
+- `tarunai-connect-<software> preview ...` creates or updates preview state
 - `tarunai-connect previews ...` inspects or opens that existing preview state
 
 Canonical viewer commands:
@@ -75,9 +75,9 @@ This command group never renders or publishes previews by itself.
 
 Each CLI harness is a standalone Python package that wraps a real application (GIMP, Blender, etc.) with a stateful command-line interface. Every harness supports:
 
-- **REPL mode**: `cli-anything-gimp` launches an interactive session
-- **One-shot commands**: `cli-anything-gimp project create --name my-project`
-- **JSON output**: `cli-anything-gimp --json project list` for machine-readable output
+- **REPL mode**: `tarunai-connect-gimp` launches an interactive session
+- **One-shot commands**: `tarunai-connect-gimp project create --name my-project`
+- **JSON output**: `tarunai-connect-gimp --json project list` for machine-readable output
 - **Undo/redo**: Stateful project management with full operation history
 
 ## For AI agents
@@ -88,7 +88,7 @@ tarunai-connect is designed to be agent-friendly. AI coding agents can:
 2. `tarunai-connect search <keyword>` or `tarunai-connect list --json` to discover tools
 3. `tarunai-connect install <name>` to install what they need
 4. Use `--json` output for structured data parsing
-5. For preview-capable harnesses, call `cli-anything-<software> preview ... --json`
+5. For preview-capable harnesses, call `tarunai-connect-<software> preview ... --json`
    first, then inspect returned bundle/session paths with `tarunai-connect previews ...`
 
 ## Available categories

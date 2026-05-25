@@ -4,8 +4,8 @@
 
 This harness wraps the **LLDB Python API** into a Click-based CLI tool and
 debug adapter:
-- `cli-anything-lldb` for JSON CLI / REPL workflows
-- `cli-anything-lldb-dap` for stdio Debug Adapter Protocol clients
+- `tarunai-connect-lldb` for JSON CLI / REPL workflows
+- `tarunai-connect-lldb-dap` for stdio Debug Adapter Protocol clients
 
 It provides stateful debugging workflows for agent and script usage, with:
 - direct `import lldb` integration
@@ -20,7 +20,7 @@ agent-harness/
 ├── HARNESS.md
 ├── LLDB.md
 ├── setup.py
-└── cli_anything/
+└── tarunai_connect/
     └── lldb/
         ├── lldb_cli.py
         ├── dap.py
@@ -62,7 +62,7 @@ agent-harness/
 
 ## Debug Adapter Protocol
 
-`cli-anything-lldb-dap` is a stdio DAP server. It owns one in-process
+`tarunai-connect-lldb-dap` is a stdio DAP server. It owns one in-process
 `LLDBSession` and does not use the persistent CLI daemon. Stdout must contain
 only DAP `Content-Length` frames; diagnostics go to stderr or `--log-file`.
 
@@ -80,7 +80,7 @@ frame state honest for AI agents and avoids reusing stale LLDB `SBValue`
 objects after execution continues.
 
 Long-running GUI targets can provide DAP stop-rule profiles either with
-`cli-anything-lldb-dap --profile PATH`, `cli-anything-lldb dap --profile PATH`,
+`tarunai-connect-lldb-dap --profile PATH`, `tarunai-connect-lldb dap --profile PATH`,
 or launch/attach arguments such as `stopRuleProfile` and inline `stopRules`.
 Rules match structured stop context (`reason`, `module`, `function`, `regex`)
 and either classify the stop or auto-continue it. Stopped events expose

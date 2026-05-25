@@ -1,20 +1,20 @@
 from pathlib import Path
 from setuptools import setup, find_namespace_packages
 
-_readme = Path("cli_anything/cloudanalyzer/README.md")
+_readme = Path("tarunai_connect/cloudanalyzer/README.md")
 _long_description = _readme.read_text(encoding="utf-8") if _readme.is_file() else ""
 
 setup(
-    name="cli-anything-cloudanalyzer",
+    name="tarunai-connect-cloudanalyzer",
     version="1.0.0",
     description="Agent-friendly CLI harness for CloudAnalyzer point cloud QA platform",
     long_description=_long_description,
     long_description_content_type="text/markdown",
-    author="cli-anything",
+    author="tarunai-connect",
     python_requires=">=3.10",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     package_data={
-        "cli_anything.cloudanalyzer": ["skills/*.md"],
+        "tarunai_connect.cloudanalyzer": ["skills/*.md"],
     },
     install_requires=[
         "click>=8.0.0",
@@ -23,7 +23,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cli-anything-cloudanalyzer=cli_anything.cloudanalyzer.cloudanalyzer_cli:main",
+            "tarunai-connect-cloudanalyzer=tarunai_connect.cloudanalyzer.cloudanalyzer_cli:main",
         ],
     },
     classifiers=[

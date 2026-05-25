@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-blender"
+name: "tarunai-connect-blender"
 description: >-
   Command-line interface for Blender - A stateful command-line interface for 3D scene editing, following the same patterns as the GIMP CLI ...
 ---
 
-# cli-anything-blender
+# tarunai-connect-blender
 
 A stateful command-line interface for 3D scene editing, following the same patterns as the GIMP CLI harness. Uses a JSON scene description format with bpy script generation for actual Blender rendering.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-blender package:
+This CLI is installed as part of the tarunai-connect-blender package:
 
 ```bash
-pip install cli-anything-blender
+pip install tarunai-connect-blender
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-blender
 
 ```bash
 # Show help
-cli-anything-blender --help
+tarunai-connect-blender --help
 
 # Start interactive REPL mode
-cli-anything-blender
+tarunai-connect-blender
 
 # Create a new scene project
-cli-anything-blender scene new -o scene.blend-cli.json
+tarunai-connect-blender scene new -o scene.blend-cli.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-blender --json --project scene.blend-cli.json scene info
+tarunai-connect-blender --json --project scene.blend-cli.json scene info
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-blender --json --project scene.blend-cli.json scene info
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-blender
+tarunai-connect-blender
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -211,9 +211,9 @@ Session management commands.
 Create a new Blender scene project file.
 
 ```bash
-cli-anything-blender scene new -o myscene.blend-cli.json
+tarunai-connect-blender scene new -o myscene.blend-cli.json
 # Or with JSON output for programmatic use
-cli-anything-blender --json scene new -o myscene.blend-cli.json
+tarunai-connect-blender --json scene new -o myscene.blend-cli.json
 ```
 
 
@@ -222,7 +222,7 @@ cli-anything-blender --json scene new -o myscene.blend-cli.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-blender
+tarunai-connect-blender
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -246,10 +246,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-blender --project scene.blend-cli.json scene info
+tarunai-connect-blender --project scene.blend-cli.json scene info
 
 # JSON output for agents
-cli-anything-blender --json --project scene.blend-cli.json scene info
+tarunai-connect-blender --json --project scene.blend-cli.json scene info
 ```
 
 ## Preview Workflow
@@ -258,16 +258,16 @@ Use Blender previews when the agent needs truthful visual checkpoints:
 
 ```bash
 # List preview recipes
-cli-anything-blender --project scene.blend-cli.json preview recipes
+tarunai-connect-blender --project scene.blend-cli.json preview recipes
 
 # Capture a real preview bundle
-cli-anything-blender --json --project scene.blend-cli.json preview capture --recipe quick
+tarunai-connect-blender --json --project scene.blend-cli.json preview capture --recipe quick
 
 # Start a live preview loop
-cli-anything-blender --json --project scene.blend-cli.json preview live start --recipe quick --mode poll --source-poll-ms 500
+tarunai-connect-blender --json --project scene.blend-cli.json preview live start --recipe quick --mode poll --source-poll-ms 500
 
 # Query current live head without rendering
-cli-anything-blender --json --project scene.blend-cli.json preview live status --recipe quick
+tarunai-connect-blender --json --project scene.blend-cli.json preview live status --recipe quick
 ```
 
 For agents, `preview capture --json` returns bundle metadata plus artifact file
@@ -285,13 +285,13 @@ When using this CLI programmatically:
 5. **Use `preview capture` or `preview live ...` for visual verification** instead of inferring scene quality from JSON alone
 6. **Read returned artifact paths** such as `hero.png` and `workbench.png`; the JSON payload references files, it does not inline image bytes
 7. **Treat `_bundle_dir` as one snapshot only**; for stable live history, use `_session_dir` plus `_trajectory_path`
-8. **Use `cli-hub previews ...` only to inspect/open existing previews**; preview generation itself always happens through `cli-anything-blender preview ...`
+8. **Use `cli-hub previews ...` only to inspect/open existing previews**; preview generation itself always happens through `tarunai-connect-blender preview ...`
 
 ## More Information
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

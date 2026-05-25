@@ -1,4 +1,4 @@
-name: Publish cli-anything-hub to PyPI
+name: Publish tarunai-connect-hub to PyPI
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         run: |
           VERSION=$(python -c "import re; print(re.search(r'version=\"([^\"]+)\"', open('cli-hub/setup.py').read()).group(1))")
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://pypi.org/pypi/cli-anything-hub/$VERSION/json")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://pypi.org/pypi/tarunai-connect-hub/$VERSION/json")
           if [ "$STATUS" = "200" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Version $VERSION already on PyPI — skipping."

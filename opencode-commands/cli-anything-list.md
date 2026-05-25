@@ -1,9 +1,9 @@
 ---
-description: List all available CLI-Anything tools (installed and generated)
+description: List all available tarunAI Connect tools (installed and generated)
 ---
-# cli-anything-list Command
+# tarunai-connect-list Command
 
-List all available CLI-Anything tools (installed and generated).
+List all available tarunAI Connect tools (installed and generated).
 
 **Arguments**: $ARGUMENTS
 
@@ -15,12 +15,12 @@ List all available CLI-Anything tools (installed and generated).
 
 ## What This Command Does
 
-Displays all CLI-Anything tools available in the system:
+Displays all tarunAI Connect tools available in the system:
 
 ### 1. Installed CLIs
 
-Uses `importlib.metadata` to find installed `cli-anything-*` packages:
-- Pattern: package name starts with `cli-anything-`
+Uses `importlib.metadata` to find installed `tarunai-connect-*` packages:
+- Pattern: package name starts with `tarunai-connect-`
 - Extracts: software name, version, entry point
 
 ```python
@@ -29,11 +29,11 @@ from importlib.metadata import distributions
 installed = {}
 for dist in distributions():
     name = dist.metadata.get("Name", "")
-    if name.startswith("cli-anything-"):
-        software = name.replace("cli-anything-", "")
+    if name.startswith("tarunai-connect-"):
+        software = name.replace("tarunai-connect-", "")
         version = dist.version
         # Find executable via entry points or shutil.which
-        executable = shutil.which(f"cli-anything-{software}")
+        executable = shutil.which(f"tarunai-connect-{software}")
         installed[software] = {
             "status": "installed",
             "version": version,
@@ -44,7 +44,7 @@ for dist in distributions():
 ### 2. Generated CLIs
 
 Uses `glob` to find local CLI directories:
-- Pattern: `**/agent-harness/cli_anything/*/__init__.py` (or depth-limited variant)
+- Pattern: `**/agent-harness/tarunai_connect/*/__init__.py` (or depth-limited variant)
 - Extracts: software name, version (from setup.py), source path
 - Status: `generated`
 
@@ -69,7 +69,7 @@ def extract_version_from_setup(setup_path):
 def build_glob_patterns(base_path, depth):
     """Build list of glob patterns for depths 0 through max_depth."""
     base = Path(base_path)
-    suffix = "agent-harness/cli_anything/*/__init__.py"
+    suffix = "agent-harness/tarunai_connect/*/__init__.py"
 
     if depth is None:
         return [str(base / "**" / suffix)]
@@ -88,7 +88,7 @@ for pattern in patterns:
     for init_file in glob.glob(pattern, recursive=True):
         parts = Path(init_file).parts
         for i, p in enumerate(parts):
-            if p == "cli_anything" and i + 1 < len(parts):
+            if p == "tarunai_connect" and i + 1 < len(parts):
                 software = parts[i + 1]
                 agent_harness_idx = parts.index("agent-harness") if "agent-harness" in parts else i - 1
                 source = str(Path(*parts[:agent_harness_idx + 2]))
@@ -114,7 +114,7 @@ for pattern in patterns:
 ### Table Format (default)
 
 ```
-CLI-Anything Tools (found 5)
+tarunAI Connect Tools (found 5)
 
 Name            Status      Version   Source
 ──────────────────────────────────────────────────────────────
@@ -134,7 +134,7 @@ libreoffice     generated   1.0.0     ./libreoffice/agent-harness
       "name": "gimp",
       "status": "installed",
       "version": "1.0.0",
-      "executable": "/usr/local/bin/cli-anything-gimp",
+      "executable": "/usr/local/bin/tarunai-connect-gimp",
       "source": "./gimp/agent-harness"
     },
     {
@@ -165,7 +165,7 @@ When this command is invoked, the agent should:
 
 3. **Scan installed CLIs**
    - Use `importlib.metadata.distributions()` to find all packages
-   - Filter for packages starting with `cli-anything-`
+   - Filter for packages starting with `tarunai-connect-`
    - Extract name, version, find executable path
 
 4. **Scan generated CLIs**

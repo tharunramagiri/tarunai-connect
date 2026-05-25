@@ -3,7 +3,7 @@
 ## Overview
 
 This harness wraps the **RenderDoc** graphics debugger Python API into a Click-based
-CLI tool called `cli-anything-renderdoc`. It enables headless, scriptable analysis
+CLI tool called `tarunai-connect-renderdoc`. It enables headless, scriptable analysis
 of GPU frame captures (`.rdc` files) without requiring the RenderDoc GUI.
 
 ## Architecture
@@ -13,7 +13,7 @@ agent-harness/
 ├── HARNESS.md              # This file
 ├── RENDERDOC.md            # Software-specific SOP
 ├── setup.py                # PEP 420 namespace package
-└── cli_anything/           # NO __init__.py (namespace package)
+└── tarunai_connect/           # NO __init__.py (namespace package)
     └── renderdoc/          # HAS __init__.py
         ├── renderdoc_cli.py        # Main CLI entry point (Click)
         ├── core/
@@ -73,7 +73,7 @@ agent-harness/
 - **E2E tests** (`test_full_e2e.py`): Require a real RenderDoc installation and
   at least one `.rdc` capture file. Test full CLI invocation via subprocess.
 - **Subprocess tests**: Invoke the CLI with
-  `python -m cli_anything.renderdoc.renderdoc_cli` from `agent-harness/` (see
+  `python -m tarunai_connect.renderdoc.renderdoc_cli` from `agent-harness/` (see
   `test_core.py` / `test_full_e2e.py`).
 
 ## Dependencies

@@ -22,27 +22,27 @@ import pytest
 # ---------------------------------------------------------------------------
 
 def _build_package_tree(root: Path, software: str = "demo") -> Path:
-    """Create a minimal cli_anything/<software>/ layout with repl_skin + SKILL.md.
+    """Create a minimal tarunai_connect/<software>/ layout with repl_skin + SKILL.md.
 
     Returns the path to the utils/ directory (where repl_skin.py lives).
     """
-    pkg = root / "cli_anything" / software
+    pkg = root / "tarunai_connect" / software
     utils = pkg / "utils"
     skills = pkg / "skills"
     utils.mkdir(parents=True)
     skills.mkdir(parents=True)
 
     # Copy the canonical repl_skin.py from the plugin
-    src = Path(__file__).resolve().parent.parent.parent / "cli-anything-plugin" / "repl_skin.py"
+    src = Path(__file__).resolve().parent.parent.parent / "tarunai-connect-plugin" / "repl_skin.py"
     shutil.copy(src, utils / "repl_skin.py")
 
     # Write a minimal SKILL.md
     (skills / "SKILL.md").write_text(textwrap.dedent("""\
         ---
-        name: "cli-anything-demo"
+        name: "tarunai-connect-demo"
         description: "Demo skill"
         ---
-        # cli-anything-demo
+        # tarunai-connect-demo
     """))
 
     return utils
@@ -75,7 +75,7 @@ class TestSkillPathAutoDetect:
 
         skin = ReplSkin("demo", version="1.0.0")
 
-        expected = str(tmp_path / "cli_anything" / "demo" / "skills" / "SKILL.md")
+        expected = str(tmp_path / "tarunai_connect" / "demo" / "skills" / "SKILL.md")
         assert skin.skill_path == expected
 
     def test_skill_path_is_absolute(self, tmp_path):
@@ -97,7 +97,7 @@ class TestSkillPathAutoDetect:
     def test_none_when_skill_missing(self, tmp_path):
         utils = _build_package_tree(tmp_path)
         # Remove the SKILL.md
-        (tmp_path / "cli_anything" / "demo" / "skills" / "SKILL.md").unlink()
+        (tmp_path / "tarunai_connect" / "demo" / "skills" / "SKILL.md").unlink()
 
         ReplSkin = _load_repl_skin(utils)
         skin = ReplSkin("demo", version="1.0.0")
@@ -129,7 +129,7 @@ class TestSkillPathInBanner:
 
     def test_banner_omits_skill_when_missing(self, tmp_path, capsys):
         utils = _build_package_tree(tmp_path)
-        (tmp_path / "cli_anything" / "demo" / "skills" / "SKILL.md").unlink()
+        (tmp_path / "tarunai_connect" / "demo" / "skills" / "SKILL.md").unlink()
 
         ReplSkin = _load_repl_skin(utils)
         skin = ReplSkin("demo", version="1.0.0")
@@ -166,13 +166,13 @@ class TestInstalledHarnesses:
     @pytest.mark.parametrize("dir_name,pkg_name", HARNESSES)
     def test_skill_md_exists_in_package(self, dir_name, pkg_name):
         repo_root = Path(__file__).resolve().parent.parent.parent
-        skill_path = repo_root / dir_name / "agent-harness" / "cli_anything" / pkg_name / "skills" / "SKILL.md"
+        skill_path = repo_root / dir_name / "agent-harness" / "tarunai_connect" / pkg_name / "skills" / "SKILL.md"
         assert skill_path.is_file(), f"Missing: {skill_path}"
 
     @pytest.mark.parametrize("dir_name,pkg_name", HARNESSES)
     def test_skill_md_has_yaml_frontmatter(self, dir_name, pkg_name):
         repo_root = Path(__file__).resolve().parent.parent.parent
-        skill_path = repo_root / dir_name / "agent-harness" / "cli_anything" / pkg_name / "skills" / "SKILL.md"
+        skill_path = repo_root / dir_name / "agent-harness" / "tarunai_connect" / pkg_name / "skills" / "SKILL.md"
         content = skill_path.read_text()
         assert content.startswith("---"), f"Missing YAML frontmatter in {skill_path}"
         # Must have closing ---
@@ -181,7 +181,7 @@ class TestInstalledHarnesses:
     @pytest.mark.parametrize("dir_name,pkg_name", HARNESSES)
     def test_skill_md_has_command_groups(self, dir_name, pkg_name):
         repo_root = Path(__file__).resolve().parent.parent.parent
-        skill_path = repo_root / dir_name / "agent-harness" / "cli_anything" / pkg_name / "skills" / "SKILL.md"
+        skill_path = repo_root / dir_name / "agent-harness" / "tarunai_connect" / pkg_name / "skills" / "SKILL.md"
         content = skill_path.read_text()
         assert "## Command Groups" in content
         # Must have at least one filled command row

@@ -1,10 +1,10 @@
 ---
-name: "cli-anything-pm2"
+name: "tarunai-connect-pm2"
 description: >-
   Command-line interface for PM2 - A stateless CLI for Node.js process management via the PM2 CLI. List, start, stop, restart processes, view logs, and manage system configuration.
 ---
 
-# cli-anything-pm2
+# tarunai-connect-pm2
 
 A stateless command-line interface for PM2 process management.
 Communicates via the PM2 CLI subprocess. No local state or session.
@@ -25,14 +25,14 @@ pip install -e .
 
 ```bash
 # Show help
-cli-anything-pm2 --help
+tarunai-connect-pm2 --help
 
 # Start interactive REPL mode
-cli-anything-pm2
+tarunai-connect-pm2
 
 # Run with JSON output (for agent consumption)
-cli-anything-pm2 --json process list
-cli-anything-pm2 --json system version
+tarunai-connect-pm2 --json process list
+tarunai-connect-pm2 --json system version
 ```
 
 ### REPL Mode
@@ -40,7 +40,7 @@ cli-anything-pm2 --json system version
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-pm2
+tarunai-connect-pm2
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -91,10 +91,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-pm2 process list
+tarunai-connect-pm2 process list
 
 # JSON output for agents
-cli-anything-pm2 --json process list
+tarunai-connect-pm2 --json process list
 ```
 
 ## For AI Agents

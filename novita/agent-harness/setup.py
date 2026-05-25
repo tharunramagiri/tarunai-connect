@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-novita
+setup.py for tarunai-connect-novita
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/novita/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/novita/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-novita",
+    name="tarunai-connect-novita",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Novita AI - OpenAI-compatible API client. Requires: NOVITA_API_KEY",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-novita=cli_anything.novita.novita_cli:main",
+            "tarunai-connect-novita=tarunai_connect.novita.novita_cli:main",
         ],
     },
     package_data={
-        "cli_anything.novita": ["skills/*.md"],
+        "tarunai_connect.novita": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

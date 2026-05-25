@@ -56,7 +56,7 @@ docker run -d --name wiremock \
 ```bash
 cd /path/to/agent-harness
 pip install -e .
-cli-anything-wiremock --help
+tarunai-connect-wiremock --help
 ```
 
 ---
@@ -79,7 +79,7 @@ All connection parameters can be set via environment variables or CLI flags.
 ```bash
 export WIREMOCK_HOST=wiremock.internal
 export WIREMOCK_PORT=9090
-cli-anything-wiremock status
+tarunai-connect-wiremock status
 ```
 
 ---
@@ -89,17 +89,17 @@ cli-anything-wiremock status
 ### 1. Verify the server is running
 
 ```bash
-cli-anything-wiremock status
+tarunai-connect-wiremock status
 ```
 
 ### 2. Create a simple stub
 
 ```bash
 # Quick form: METHOD URL STATUS_CODE [--body JSON]
-cli-anything-wiremock stub quick GET /api/users 200 --body '{"users":[]}'
+tarunai-connect-wiremock stub quick GET /api/users 200 --body '{"users":[]}'
 
 # Full JSON form
-cli-anything-wiremock stub create '{
+tarunai-connect-wiremock stub create '{
   "request": { "method": "POST", "url": "/api/orders" },
   "response": { "status": 201, "body": "{\"id\":42}", "headers": { "Content-Type": "application/json" } }
 }'
@@ -108,38 +108,38 @@ cli-anything-wiremock stub create '{
 ### 3. List all stubs
 
 ```bash
-cli-anything-wiremock stub list
-cli-anything-wiremock stub list --json   # machine-readable
+tarunai-connect-wiremock stub list
+tarunai-connect-wiremock stub list --json   # machine-readable
 ```
 
 ### 4. Get a specific stub
 
 ```bash
-cli-anything-wiremock stub get <stub-id>
+tarunai-connect-wiremock stub get <stub-id>
 ```
 
 ### 5. Delete a stub
 
 ```bash
-cli-anything-wiremock stub delete <stub-id>
+tarunai-connect-wiremock stub delete <stub-id>
 ```
 
 ### 6. Reset all stubs to defaults
 
 ```bash
-cli-anything-wiremock stub reset
+tarunai-connect-wiremock stub reset
 ```
 
 ### 7. Persist stubs to disk
 
 ```bash
-cli-anything-wiremock stub save
+tarunai-connect-wiremock stub save
 ```
 
 ### 8. Import stubs from a file
 
 ```bash
-cli-anything-wiremock stub import ./my-stubs.json
+tarunai-connect-wiremock stub import ./my-stubs.json
 ```
 
 ---
@@ -148,20 +148,20 @@ cli-anything-wiremock stub import ./my-stubs.json
 
 ```bash
 # List recent requests
-cli-anything-wiremock request list
-cli-anything-wiremock request list --limit 10
+tarunai-connect-wiremock request list
+tarunai-connect-wiremock request list --limit 10
 
 # Find requests matching a pattern
-cli-anything-wiremock request find '{"method": "GET", "url": "/api/users"}'
+tarunai-connect-wiremock request find '{"method": "GET", "url": "/api/users"}'
 
 # Count matching requests (useful for assertion)
-cli-anything-wiremock request count '{"method": "POST", "urlPath": "/api/orders"}'
+tarunai-connect-wiremock request count '{"method": "POST", "urlPath": "/api/orders"}'
 
 # List unmatched requests (404s)
-cli-anything-wiremock request unmatched
+tarunai-connect-wiremock request unmatched
 
 # Clear the request journal
-cli-anything-wiremock request reset
+tarunai-connect-wiremock request reset
 ```
 
 ---
@@ -172,13 +172,13 @@ WireMock supports state machines (scenarios) to simulate multi-step workflows.
 
 ```bash
 # List all scenarios and their current state
-cli-anything-wiremock scenario list
+tarunai-connect-wiremock scenario list
 
 # Set a specific scenario to a state
-cli-anything-wiremock scenario set "login-flow" "logged-in"
+tarunai-connect-wiremock scenario set "login-flow" "logged-in"
 
 # Reset all scenarios to initial state
-cli-anything-wiremock scenario reset
+tarunai-connect-wiremock scenario reset
 ```
 
 ---
@@ -189,18 +189,18 @@ Use recording to auto-generate stubs from real API traffic.
 
 ```bash
 # Start recording — proxy traffic to a real backend
-cli-anything-wiremock record start https://api.example.com
+tarunai-connect-wiremock record start https://api.example.com
 
 # ... make requests to http://localhost:8080 — they are proxied and captured ...
 
 # Stop recording and inspect captured stubs
-cli-anything-wiremock record stop
+tarunai-connect-wiremock record stop
 
 # Check if currently recording
-cli-anything-wiremock record status
+tarunai-connect-wiremock record status
 
 # Take a snapshot of in-memory requests as stubs
-cli-anything-wiremock record snapshot
+tarunai-connect-wiremock record snapshot
 ```
 
 ---
@@ -209,16 +209,16 @@ cli-anything-wiremock record snapshot
 
 ```bash
 # Check WireMock version
-cli-anything-wiremock settings version
+tarunai-connect-wiremock settings version
 
 # Get global settings
-cli-anything-wiremock settings get
+tarunai-connect-wiremock settings get
 
 # Full reset (stubs + requests + scenarios)
-cli-anything-wiremock reset
+tarunai-connect-wiremock reset
 
 # Shutdown the server
-cli-anything-wiremock shutdown
+tarunai-connect-wiremock shutdown
 ```
 
 ---
@@ -228,8 +228,8 @@ cli-anything-wiremock shutdown
 All commands support `--json` for machine-readable output suitable for scripting or agent use:
 
 ```bash
-cli-anything-wiremock --json stub list
-cli-anything-wiremock --json request count '{"method":"GET","url":"/health"}'
+tarunai-connect-wiremock --json stub list
+tarunai-connect-wiremock --json request count '{"method":"GET","url":"/health"}'
 ```
 
 JSON output varies by command type:

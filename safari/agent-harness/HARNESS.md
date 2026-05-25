@@ -11,7 +11,7 @@ This harness provides Safari browser automation on macOS by wrapping
 Node.js MCP server — in a Python Click CLI.
 
 It follows the MCP backend pattern documented in
-[`cli-anything-plugin/guides/mcp-backend.md`](../cli-anything-plugin/guides/mcp-backend.md).
+[`tarunai-connect-plugin/guides/mcp-backend.md`](../tarunai-connect-plugin/guides/mcp-backend.md).
 
 ## Architecture Overview
 
@@ -83,7 +83,7 @@ Regenerate the schema whenever `safari-mcp` upgrades:
 ```bash
 python scripts/extract_tools.py \
     /path/to/safari-mcp/index.js \
-    cli_anything/safari/resources/tools.json
+    tarunai_connect/safari/resources/tools.json
 ```
 
 The parser produces JSON with a top-level `tool_count`, `source_version`,
@@ -118,10 +118,10 @@ safari/agent-harness/
 ├── setup.py                            find_namespace_packages + bundles tools.json
 ├── scripts/
 │   └── extract_tools.py                offline parser → tools.json
-└── cli_anything/                       PEP 420 namespace (NO __init__.py)
+└── tarunai_connect/                       PEP 420 namespace (NO __init__.py)
     └── safari/
         ├── __init__.py
-        ├── __main__.py                 python -m cli_anything.safari
+        ├── __main__.py                 python -m tarunai_connect.safari
         ├── README.md                   user-facing docs
         ├── safari_cli.py               dynamic Click CLI
         ├── core/
@@ -179,10 +179,10 @@ protected.
 
 ### Configuration
 
-- `CLI_ANYTHING_SAFARI_ALLOWED_SCHEMES` — comma-separated scheme list
-- `CLI_ANYTHING_SAFARI_BLOCK_PRIVATE` — set to `1` to block private IPs
+- `TARUNAI_CONNECT_SAFARI_ALLOWED_SCHEMES` — comma-separated scheme list
+- `TARUNAI_CONNECT_SAFARI_BLOCK_PRIVATE` — set to `1` to block private IPs
 
-See [`cli_anything/safari/utils/security.py`](cli_anything/safari/utils/security.py)
+See [`tarunai_connect/safari/utils/security.py`](tarunai_connect/safari/utils/security.py)
 for the full scheme and private-network lists.
 
 ## Error Handling
@@ -225,7 +225,7 @@ thread — a v2 concern, not v1.
 Each CLI invocation spawns a fresh `npx safari-mcp` subprocess. This
 adds ~2.9s of overhead per call (npx resolution, Node startup, MCP
 handshake). For latency-sensitive workflows, users should drive the
-Python API directly (`from cli_anything.safari.utils.safari_backend
+Python API directly (`from tarunai_connect.safari.utils.safari_backend
 import call`) or use `safari-mcp` over MCP stdio.
 
 The CLI targets use cases where MCP is not available: non-MCP agent
@@ -284,17 +284,17 @@ Five classes:
 - `TestSessionCommands` — session status via CliRunner
 - `TestSecurityIntegration` — URL validation at the CLI boundary
 - `TestRealSafariRoundTrip` — actually talks to Safari, mutates state
-- `TestCLISubprocess` — invokes the installed `cli-anything-safari`
+- `TestCLISubprocess` — invokes the installed `tarunai-connect-safari`
   binary via `subprocess.run`, using `_resolve_cli()` to honor the
-  `CLI_ANYTHING_FORCE_INSTALLED` env var. `CLI_BASE` is a lazy class
+  `TARUNAI_CONNECT_FORCE_INSTALLED` env var. `CLI_BASE` is a lazy class
   property so collection does not fail when the command is missing
   and E2E is disabled.
 
 To run E2E locally (will kill any concurrent safari-mcp):
 
 ```bash
-SAFARI_E2E=1 CLI_ANYTHING_FORCE_INSTALLED=1 \
-    python -m pytest cli_anything/safari/tests/test_full_e2e.py -v -s
+SAFARI_E2E=1 TARUNAI_CONNECT_FORCE_INSTALLED=1 \
+    python -m pytest tarunai_connect/safari/tests/test_full_e2e.py -v -s
 ```
 
 ## Performance
@@ -307,7 +307,7 @@ Each command spawns a fresh `npx -y safari-mcp`:
 
 There is no daemon mode. For latency-sensitive workflows, drive the
 CLI from a long-lived Python script that imports
-`cli_anything.safari.utils.safari_backend.call()` directly, which still
+`tarunai_connect.safari.utils.safari_backend.call()` directly, which still
 spawns per call but at least avoids the Python interpreter startup.
 
 ### Response Sizes
@@ -351,7 +351,7 @@ applied to any software that exposes an MCP server. Steps:
 
 - [safari-mcp GitHub](https://github.com/achiya-automation/safari-mcp)
 - [safari-mcp on npm](https://www.npmjs.com/package/safari-mcp)
-- [CLI-Anything plugin HARNESS.md](../cli-anything-plugin/HARNESS.md)
-- [MCP Backend Pattern Guide](../cli-anything-plugin/guides/mcp-backend.md)
+- [tarunAI Connect plugin HARNESS.md](../tarunai-connect-plugin/HARNESS.md)
+- [MCP Backend Pattern Guide](../tarunai-connect-plugin/guides/mcp-backend.md)
 - [Sibling: browser/agent-harness (DOMShell / Chrome)](../browser/agent-harness/)
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)

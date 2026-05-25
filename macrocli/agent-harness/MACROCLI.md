@@ -6,7 +6,7 @@
 parameterized, agent-callable macros. The agent sends one command:
 
 ```bash
-cli-anything-macrocli macro run export_png --param output=/tmp/out.png --json
+tarunai-connect-macrocli macro run export_png --param output=/tmp/out.png --json
 ```
 
 The system handles everything else: parameter validation, precondition checks,
@@ -17,7 +17,7 @@ result output. The agent never touches the GUI directly.
 
 ```
 Agent
-  └─▶  cli-anything-macrocli macro run <name> --param k=v --json   (L6: CLI)
+  └─▶  tarunai-connect-macrocli macro run <name> --param k=v --json   (L6: CLI)
              │
         MacroRuntime                                                  (L5)
              │  1. Validate params against MacroDefinition schema
@@ -60,7 +60,7 @@ is unavailable it walks down the priority list.
 
 ## Macro Definition Format
 
-Macros live in `cli_anything/macrocli/macro_definitions/` as YAML files:
+Macros live in `tarunai_connect/macrocli/macro_definitions/` as YAML files:
 
 ```yaml
 name: export_png
@@ -117,8 +117,8 @@ agent_hints:
 ```
 macrocli/
 └── agent-harness/
-    ├── setup.py                           entry_point: cli-anything-macrocli
-    └── cli_anything/macrocli/
+    ├── setup.py                           entry_point: tarunai-connect-macrocli
+    └── tarunai_connect/macrocli/
         ├── macrocli_cli.py                Main Click CLI
         ├── macro_definitions/             YAML macro registry
         │   ├── manifest.yaml
@@ -142,7 +142,7 @@ macrocli/
         │   ├── gui_macro.py              compiled replay backend
         │   └── recovery.py               retry/fallback backend
         ├── skills/SKILL.md               Agent-readable skill definition
-        ├── utils/repl_skin.py            Unified REPL skin (cli-anything standard)
+        ├── utils/repl_skin.py            Unified REPL skin (tarunai-connect standard)
         └── tests/
             ├── test_core.py              Unit tests (49 tests, no external deps)
             └── test_full_e2e.py          E2E + CLI subprocess tests (15 tests)
@@ -185,7 +185,7 @@ OpenAI-compatible API. Configure via environment variables:
 
 ```bash
 cd macrocli/agent-harness
-python3 -m pytest cli_anything/macrocli/tests/ -v -s
+python3 -m pytest tarunai_connect/macrocli/tests/ -v -s
 # 64 passed
 ```
 

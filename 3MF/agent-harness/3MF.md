@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **3MF CLI** (`cli-anything-3mf`) is an agent-native command-line interface for
+The **3MF CLI** (`tarunai-connect-3mf`) is an agent-native command-line interface for
 inspecting, modifying, and repairing 3MF mesh files used in 3D printing.
 
 Unlike traditional 3D-printing CLI tools (PrusaSlicer CLI, BambuStudio CLI, admesh)

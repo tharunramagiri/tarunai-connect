@@ -7,7 +7,7 @@ branch and records the next design direction for live popup preview windows.
 
 ## Workspace
 
-- Repo: `/root/CLI-Anything-preview`
+- Repo: `/root/tarunAI Connect-preview`
 - Branch: `feat/preview-protocol`
 - Primary protocol doc: `docs/PREVIEW_PROTOCOL.md`
 
@@ -16,7 +16,7 @@ branch and records the next design direction for live popup preview windows.
 The current branch already has a working first-pass preview stack:
 
 - Shared preview bundle helper:
-  `cli-anything-plugin/preview_bundle.py`
+  `tarunai-connect-plugin/preview_bundle.py`
 - Shared static viewer/inspector:
   `cli-hub/cli_hub/preview.py`
 - Preview protocol documented:
@@ -363,7 +363,7 @@ Interpretation:
   outputs, timings, and preview images are all real
 - the `20260421/freecad-empire-state-video/` directory does the same for a
   tiny Empire State Building reproduction built entirely with
-  `cli-anything-freecad` primitives and real poll-mode preview refresh
+  `tarunai-connect-freecad` primitives and real poll-mode preview refresh
   - after self-review, this Empire State Building attempt is not considered
     shippable because the silhouette still reads as a generic stepped tower
 - the `20260421/freecad-taipei-101-video/` directory is a second real
@@ -486,14 +486,14 @@ This is now improved in the current branch:
   - `mirrored`
   - `multi_transform` as a sequential expansion of supported pattern features
 - full verification now passes on this machine:
-  - `cli_anything/freecad/tests/test_core.py` -> `76 passed`
-  - `cli_anything/freecad/tests/test_full_e2e.py -k 'macro_generation or preview_capture_bundle or preview_capture_subprocess or preview_live_poll_auto_refresh'` -> `6 passed`
+  - `tarunai_connect/freecad/tests/test_core.py` -> `76 passed`
+  - `tarunai_connect/freecad/tests/test_full_e2e.py -k 'macro_generation or preview_capture_bundle or preview_capture_subprocess or preview_live_poll_auto_refresh'` -> `6 passed`
 
 ### Shared runtime cleanup
 
 The preview bundle helper currently exists in:
 
-- canonical form in `cli-anything-plugin/preview_bundle.py`
+- canonical form in `tarunai-connect-plugin/preview_bundle.py`
 - copied form in each harness under `utils/preview_bundle.py`
 
 That is acceptable for a first pass, but the long-term direction should be:
@@ -560,7 +560,7 @@ That means:
 This is realistic across video, CAD, 3D, and GPU-debug workflows.
 
 A universal 30-60 FPS live remote viewport for all supported software is not a
-good root abstraction for CLI-Anything.
+good root abstraction for tarunAI Connect.
 
 ## Proposed New Abstraction: Live Preview Session
 
@@ -820,13 +820,13 @@ The correct root design is:
 - but "every harness publishes preview state, and `cli-hub` owns the live
   popup viewer"
 
-That is the most generic, minimal, and extensible solution for CLI-Anything.
+That is the most generic, minimal, and extensible solution for tarunAI Connect.
 
 ## 2026-04-22: FreeCAD Motion CLI
 
 Status:
 
-- implemented a real `motion` command group for `cli-anything-freecad`
+- implemented a real `motion` command group for `tarunai-connect-freecad`
 - kept motion separate from preview/live preview
 - motion output is now `keyframes -> real FreeCAD GUI frame renders -> ffmpeg video`
 
@@ -851,7 +851,7 @@ Current scope:
 
 Implementation notes:
 
-- new core module: [freecad/core/motion.py](/root/CLI-Anything-preview/freecad/agent-harness/cli_anything/freecad/core/motion.py)
+- new core module: [freecad/core/motion.py](/root/tarunAI Connect-preview/freecad/agent-harness/tarunai_connect/freecad/core/motion.py)
 - FreeCAD sequence rendering is done in one GUI macro process, not one FreeCAD process per frame
 - frame directories now write a `sequence.json` manifest for later editing / reuse
 - this is a truthful frame-by-frame render path; it does not synthesize in-between motion frames
@@ -879,7 +879,7 @@ Current limitation:
 Status:
 
 - connected the new FreeCAD `motion` CLI to the real `Curiosity v6` final project
-- added a reusable `motion-showcase` mode to [freecad_live_preview_demo.py](/root/CLI-Anything-preview/docs/scripts/freecad_live_preview_demo.py)
+- added a reusable `motion-showcase` mode to [freecad_live_preview_demo.py](/root/tarunAI Connect-preview/docs/scripts/freecad_live_preview_demo.py)
 - rendered a fully real frame-by-frame Curiosity showcase video
 
 New script path:
@@ -891,7 +891,7 @@ What it does:
 - loads the real final `Curiosity v6` project from the existing trajectory
 - adds the showcase stage geometry as real parts
 - writes `13` key poses into a real project `motions` collection
-- calls `cli-anything-freecad motion render-video`
+- calls `tarunai-connect-freecad motion render-video`
 - preserves the real frame sequence and stills
 
 Artifact set:

@@ -36,7 +36,7 @@ and downloads generated files.
 └─────────────────────┼────────────────────────────┘
                       │  HTTPS + Bearer sk-…
          ┌────────────┴─────────────┐
-         │  cli-anything-anygen     │
+         │  tarunai-connect-anygen     │
          │  Click CLI + REPL        │
          │  JSON / human output     │
          └──────────────────────────┘

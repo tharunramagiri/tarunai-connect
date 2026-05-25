@@ -7,7 +7,7 @@ work on the dedicated preview branch.
 
 ## Workspace
 
-- Repo: `/root/CLI-Anything-preview`
+- Repo: `/root/tarunAI Connect-preview`
 - Branch: `feat/preview-protocol`
 - Current checkpoint commit: `81dbe58`
 
@@ -22,7 +22,7 @@ The current mechanism is built as five layers:
 1. `Preview Bundle`
    - A stable on-disk contract for preview outputs.
    - Defined in `docs/PREVIEW_PROTOCOL.md`.
-   - Implemented by `cli-anything-plugin/preview_bundle.py` and vendored
+   - Implemented by `tarunai-connect-plugin/preview_bundle.py` and vendored
      harness helpers.
 
 2. `Harness Preview Commands`
@@ -63,8 +63,8 @@ The current mechanism is built as five layers:
 ### Protocol / Platform
 
 - `docs/PREVIEW_PROTOCOL.md`
-- `cli-anything-plugin/preview_bundle.py`
-- `cli-anything-plugin/HARNESS.md` preview requirements
+- `tarunai-connect-plugin/preview_bundle.py`
+- `tarunai-connect-plugin/HARNESS.md` preview requirements
 - `cli-hub/cli_hub/preview.py`
 - `cli-hub` previews CLI integration
 
@@ -106,7 +106,7 @@ The current mechanism is built as five layers:
 
 Use this wording consistently:
 
-- software harnesses publish previews through `cli-anything-<software> preview ...`
+- software harnesses publish previews through `tarunai-connect-<software> preview ...`
 - `cli-hub previews ...` only inspects, renders, opens, or watches existing
   bundles and live sessions
 

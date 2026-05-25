@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-ollama
+setup.py for tarunai-connect-ollama
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/ollama/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/ollama/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-ollama",
+    name="tarunai-connect-ollama",
     version="1.0.1",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Ollama - Local LLM inference and model management via Ollama REST API. Recommended: Ollama running at http://localhost:11434",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -46,11 +46,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-ollama=cli_anything.ollama.ollama_cli:main",
+            "tarunai-connect-ollama=tarunai_connect.ollama.ollama_cli:main",
         ],
     },
     package_data={
-        "cli_anything.ollama": ["skills/*.md"],
+        "tarunai_connect.ollama": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

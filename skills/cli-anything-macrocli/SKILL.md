@@ -1,5 +1,5 @@
 ---
-name: "cli-anything-macrocli"
+name: "tarunai-connect-macrocli"
 description: >
   Use when the agent wants to define, list, inspect, or execute GUI macros
   via the MacroCLI CLI. Macros are parameterized, CLI-callable
@@ -30,21 +30,21 @@ pip install -e .
 
 ```bash
 # 1. See what macros are available
-cli-anything-macrocli macro list --json
+tarunai-connect-macrocli macro list --json
 
 # 2. Inspect a macro's parameters
-cli-anything-macrocli macro info export_file --json
+tarunai-connect-macrocli macro info export_file --json
 
 # 3. Dry-run to check params without side effects
-cli-anything-macrocli --dry-run macro run export_file \
+tarunai-connect-macrocli --dry-run macro run export_file \
     --param output=/tmp/test.txt --json
 
 # 4. Execute a macro
-cli-anything-macrocli macro run export_file \
+tarunai-connect-macrocli macro run export_file \
     --param output=/tmp/result.txt --json
 
 # 5. See what backends are available
-cli-anything-macrocli backends --json
+tarunai-connect-macrocli backends --json
 ```
 
 ## Command Reference
@@ -80,7 +80,7 @@ cli-anything-macrocli backends --json
 ### `backends`
 
 ```bash
-cli-anything-macrocli backends --json
+tarunai-connect-macrocli backends --json
 # Shows: native_api, file_transform, semantic_ui, gui_macro, recovery
 # and whether each is available in the current environment.
 ```
@@ -90,7 +90,7 @@ cli-anything-macrocli backends --json
 Pass parameters with `--param key=value`. Repeat for multiple:
 
 ```bash
-cli-anything-macrocli macro run transform_json \
+tarunai-connect-macrocli macro run transform_json \
     --param file=/path/to/data.json \
     --param key=settings.theme \
     --param value=dark \
@@ -136,12 +136,12 @@ Backends are selected automatically based on the macro step definition:
 
 ## Writing Macros
 
-Macros are YAML files in `cli_anything/macrocli/macro_definitions/`.
+Macros are YAML files in `tarunai_connect/macrocli/macro_definitions/`.
 Scaffold one with:
 
 ```bash
-cli-anything-macrocli macro define my_macro --output \
-    cli_anything/macrocli/macro_definitions/examples/my_macro.yaml
+tarunai-connect-macrocli macro define my_macro --output \
+    tarunai_connect/macrocli/macro_definitions/examples/my_macro.yaml
 ```
 
 Minimal schema:
@@ -197,19 +197,19 @@ agent_hints:
 
 ```bash
 # Step 1: What's available?
-cli-anything-macrocli macro list --json
+tarunai-connect-macrocli macro list --json
 
 # Step 2: What params does transform_json need?
-cli-anything-macrocli macro info transform_json --json
+tarunai-connect-macrocli macro info transform_json --json
 
 # Step 3: Test safely
-cli-anything-macrocli --dry-run macro run transform_json \
+tarunai-connect-macrocli --dry-run macro run transform_json \
     --param file=/tmp/config.json \
     --param key=theme \
     --param value=dark --json
 
 # Step 4: Execute for real
-cli-anything-macrocli macro run transform_json \
+tarunai-connect-macrocli macro run transform_json \
     --param file=/tmp/config.json \
     --param key=theme \
     --param value=dark --json

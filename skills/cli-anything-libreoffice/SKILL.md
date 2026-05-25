@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-libreoffice"
+name: "tarunai-connect-libreoffice"
 description: >-
   Command-line interface for Libreoffice - A stateful command-line interface for document editing, producing real ODF files (ZIP archives with ...
 ---
 
-# cli-anything-libreoffice
+# tarunai-connect-libreoffice
 
 A stateful command-line interface for document editing, producing real ODF files (ZIP archives with XML). Designed for AI agents and power users who need to create and manipulate Writer, Calc, and Impress documents without a GUI or LibreOffice installation.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-libreoffice package:
+This CLI is installed as part of the tarunai-connect-libreoffice package:
 
 ```bash
-pip install cli-anything-libreoffice
+pip install tarunai-connect-libreoffice
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-libreoffice
 
 ```bash
 # Show help
-cli-anything-libreoffice --help
+tarunai-connect-libreoffice --help
 
 # Start interactive REPL mode
-cli-anything-libreoffice
+tarunai-connect-libreoffice
 
 # Create a new project
-cli-anything-libreoffice project new -o project.json
+tarunai-connect-libreoffice project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-libreoffice --json project info -p project.json
+tarunai-connect-libreoffice --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-libreoffice --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-libreoffice
+tarunai-connect-libreoffice
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -157,9 +157,9 @@ Session management commands.
 Create a new libreoffice project file.
 
 ```bash
-cli-anything-libreoffice project new -o myproject.json
+tarunai-connect-libreoffice project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-libreoffice --json project new -o myproject.json
+tarunai-connect-libreoffice --json project new -o myproject.json
 ```
 
 
@@ -168,7 +168,7 @@ cli-anything-libreoffice --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-libreoffice
+tarunai-connect-libreoffice
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -180,7 +180,7 @@ cli-anything-libreoffice
 Export the project to a final output format.
 
 ```bash
-cli-anything-libreoffice --project myproject.json export render output.pdf --overwrite
+tarunai-connect-libreoffice --project myproject.json export render output.pdf --overwrite
 ```
 
 
@@ -202,10 +202,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-libreoffice project info -p project.json
+tarunai-connect-libreoffice project info -p project.json
 
 # JSON output for agents
-cli-anything-libreoffice --json project info -p project.json
+tarunai-connect-libreoffice --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -223,7 +223,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

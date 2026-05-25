@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-novita"
+name: "tarunai-connect-novita"
 description: >-
   Command-line interface for Novita AI - An OpenAI-compatible AI API client for DeepSeek, GLM, and other models.
 ---
 
-# cli-anything-novita
+# tarunai-connect-novita
 
 A CLI harness for **Novita AI** - an OpenAI-compatible API service for AI models like DeepSeek, GLM, and others.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-novita package:
+This CLI is installed as part of the tarunai-connect-novita package:
 
 ```bash
-pip install cli-anything-novita
+pip install tarunai-connect-novita
 ```
 
 **Prerequisites:**
@@ -26,22 +26,22 @@ pip install cli-anything-novita
 
 ```bash
 # Show help
-cli-anything-novita --help
+tarunai-connect-novita --help
 
 # Start interactive REPL mode
-cli-anything-novita
+tarunai-connect-novita
 
 # Chat with model
-cli-anything-novita chat --prompt "What is AI?" --model deepseek/deepseek-v3.2
+tarunai-connect-novita chat --prompt "What is AI?" --model deepseek/deepseek-v3.2
 
 # Streaming chat
-cli-anything-novita stream --prompt "Write a poem about code"
+tarunai-connect-novita stream --prompt "Write a poem about code"
 
 # List available models
-cli-anything-novita models
+tarunai-connect-novita models
 
 # JSON output (for agent consumption)
-cli-anything-novita --json chat --prompt "Hello"
+tarunai-connect-novita --json chat --prompt "Hello"
 ```
 
 ### REPL Mode
@@ -49,7 +49,7 @@ cli-anything-novita --json chat --prompt "Hello"
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-novita
+tarunai-connect-novita
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -98,7 +98,7 @@ Configuration management.
 
 ```bash
 # Set API key via config file (recommended)
-cli-anything-novita config set api_key "sk-xxx"
+tarunai-connect-novita config set api_key "sk-xxx"
 
 # Or use environment variable
 export NOVITA_API_KEY="sk-xxx"
@@ -108,20 +108,20 @@ export NOVITA_API_KEY="sk-xxx"
 
 ```bash
 # Simple chat
-cli-anything-novita chat --prompt "Explain quantum computing" --model deepseek/deepseek-v3.2
+tarunai-connect-novita chat --prompt "Explain quantum computing" --model deepseek/deepseek-v3.2
 
 # Streaming chat
-cli-anything-novita stream --prompt "Write a Python function to calculate factorial"
+tarunai-connect-novita stream --prompt "Write a Python function to calculate factorial"
 ```
 
 ### Test Connectivity
 
 ```bash
 # Verify API key and connectivity
-cli-anything-novita test --model deepseek/deepseek-v3.2
+tarunai-connect-novita test --model deepseek/deepseek-v3.2
 
 # List all available models
-cli-anything-novita models
+tarunai-connect-novita models
 ```
 
 ## Default Models
@@ -143,10 +143,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-novita chat --prompt "Hello"
+tarunai-connect-novita chat --prompt "Hello"
 
 # JSON output for agents
-cli-anything-novita --json chat --prompt "Hello"
+tarunai-connect-novita --json chat --prompt "Hello"
 ```
 
 ## For AI Agents
@@ -163,7 +163,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

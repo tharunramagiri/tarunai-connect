@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 
 
-PACKAGE_NAME = "cli-anything-mubu"
+PACKAGE_NAME = "tarunai-connect-mubu"
 PACKAGE_VERSION = "0.1.1"
 
 
@@ -34,16 +34,16 @@ setup(
     description="Agent-oriented CLI bridge for the Mubu desktop app",
     py_modules=["mubu_probe"],
     install_requires=["click>=8.0"],
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     include_package_data=True,
     package_data={
-        "cli_anything.mubu": ["README.md"],
-        "cli_anything.mubu.skills": ["SKILL.md"],
-        "cli_anything.mubu.tests": ["TEST.md"],
+        "tarunai_connect.mubu": ["README.md"],
+        "tarunai_connect.mubu.skills": ["SKILL.md"],
+        "tarunai_connect.mubu.tests": ["TEST.md"],
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-mubu=cli_anything.mubu.mubu_cli:entrypoint",
+            "tarunai-connect-mubu=tarunai_connect.mubu.mubu_cli:entrypoint",
         ]
     },
 )

@@ -1,10 +1,10 @@
 ---
-name: "cli-anything-mubu"
+name: "tarunai-connect-mubu"
 description: >-
   Command-line interface for Mubu - Canonical packaged entrypoint for the Mubu live bridge....
 ---
 
-# cli-anything-mubu
+# tarunai-connect-mubu
 
 Canonical packaged entrypoint for the Mubu live bridge.
 
@@ -25,8 +25,8 @@ pip install -e .
 ## Entry Points
 
 ```bash
-cli-anything-mubu
-python -m cli_anything.mubu
+tarunai-connect-mubu
+python -m tarunai_connect.mubu
 ```
 
 When invoked without a subcommand, the CLI enters an interactive REPL session.
@@ -153,7 +153,7 @@ mutate update-text / create-child / delete-node --json
 Start an interactive session with persistent document and node context.
 
 ```bash
-cli-anything-mubu
+tarunai-connect-mubu
 # Enter commands interactively
 # Use 'help' to see builtins
 # Use session commands to persist current-doc/current-node
@@ -165,7 +165,7 @@ cli-anything-mubu
 Resolve the current daily note from an explicit folder reference.
 
 ```bash
-cli-anything-mubu --json discover daily-current '<daily-folder-ref>'
+tarunai-connect-mubu --json discover daily-current '<daily-folder-ref>'
 ```
 
 
@@ -174,7 +174,7 @@ cli-anything-mubu --json discover daily-current '<daily-folder-ref>'
 Inspect the exact outgoing payload before a live mutation.
 
 ```bash
-cli-anything-mubu mutate update-text '<doc-ref>' --node-id <node-id> --text 'new text' --json
+tarunai-connect-mubu mutate update-text '<doc-ref>' --node-id <node-id> --text 'new text' --json
 ```
 
 

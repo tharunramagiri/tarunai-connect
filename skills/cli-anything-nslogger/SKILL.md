@@ -1,13 +1,13 @@
 ---
-name: "cli-anything-nslogger"
+name: "tarunai-connect-nslogger"
 description: CLI harness for NSLogger — parse, filter, export, and monitor NSLogger log files (.rawnsloggerdata / .nsloggerdata)
 version: 0.1.0
-install: pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=nslogger/agent-harness
-binary: cli-anything-nslogger
+install: pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=nslogger/agent-harness
+binary: tarunai-connect-nslogger
 tags: [logging, ios, macos, debugging, nslogger]
 ---
 
-# cli-anything-nslogger
+# tarunai-connect-nslogger
 
 A complete CLI harness for [NSLogger](https://github.com/fpillet/NSLogger), the macOS log viewer for iOS/macOS apps.
 
@@ -17,7 +17,7 @@ A complete CLI harness for [NSLogger](https://github.com/fpillet/NSLogger), the 
 cd nslogger/agent-harness
 pip install -e .
 # Verify
-cli-anything-nslogger --help
+tarunai-connect-nslogger --help
 ```
 
 ## Command Reference
@@ -25,65 +25,65 @@ cli-anything-nslogger --help
 ### `generate` — Create sample files for testing
 
 ```bash
-cli-anything-nslogger generate sample.rawnsloggerdata --count 50
+tarunai-connect-nslogger generate sample.rawnsloggerdata --count 50
 ```
 
 ### `read` — Display messages from a file
 
 ```bash
 # All messages
-cli-anything-nslogger read session.rawnsloggerdata
+tarunai-connect-nslogger read session.rawnsloggerdata
 
 # Errors only (level 0)
-cli-anything-nslogger read session.rawnsloggerdata --level 0
+tarunai-connect-nslogger read session.rawnsloggerdata --level 0
 
 # Filter by tag and text search
-cli-anything-nslogger read session.rawnsloggerdata --tag Network --search "timeout"
+tarunai-connect-nslogger read session.rawnsloggerdata --tag Network --search "timeout"
 
 # First 20 messages as JSON
-cli-anything-nslogger read session.rawnsloggerdata --limit 20 --json
+tarunai-connect-nslogger read session.rawnsloggerdata --limit 20 --json
 ```
 
 ### `filter` — Advanced filtering
 
 ```bash
 # Errors and warnings only
-cli-anything-nslogger filter session.rawnsloggerdata --level 1
+tarunai-connect-nslogger filter session.rawnsloggerdata --level 1
 
 # By tag
-cli-anything-nslogger filter session.rawnsloggerdata --tag Auth --tag Network
+tarunai-connect-nslogger filter session.rawnsloggerdata --tag Auth --tag Network
 
 # Regex search
-cli-anything-nslogger filter session.rawnsloggerdata --regex "(timeout|failed|error)"
+tarunai-connect-nslogger filter session.rawnsloggerdata --regex "(timeout|failed|error)"
 
 # By thread
-cli-anything-nslogger filter session.rawnsloggerdata --thread "main"
+tarunai-connect-nslogger filter session.rawnsloggerdata --thread "main"
 
 # JSON output
-cli-anything-nslogger filter session.rawnsloggerdata --level 0 --json
+tarunai-connect-nslogger filter session.rawnsloggerdata --level 0 --json
 ```
 
 ### `export` — Export to text/JSON/CSV
 
 ```bash
 # JSON to stdout
-cli-anything-nslogger export session.rawnsloggerdata --format json
+tarunai-connect-nslogger export session.rawnsloggerdata --format json
 
 # CSV to file
-cli-anything-nslogger export session.rawnsloggerdata --format csv --output logs.csv
+tarunai-connect-nslogger export session.rawnsloggerdata --format csv --output logs.csv
 
 # Filtered text export
-cli-anything-nslogger export session.rawnsloggerdata --format text --level 1 --tag Network
+tarunai-connect-nslogger export session.rawnsloggerdata --format text --level 1 --tag Network
 ```
 
 ### `stats` — Summary statistics
 
 ```bash
 # Human-readable summary
-cli-anything-nslogger stats session.rawnsloggerdata
+tarunai-connect-nslogger stats session.rawnsloggerdata
 
 # JSON for agent consumption
-cli-anything-nslogger stats session.rawnsloggerdata --json
+tarunai-connect-nslogger stats session.rawnsloggerdata --json
 ```
 
 JSON output shape:
@@ -105,22 +105,22 @@ JSON output shape:
 
 ```bash
 # Match the NSLogger.app GUI Bonjour behavior for iOS auto-discovery
-cli-anything-nslogger listen --bonjour --name bazinga --debug
+tarunai-connect-nslogger listen --bonjour --name bazinga --debug
 
 # Mirror live logs to a text file while still printing stdout
-cli-anything-nslogger listen --bonjour --name bazinga --output app.log
+tarunai-connect-nslogger listen --bonjour --name bazinga --output app.log
 
 # Write machine-readable JSON Lines
-cli-anything-nslogger listen --bonjour --name bazinga --output app.jsonl --output-format jsonl
+tarunai-connect-nslogger listen --bonjour --name bazinga --output app.jsonl --output-format jsonl
 
 # Direct TCP/TLS mode for manually configured clients
-cli-anything-nslogger listen --port 50000 --ssl --debug
+tarunai-connect-nslogger listen --port 50000 --ssl --debug
 
 # Show only errors while listening, output as JSON stream
-cli-anything-nslogger listen --bonjour --name bazinga --level 0 --json
+tarunai-connect-nslogger listen --bonjour --name bazinga --level 0 --json
 
 # Run until Ctrl-C
-cli-anything-nslogger listen --bonjour --name bazinga
+tarunai-connect-nslogger listen --bonjour --name bazinga
 ```
 
 Use Bonjour mode first for iOS apps because it matches the desktop NSLogger GUI:
@@ -131,8 +131,8 @@ configured with the Mac host and port.
 ### `repl` — Interactive Command REPL
 
 ```bash
-cli-anything-nslogger repl session.rawnsloggerdata
-# Or launch it by running cli-anything-nslogger with no subcommand.
+tarunai-connect-nslogger repl session.rawnsloggerdata
+# Or launch it by running tarunai-connect-nslogger with no subcommand.
 ```
 
 ## Log Levels
@@ -172,17 +172,17 @@ cli-anything-nslogger repl session.rawnsloggerdata
 
 ```bash
 # 1. Inspect a captured crash session
-cli-anything-nslogger stats crash.rawnsloggerdata --json
+tarunai-connect-nslogger stats crash.rawnsloggerdata --json
 
 # 2. Find all errors in the 5 minutes before crash
-cli-anything-nslogger filter crash.rawnsloggerdata --level 0 --json
+tarunai-connect-nslogger filter crash.rawnsloggerdata --level 0 --json
 
 # 3. Get network failures only
-cli-anything-nslogger filter crash.rawnsloggerdata --tag Network --regex "fail|timeout|error" --json
+tarunai-connect-nslogger filter crash.rawnsloggerdata --tag Network --regex "fail|timeout|error" --json
 
 # 4. Export full log for offline analysis
-cli-anything-nslogger export crash.rawnsloggerdata --format json --output crash_log.json
+tarunai-connect-nslogger export crash.rawnsloggerdata --format json --output crash_log.json
 
 # 5. Monitor an iOS app live and keep a local copy
-cli-anything-nslogger listen --bonjour --name bazinga --output app.log --debug
+tarunai-connect-nslogger listen --bonjour --name bazinga --output app.log --debug
 ```

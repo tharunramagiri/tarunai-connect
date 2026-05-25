@@ -1,6 +1,6 @@
-# Contributing to CLI-Anything
+# Contributing to tarunAI Connect
 
-Thank you for your interest in contributing to CLI-Anything! This guide will help you get started.
+Thank you for your interest in contributing to tarunAI Connect! This guide will help you get started.
 
 ## Types of Contributions
 
@@ -15,7 +15,7 @@ Adding a new CLI harness is the most impactful contribution. You can either add 
 Place your code under `<software>/agent-harness/` and ensure the following:
 
 1. **`<SOFTWARE>.md`** — the SOP document exists at `<software>/agent-harness/<SOFTWARE>.md` describing the harness architecture.
-2. **`SKILL.md`** — the canonical AI-discoverable skill definition exists at `skills/cli-anything-<software>/SKILL.md`, and the packaged compatibility copy exists at `cli_anything/<software>/skills/SKILL.md`.
+2. **`SKILL.md`** — the canonical AI-discoverable skill definition exists at `skills/tarunai-connect-<software>/SKILL.md`, and the packaged compatibility copy exists at `tarunai_connect/<software>/skills/SKILL.md`.
 3. **Tests** — unit tests (`test_core.py`, passable without backend) and E2E tests (`test_full_e2e.py`) are present and passing.
 4. **`README.md`** — the project README includes the new software with a link to its harness directory.
 5. **`registry.json`** — add an entry for the new software (see [Registry fields](#registry-fields) below).
@@ -50,7 +50,7 @@ Bug fixes resolve incorrect behavior in existing harnesses or the plugin.
 
 ## CLI-Hub & Registry
 
-All available CLIs are listed in `registry.json` at the repo root and displayed on the [CLI-Hub](https://hkuds.github.io/CLI-Anything/hub/). The hub reads `registry.json` directly from `main`, so it updates immediately when a PR is merged.
+All available CLIs are listed in `registry.json` at the repo root and displayed on the [CLI-Hub](https://chat.ramagiritharun.in). The hub reads `registry.json` directly from `main`, so it updates immediately when a PR is merged.
 
 ### Registry fields
 
@@ -65,9 +65,9 @@ Include an entry in `registry.json` as part of your PR. Each field is described 
 | `requires` | Yes | Runtime dependencies the user needs (e.g. `"Docker"`) or `null`. |
 | `homepage` | Yes | Official homepage of the **target software** (not your repo). |
 | `source_url` | Yes | For standalone repos: URL to your repo (e.g. `"https://github.com/user/repo"`). For in-repo harnesses: `null` (the hub auto-links to `<name>/agent-harness/`). |
-| `install_cmd` | Yes | Full pip install command. PyPI: `"pip install cli-anything-my-software"`. In-repo: `"pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=my-software/agent-harness"`. |
-| `entry_point` | Yes | CLI command name (e.g. `"cli-anything-my-software"`). |
-| `skill_md` | Yes | Path to canonical SKILL.md. For standalone repos: full URL (e.g. `"https://github.com/user/repo/blob/main/.../SKILL.md"`). For in-repo: relative path under the repo-root `skills/` tree (e.g. `"skills/cli-anything-my-software/SKILL.md"`). Set to `null` if not yet available. |
+| `install_cmd` | Yes | Full pip install command. PyPI: `"pip install tarunai-connect-my-software"`. In-repo: `"pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=my-software/agent-harness"`. |
+| `entry_point` | Yes | CLI command name (e.g. `"tarunai-connect-my-software"`). |
+| `skill_md` | Yes | Path to canonical SKILL.md. For standalone repos: full URL (e.g. `"https://github.com/user/repo/blob/main/.../SKILL.md"`). For in-repo: relative path under the repo-root `skills/` tree (e.g. `"skills/tarunai-connect-my-software/SKILL.md"`). Set to `null` if not yet available. |
 | `category` | Yes | One of the existing categories (check `registry.json` for examples). |
 | `contributors` | Yes | Array of `{"name": "...", "url": "..."}` objects listing all contributors. |
 
@@ -82,9 +82,9 @@ Include an entry in `registry.json` as part of your PR. Each field is described 
   "requires": "backend software or null",
   "homepage": "https://my-software.org",
   "source_url": null,
-  "install_cmd": "pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=my-software/agent-harness",
-  "entry_point": "cli-anything-my-software",
-  "skill_md": "skills/cli-anything-my-software/SKILL.md",
+  "install_cmd": "pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=my-software/agent-harness",
+  "entry_point": "tarunai-connect-my-software",
+  "skill_md": "skills/tarunai-connect-my-software/SKILL.md",
   "category": "category-name",
   "contributors": [
     {"name": "your-github-username", "url": "https://github.com/your-github-username"}
@@ -102,10 +102,10 @@ Include an entry in `registry.json` as part of your PR. Each field is described 
   "description": "Short description of what the CLI does",
   "requires": "backend software or null",
   "homepage": "https://my-software.org",
-  "source_url": "https://github.com/your-username/cli-anything-my-software",
-  "install_cmd": "pip install cli-anything-my-software",
-  "entry_point": "cli-anything-my-software",
-  "skill_md": "https://github.com/your-username/cli-anything-my-software/blob/main/cli_anything/my_software/skills/SKILL.md",
+  "source_url": "https://github.com/your-username/tarunai-connect-my-software",
+  "install_cmd": "pip install tarunai-connect-my-software",
+  "entry_point": "tarunai-connect-my-software",
+  "skill_md": "https://github.com/your-username/tarunai-connect-my-software/blob/main/tarunai_connect/my_software/skills/SKILL.md",
   "category": "category-name",
   "contributors": [
     {"name": "original-author", "url": "https://github.com/original-author"},
@@ -128,15 +128,15 @@ Each generated CLI lives in `<software>/agent-harness/` and is an independent Py
 
 ```bash
 # Clone the repo
-git clone https://github.com/HKUDS/CLI-Anything.git
-cd CLI-Anything
+git clone https://github.com/tharunramagiri/tarunai-connect.git
+cd tarunAI Connect
 
 # Install a harness in editable mode
 cd <software>/agent-harness
 pip install -e .
 
 # Run tests
-python3 -m pytest cli_anything/<software>/tests/ -v
+python3 -m pytest tarunai_connect/<software>/tests/ -v
 ```
 
 ### Requirements
@@ -166,13 +166,13 @@ test: add unit tests for Inkscape layer commands
 
 ```bash
 # Unit tests (no backend software needed)
-python3 -m pytest cli_anything/<software>/tests/test_core.py -v
+python3 -m pytest tarunai_connect/<software>/tests/test_core.py -v
 
 # E2E tests (requires real backend installed)
-python3 -m pytest cli_anything/<software>/tests/test_full_e2e.py -v
+python3 -m pytest tarunai_connect/<software>/tests/test_full_e2e.py -v
 
 # All tests for a harness
-python3 -m pytest cli_anything/<software>/tests/ -v
+python3 -m pytest tarunai_connect/<software>/tests/ -v
 ```
 
 ## Submitting a Pull Request
@@ -185,4 +185,4 @@ python3 -m pytest cli_anything/<software>/tests/ -v
 
 ## Questions?
 
-If you have questions, feel free to open a [Discussion](https://github.com/HKUDS/CLI-Anything/discussions) or an issue tagged with `type: question`.
+If you have questions, feel free to open a [Discussion](https://github.com/tharunramagiri/tarunai-connect/discussions) or an issue tagged with `type: question`.

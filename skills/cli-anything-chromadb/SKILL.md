@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-chromadb"
+name: "tarunai-connect-chromadb"
 description: >-
   Command-line interface for ChromaDB - A stateless CLI for managing vector database collections, documents, and semantic search. Designed for AI agents and automation via the ChromaDB HTTP API v2.
 ---
 
-# cli-anything-chromadb
+# tarunai-connect-chromadb
 
 A stateless command-line interface for ChromaDB vector database, built on the HTTP API v2. Designed for AI agents and power users who need to manage collections, documents, and run semantic queries without a browser UI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-chromadb package:
+This CLI is installed as part of the tarunai-connect-chromadb package:
 
 ```bash
-pip install cli-anything-chromadb
+pip install tarunai-connect-chromadb
 ```
 
 **Prerequisites:**
@@ -26,19 +26,19 @@ pip install cli-anything-chromadb
 
 ```bash
 # Show help
-cli-anything-chromadb --help
+tarunai-connect-chromadb --help
 
 # Start interactive REPL mode
-cli-anything-chromadb
+tarunai-connect-chromadb
 
 # Check server health
-cli-anything-chromadb --json server heartbeat
+tarunai-connect-chromadb --json server heartbeat
 
 # List all collections
-cli-anything-chromadb --json collection list
+tarunai-connect-chromadb --json collection list
 
 # Semantic search
-cli-anything-chromadb --json query search --collection hub_knowledge --text "How to deploy"
+tarunai-connect-chromadb --json query search --collection hub_knowledge --text "How to deploy"
 ```
 
 ### REPL Mode
@@ -46,7 +46,7 @@ cli-anything-chromadb --json query search --collection hub_knowledge --text "How
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-chromadb
+tarunai-connect-chromadb
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -96,10 +96,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-chromadb server heartbeat
+tarunai-connect-chromadb server heartbeat
 
 # JSON output for agents
-cli-anything-chromadb --json server heartbeat
+tarunai-connect-chromadb --json server heartbeat
 ```
 
 ## For AI Agents

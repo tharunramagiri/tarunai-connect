@@ -1,13 +1,13 @@
 ---
-name: "cli-anything-wiremock"
+name: "tarunai-connect-wiremock"
 description: Python CLI harness for WireMock HTTP mock server administration
 version: 0.1.0
-entrypoint: cli-anything-wiremock
+entrypoint: tarunai-connect-wiremock
 ---
 
 ## Overview
 
-`cli-anything-wiremock` is a command-line interface that wraps the WireMock Admin REST API (`/__admin/`). It allows agents and developers to manage HTTP stub mappings, inspect served requests, control stateful scenarios, and record real backend traffic — all from the terminal or from agent tool calls.
+`tarunai-connect-wiremock` is a command-line interface that wraps the WireMock Admin REST API (`/__admin/`). It allows agents and developers to manage HTTP stub mappings, inspect served requests, control stateful scenarios, and record real backend traffic — all from the terminal or from agent tool calls.
 
 WireMock is commonly used in integration testing environments to replace real HTTP backends with controllable mock responses.
 
@@ -72,28 +72,28 @@ WireMock is commonly used in integration testing environments to replace real HT
 
 ```bash
 # Check connectivity
-cli-anything-wiremock status
+tarunai-connect-wiremock status
 
 # Create a stub using quick form
-cli-anything-wiremock stub quick GET /api/users 200 --body '[{"id":1}]'
+tarunai-connect-wiremock stub quick GET /api/users 200 --body '[{"id":1}]'
 
 # Create a stub using full JSON
-cli-anything-wiremock stub create '{
+tarunai-connect-wiremock stub create '{
   "request": {"method": "POST", "url": "/api/orders"},
   "response": {"status": 201, "body": "{\"id\":99}"}
 }'
 
 # Verify a POST was made exactly once
-cli-anything-wiremock --json request count '{"method":"POST","url":"/api/orders"}'
+tarunai-connect-wiremock --json request count '{"method":"POST","url":"/api/orders"}'
 # → {"count": 1}
 
 # Scenario: advance state
-cli-anything-wiremock scenario set "cart-flow" "item-added"
+tarunai-connect-wiremock scenario set "cart-flow" "item-added"
 
 # Record a real backend
-cli-anything-wiremock record start https://api.example.com
+tarunai-connect-wiremock record start https://api.example.com
 # ... make requests ...
-cli-anything-wiremock record stop
+tarunai-connect-wiremock record stop
 ```
 
 ## Agent Guidance
@@ -104,10 +104,10 @@ Use `--json` for all invocations in scripts or agent tool calls. JSON output var
 
 ```bash
 # Data commands return raw WireMock API JSON directly:
-cli-anything-wiremock --json stub quick GET /api/hello 200 --body '{"hello":"world"}'
+tarunai-connect-wiremock --json stub quick GET /api/hello 200 --body '{"hello":"world"}'
 # → {"id": "abc-123", "request": {...}, "response": {...}, ...}
 
-cli-anything-wiremock --json stub list
+tarunai-connect-wiremock --json stub list
 # → {"mappings": [...], "total": N}
 
 # Void commands (delete, reset, save) return:
@@ -130,16 +130,16 @@ export WIREMOCK_PORT=8080
 
 1. Set up stubs before running the system under test:
    ```bash
-   cli-anything-wiremock --json stub quick POST /api/payment 200 --body '{"success":true}'
+   tarunai-connect-wiremock --json stub quick POST /api/payment 200 --body '{"success":true}'
    ```
 2. Run the system under test.
 3. Verify interactions:
    ```bash
-   cli-anything-wiremock --json request count '{"method":"POST","url":"/api/payment"}'
+   tarunai-connect-wiremock --json request count '{"method":"POST","url":"/api/payment"}'
    ```
 4. Clean up:
    ```bash
-   cli-anything-wiremock reset
+   tarunai-connect-wiremock reset
    ```
 
 ### Error handling

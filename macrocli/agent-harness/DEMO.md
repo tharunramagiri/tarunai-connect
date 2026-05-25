@@ -111,7 +111,7 @@ export DISPLAY=:99
 conda activate macrocli
 cd path/to/macrocli/agent-harness
 
-cli-anything-macrocli --json backends
+tarunai-connect-macrocli --json backends
 ```
 
 期望输出（所有后端 available: true）：
@@ -134,7 +134,7 @@ cli-anything-macrocli --json backends
 ### A1. 打开 gedit
 
 ```bash
-cli-anything-macrocli --json macro run gedit_new_window
+tarunai-connect-macrocli --json macro run gedit_new_window
 ```
 
 VNC 里能看到 gedit 窗口弹出。
@@ -153,7 +153,7 @@ VNC 里能看到 gedit 窗口弹出。
 ### A2. 输入文字并保存
 
 ```bash
-cli-anything-macrocli --json macro run gedit_type_and_save \
+tarunai-connect-macrocli --json macro run gedit_type_and_save \
     --param "text=Hello from MacroCLI!"
 ```
 
@@ -178,7 +178,7 @@ VNC 里能看到文字逐字输入到 gedit，然后触发 Ctrl+S。
 ### A3. 另存为指定路径
 
 ```bash
-cli-anything-macrocli --json macro run gedit_save_as \
+tarunai-connect-macrocli --json macro run gedit_save_as \
     --param output_path=/tmp/macrocli_demo.txt
 ```
 
@@ -230,7 +230,7 @@ Ctrl+Alt+S 停止录制
 
 ```bash
 # 开始录制，命名为 my_workflow
-cli-anything-macrocli macro record my_workflow \
+tarunai-connect-macrocli macro record my_workflow \
     --output-dir /tmp/my_recording \
     --timeout 30    # 30秒后自动停止，或手动 Ctrl+Alt+S
 ```
@@ -286,7 +286,7 @@ steps:
 ```bash
 # 先清空 gedit 内容
 # 然后回放
-cli-anything-macrocli --json macro run my_workflow \
+tarunai-connect-macrocli --json macro run my_workflow \
     --macro-file /tmp/my_recording/my_workflow.yaml
 ```
 
@@ -323,7 +323,7 @@ gedit 窗口标题: macrocli_test_final.txt (/tmp) - gedit
 echo '{"app": "draw.io", "version": 1}' > /tmp/config.json
 
 # 用宏修改嵌套 key
-cli-anything-macrocli --json macro run transform_json \
+tarunai-connect-macrocli --json macro run transform_json \
     --param file=/tmp/config.json \
     --param key=settings.theme \
     --param value=dark
@@ -349,7 +349,7 @@ cat /tmp/config.json
 ```bash
 conda activate macrocli
 export DISPLAY=:99
-cli-anything-macrocli ...
+tarunai-connect-macrocli ...
 ```
 
 **Q: VNC Connect 后显示"连接已中断"**

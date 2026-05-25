@@ -1,8 +1,8 @@
-# LLDB.md - LLDB Backend Notes for CLI-Anything
+# LLDB.md - LLDB Backend Notes for tarunAI Connect
 
 ## Why LLDB Python API
 
-This harness follows the CLI-Anything principle:
+This harness follows the tarunAI Connect principle:
 
 > Direct integration with actual software backends — full professional capabilities, zero compromises.
 

@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-kdenlive"
+name: "tarunai-connect-kdenlive"
 description: >-
   Command-line interface for Kdenlive - A stateful command-line interface for video editing, following the same patterns as the Blender CLI ...
 ---
 
-# cli-anything-kdenlive
+# tarunai-connect-kdenlive
 
 A stateful command-line interface for video editing, following the same patterns as the Blender CLI harness. Uses a JSON project format with MLT XML generation for Kdenlive/melt.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-kdenlive package:
+This CLI is installed as part of the tarunai-connect-kdenlive package:
 
 ```bash
-pip install cli-anything-kdenlive
+pip install tarunai-connect-kdenlive
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-kdenlive
 
 ```bash
 # Show help
-cli-anything-kdenlive --help
+tarunai-connect-kdenlive --help
 
 # Start interactive REPL mode
-cli-anything-kdenlive
+tarunai-connect-kdenlive
 
 # Create a new project
-cli-anything-kdenlive project new -o project.json
+tarunai-connect-kdenlive project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-kdenlive --json project info -p project.json
+tarunai-connect-kdenlive --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-kdenlive --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-kdenlive
+tarunai-connect-kdenlive
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -162,9 +162,9 @@ Session management commands.
 Create a new kdenlive project file.
 
 ```bash
-cli-anything-kdenlive project new -o myproject.json
+tarunai-connect-kdenlive project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-kdenlive --json project new -o myproject.json
+tarunai-connect-kdenlive --json project new -o myproject.json
 ```
 
 
@@ -173,7 +173,7 @@ cli-anything-kdenlive --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-kdenlive
+tarunai-connect-kdenlive
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -185,7 +185,7 @@ cli-anything-kdenlive
 Export the project to a final output format.
 
 ```bash
-cli-anything-kdenlive --project myproject.json export render output.pdf --overwrite
+tarunai-connect-kdenlive --project myproject.json export render output.pdf --overwrite
 ```
 
 
@@ -206,10 +206,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-kdenlive project info -p project.json
+tarunai-connect-kdenlive project info -p project.json
 
 # JSON output for agents
-cli-anything-kdenlive --json project info -p project.json
+tarunai-connect-kdenlive --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -226,7 +226,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

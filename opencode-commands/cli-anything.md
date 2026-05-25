@@ -2,7 +2,7 @@
 description: Build a complete CLI harness for any GUI application (all 7 phases)
 subtask: true
 ---
-# cli-anything Command
+# tarunai-connect Command
 
 Build a complete, stateful CLI harness for any GUI application.
 
@@ -24,7 +24,7 @@ Build a complete, stateful CLI harness for any GUI application.
 
 ## What This Command Does
 
-This command implements the complete cli-anything methodology to build a production-ready CLI harness for any GUI application. **All phases follow the standards defined in HARNESS.md.**
+This command implements the complete tarunai-connect methodology to build a production-ready CLI harness for any GUI application. **All phases follow the standards defined in HARNESS.md.**
 
 ### Phase 0: Source Acquisition
 - If `$1` is a GitHub URL, clone it to a local working directory
@@ -44,11 +44,11 @@ This command implements the complete cli-anything methodology to build a product
 - Creates the software-specific SOP document (e.g., GIMP.md)
 
 ### Phase 3: Implementation
-- Creates the directory structure: `agent-harness/cli_anything/<software>/core`, `utils`, `tests`
+- Creates the directory structure: `agent-harness/tarunai_connect/<software>/core`, `utils`, `tests`
 - Implements core modules (project, session, export, etc.)
 - Builds the Click-based CLI with REPL support
 - Implements `--json` output mode for agent consumption
-- All imports use `cli_anything.<software>.*` namespace
+- All imports use `tarunai_connect.<software>.*` namespace
 
 ### Phase 4: Test Planning
 - Creates `TEST.md` with comprehensive test plan
@@ -61,7 +61,7 @@ This command implements the complete cli-anything methodology to build a product
 - Writes E2E tests (`test_full_e2e.py`) - real files, full pipeline
 - Implements workflow tests simulating real-world usage
 - Adds output verification (pixel analysis, format validation, etc.)
-- Adds `TestCLISubprocess` class with `_resolve_cli("cli-anything-<software>")`
+- Adds `TestCLISubprocess` class with `_resolve_cli("tarunai-connect-<software>")`
   that tests the installed command via subprocess (no hardcoded paths or CWD)
 
 ### Phase 6: Test Documentation
@@ -70,12 +70,12 @@ This command implements the complete cli-anything methodology to build a product
 - Documents test coverage and any gaps
 
 ### Phase 7: PyPI Publishing and Installation
-- Creates `setup.py` with `find_namespace_packages(include=["cli_anything.*"])`
-- Package name: `cli-anything-<software>`, namespace: `cli_anything.<software>`
-- `cli_anything/` has NO `__init__.py` (PEP 420 namespace package)
+- Creates `setup.py` with `find_namespace_packages(include=["tarunai_connect.*"])`
+- Package name: `tarunai-connect-<software>`, namespace: `tarunai_connect.<software>`
+- `tarunai_connect/` has NO `__init__.py` (PEP 420 namespace package)
 - Configures console_scripts entry point for PATH installation
 - Tests local installation with `pip install -e .`
-- Verifies CLI is available in PATH: `which cli-anything-<software>`
+- Verifies CLI is available in PATH: `which tarunai-connect-<software>`
 
 ## Output Structure
 
@@ -84,7 +84,7 @@ This command implements the complete cli-anything methodology to build a product
 └── agent-harness/
     ├── <SOFTWARE>.md          # Software-specific SOP
     ├── setup.py               # PyPI package config (find_namespace_packages)
-    └── cli_anything/          # Namespace package (NO __init__.py)
+    └── tarunai_connect/          # Namespace package (NO __init__.py)
         └── <software>/        # Sub-package (HAS __init__.py)
             ├── README.md          # Installation and usage guide
             ├── <software>_cli.py  # Main CLI entry point
@@ -107,8 +107,8 @@ The command succeeds when:
 2. CLI supports both one-shot commands and REPL mode
 3. `--json` output mode works for all commands
 4. All tests pass (100% pass rate)
-5. Subprocess tests use `_resolve_cli()` and pass with `CLI_ANYTHING_FORCE_INSTALLED=1`
+5. Subprocess tests use `_resolve_cli()` and pass with `TARUNAI_CONNECT_FORCE_INSTALLED=1`
 6. TEST.md contains both plan and results
 7. README.md documents installation and usage
 8. setup.py is created and local installation works
-9. CLI is available in PATH as `cli-anything-<software>`
+9. CLI is available in PATH as `tarunai-connect-<software>`

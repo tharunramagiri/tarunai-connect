@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-adguardhome"
+name: "tarunai-connect-adguardhome"
 description: >-
   Command-line interface for AdGuard Home - Network-wide ad blocking and DNS management via AdGuard Home REST API. Designed for AI agents and power users who need to manage filtering, DNS rewrites, clients, DHCP, and query logs without a GUI.
 ---
 
-# cli-anything-adguardhome
+# tarunai-connect-adguardhome
 
 Network-wide ad blocking and DNS management via the AdGuard Home REST API. Designed for AI agents and power users who need to manage filtering, DNS rewrites, clients, DHCP, and query logs without a GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-adguardhome package:
+This CLI is installed as part of the tarunai-connect-adguardhome package:
 
 ```bash
-pip install cli-anything-adguardhome
+pip install tarunai-connect-adguardhome
 ```
 
 **Prerequisites:**
@@ -27,16 +27,16 @@ pip install cli-anything-adguardhome
 
 ```bash
 # Show help
-cli-anything-adguardhome --help
+tarunai-connect-adguardhome --help
 
 # Start interactive REPL mode
-cli-anything-adguardhome
+tarunai-connect-adguardhome
 
 # Check server status
-cli-anything-adguardhome server status
+tarunai-connect-adguardhome server status
 
 # Run with JSON output (for agent consumption)
-cli-anything-adguardhome --json server status
+tarunai-connect-adguardhome --json server status
 ```
 
 ### REPL Mode
@@ -44,7 +44,7 @@ cli-anything-adguardhome --json server status
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-adguardhome
+tarunai-connect-adguardhome
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -175,48 +175,48 @@ TLS/HTTPS configuration.
 ### Check Server Status
 
 ```bash
-cli-anything-adguardhome server status
-cli-anything-adguardhome server version
+tarunai-connect-adguardhome server status
+tarunai-connect-adguardhome server version
 ```
 
 ### Manage Filter Lists
 
 ```bash
 # List current filters
-cli-anything-adguardhome filter list
+tarunai-connect-adguardhome filter list
 
 # Add a new blocklist
-cli-anything-adguardhome filter add --url https://somehost.com/list.txt --name "My List"
+tarunai-connect-adguardhome filter add --url https://somehost.com/list.txt --name "My List"
 
 # Refresh all filters
-cli-anything-adguardhome filter refresh
+tarunai-connect-adguardhome filter refresh
 ```
 
 ### DNS Rewrites
 
 ```bash
 # Add a local DNS entry
-cli-anything-adguardhome rewrite add --domain "myserver.local" --answer "192.168.1.50"
+tarunai-connect-adguardhome rewrite add --domain "myserver.local" --answer "192.168.1.50"
 
 # List all rewrites
-cli-anything-adguardhome rewrite list
+tarunai-connect-adguardhome rewrite list
 ```
 
 ### Client Management
 
 ```bash
-cli-anything-adguardhome clients add --name "My PC" --ip 192.168.1.100
-cli-anything-adguardhome clients list
+tarunai-connect-adguardhome clients add --name "My PC" --ip 192.168.1.100
+tarunai-connect-adguardhome clients list
 ```
 
 ### Query Statistics
 
 ```bash
 # Show stats (human-readable)
-cli-anything-adguardhome stats show
+tarunai-connect-adguardhome stats show
 
 # Show stats (JSON for agents)
-cli-anything-adguardhome --json stats show
+tarunai-connect-adguardhome --json stats show
 ```
 
 ## Output Formats
@@ -228,10 +228,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-adguardhome filter list
+tarunai-connect-adguardhome filter list
 
 # JSON output for agents
-cli-anything-adguardhome --json filter list
+tarunai-connect-adguardhome --json filter list
 ```
 
 ## For AI Agents
@@ -248,7 +248,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-gimp"
+name: "tarunai-connect-gimp"
 description: >-
   Command-line interface for Gimp - A stateful command-line interface for image editing, built on Pillow. Designed for AI agents and pow...
 ---
 
-# cli-anything-gimp
+# tarunai-connect-gimp
 
 A stateful command-line interface for image editing, built on Pillow. Designed for AI agents and power users who need to create and manipulate images without a GUI.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-gimp package:
+This CLI is installed as part of the tarunai-connect-gimp package:
 
 ```bash
-pip install cli-anything-gimp
+pip install tarunai-connect-gimp
 ```
 
 **Prerequisites:**
@@ -29,16 +29,16 @@ pip install cli-anything-gimp
 
 ```bash
 # Show help
-cli-anything-gimp --help
+tarunai-connect-gimp --help
 
 # Start interactive REPL mode
-cli-anything-gimp
+tarunai-connect-gimp
 
 # Create a new project
-cli-anything-gimp project new -o project.json
+tarunai-connect-gimp project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-gimp --json project info -p project.json
+tarunai-connect-gimp --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -46,7 +46,7 @@ cli-anything-gimp --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-gimp
+tarunai-connect-gimp
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -168,9 +168,9 @@ Drawing operations (applied at render time).
 Create a new gimp project file.
 
 ```bash
-cli-anything-gimp project new -o myproject.json
+tarunai-connect-gimp project new -o myproject.json
 # Or with JSON output for programmatic use
-cli-anything-gimp --json project new -o myproject.json
+tarunai-connect-gimp --json project new -o myproject.json
 ```
 
 
@@ -179,7 +179,7 @@ cli-anything-gimp --json project new -o myproject.json
 Start an interactive session with undo/redo support.
 
 ```bash
-cli-anything-gimp
+tarunai-connect-gimp
 # Enter commands interactively
 # Use 'help' to see available commands
 # Use 'undo' and 'redo' for history navigation
@@ -191,7 +191,7 @@ cli-anything-gimp
 Export the project to a final output format.
 
 ```bash
-cli-anything-gimp --project myproject.json export render output.png --overwrite
+tarunai-connect-gimp --project myproject.json export render output.png --overwrite
 ```
 
 ### Layered Composition Workflow
@@ -199,10 +199,10 @@ cli-anything-gimp --project myproject.json export render output.png --overwrite
 For overlay-heavy compositions:
 
 ```bash
-cli-anything-gimp --project poster.gimp-cli.json layer set 0 offset_x -48
-cli-anything-gimp --project poster.gimp-cli.json layer set 0 offset_y 24
-cli-anything-gimp --project poster.gimp-cli.json draw text --layer 0 --text "Launch Night" --x 96 --y 120 --size 72 --color "#f6f1e8"
-cli-anything-gimp --project poster.gimp-cli.json export render output.png --overwrite
+tarunai-connect-gimp --project poster.gimp-cli.json layer set 0 offset_x -48
+tarunai-connect-gimp --project poster.gimp-cli.json layer set 0 offset_y 24
+tarunai-connect-gimp --project poster.gimp-cli.json draw text --layer 0 --text "Launch Night" --x 96 --y 120 --size 72 --color "#f6f1e8"
+tarunai-connect-gimp --project poster.gimp-cli.json export render output.png --overwrite
 ```
 
 Notes:
@@ -228,10 +228,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-gimp project info -p project.json
+tarunai-connect-gimp project info -p project.json
 
 # JSON output for agents
-cli-anything-gimp --json project info -p project.json
+tarunai-connect-gimp --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -249,7 +249,7 @@ When using this CLI programmatically:
 
 - Full documentation: See README.md in the package
 - Test coverage: See TEST.md in the package
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

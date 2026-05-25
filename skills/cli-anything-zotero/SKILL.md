@@ -1,12 +1,12 @@
 ---
-name: "cli-anything-zotero"
+name: "tarunai-connect-zotero"
 description: >-
   CLI harness for Zotero.
 ---
 
-# cli-anything-zotero
+# tarunai-connect-zotero
 
-`cli-anything-zotero` is an agent-native CLI for Zotero desktop. It does not reimplement Zotero. Instead, it composes Zotero's real local surfaces:
+`tarunai-connect-zotero` is an agent-native CLI for Zotero desktop. It does not reimplement Zotero. Instead, it composes Zotero's real local surfaces:
 
 ## Installation
 
@@ -17,8 +17,8 @@ pip install -e .
 ## Entry Points
 
 ```bash
-cli-anything-zotero
-python -m cli_anything.zotero
+tarunai-connect-zotero
+python -m tarunai_connect.zotero
 ```
 
 ## Important Constraints
@@ -146,7 +146,7 @@ Session and REPL context commands.
 Inspect Zotero paths and backend availability.
 
 ```bash
-cli-anything-zotero app status --json
+tarunai-connect-zotero app status --json
 ```
 
 ### Read Selected Collection
@@ -154,7 +154,7 @@ cli-anything-zotero app status --json
 Persist the collection selected in the Zotero GUI.
 
 ```bash
-cli-anything-zotero collection use-selected --json
+tarunai-connect-zotero collection use-selected --json
 ```
 
 ### Render Citation
@@ -162,7 +162,7 @@ cli-anything-zotero collection use-selected --json
 Render a citation using Zotero's Local API.
 
 ```bash
-cli-anything-zotero item citation <item-key> --style apa --locale en-US --json
+tarunai-connect-zotero item citation <item-key> --style apa --locale en-US --json
 ```
 
 ### Add Child Note
@@ -170,7 +170,7 @@ cli-anything-zotero item citation <item-key> --style apa --locale en-US --json
 Create a child note under an existing Zotero item.
 
 ```bash
-cli-anything-zotero note add <item-key> --text "Key takeaway" --json
+tarunai-connect-zotero note add <item-key> --text "Key takeaway" --json
 ```
 
 ### Build LLM Context
@@ -178,7 +178,7 @@ cli-anything-zotero note add <item-key> --text "Key takeaway" --json
 Assemble structured context for downstream model analysis.
 
 ```bash
-cli-anything-zotero item context <item-key> --include-notes --include-links --json
+tarunai-connect-zotero item context <item-key> --include-notes --include-links --json
 ```
 
 ## Version

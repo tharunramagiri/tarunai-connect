@@ -1,19 +1,19 @@
 ---
-name: "cli-anything-calibre"
+name: "tarunai-connect-calibre"
 description: >-
   Command-line interface for Calibre - A stateful CLI harness for e-book library management, metadata editing, and format conversion wrapping the real Calibre tools (calibredb, ebook-convert, ebook-meta)...
 ---
 
-# cli-anything-calibre
+# tarunai-connect-calibre
 
 A stateful CLI harness for Calibre e-book management. Wraps the real Calibre tools (`calibredb`, `ebook-convert`, `ebook-meta`) to give AI agents and scripts a clean, structured interface for library operations, metadata editing, and format conversion.
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-calibre package:
+This CLI is installed as part of the tarunai-connect-calibre package:
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=calibre/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=calibre/agent-harness
 ```
 
 **Prerequisites:**
@@ -40,16 +40,16 @@ which ebook-meta
 
 ```bash
 # Show help
-cli-anything-calibre --help
+tarunai-connect-calibre --help
 
 # Start interactive REPL mode
-cli-anything-calibre
+tarunai-connect-calibre
 
 # Connect to a Calibre library
-cli-anything-calibre library connect ~/Calibre\ Library
+tarunai-connect-calibre library connect ~/Calibre\ Library
 
 # Run with JSON output (for agent consumption)
-cli-anything-calibre --json books list
+tarunai-connect-calibre --json books list
 ```
 
 ### REPL Mode
@@ -57,7 +57,7 @@ cli-anything-calibre --json books list
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-calibre
+tarunai-connect-calibre
 # Enter commands interactively with tab-completion and history
 # Use 'help' to see available commands
 # Use 'quit' or 'exit' to leave
@@ -145,10 +145,10 @@ Catalog generation.
 Connect to your Calibre library and list books.
 
 ```bash
-cli-anything-calibre library connect ~/Calibre\ Library
-cli-anything-calibre books list
+tarunai-connect-calibre library connect ~/Calibre\ Library
+tarunai-connect-calibre books list
 # Or with JSON output
-cli-anything-calibre --json books list --search "author:asimov"
+tarunai-connect-calibre --json books list --search "author:asimov"
 ```
 
 
@@ -157,9 +157,9 @@ cli-anything-calibre --json books list --search "author:asimov"
 Search books using Calibre query language.
 
 ```bash
-cli-anything-calibre books search "title:Foundation"
-cli-anything-calibre books search "author:asimov and tags:scifi"
-cli-anything-calibre books search "rating:>3"
+tarunai-connect-calibre books search "title:Foundation"
+tarunai-connect-calibre books search "author:asimov and tags:scifi"
+tarunai-connect-calibre books search "rating:>3"
 ```
 
 
@@ -168,11 +168,11 @@ cli-anything-calibre books search "rating:>3"
 Set metadata fields on books.
 
 ```bash
-cli-anything-calibre meta set 42 title "New Title"
-cli-anything-calibre meta set 42 series "Foundation"
-cli-anything-calibre meta set 42 series_index 1
-cli-anything-calibre meta set 42 tags "scifi,classic"
-cli-anything-calibre meta set 42 rating 5
+tarunai-connect-calibre meta set 42 title "New Title"
+tarunai-connect-calibre meta set 42 series "Foundation"
+tarunai-connect-calibre meta set 42 series_index 1
+tarunai-connect-calibre meta set 42 tags "scifi,classic"
+tarunai-connect-calibre meta set 42 rating 5
 ```
 
 
@@ -181,8 +181,8 @@ cli-anything-calibre meta set 42 rating 5
 Convert between e-book formats.
 
 ```bash
-cli-anything-calibre formats convert 42 EPUB MOBI
-cli-anything-calibre formats convert 42 EPUB PDF --output /tmp/book.pdf
+tarunai-connect-calibre formats convert 42 EPUB MOBI
+tarunai-connect-calibre formats convert 42 EPUB PDF --output /tmp/book.pdf
 ```
 
 
@@ -191,8 +191,8 @@ cli-anything-calibre formats convert 42 EPUB PDF --output /tmp/book.pdf
 Export each chapter of an EPUB as a separate PDF file.
 
 ```bash
-cli-anything-calibre books export-chapters 42 --to-dir ./pdfs
-cli-anything-calibre books export-chapters 42 --to-dir ./pdfs --chapters 1-5
+tarunai-connect-calibre books export-chapters 42 --to-dir ./pdfs
+tarunai-connect-calibre books export-chapters 42 --to-dir ./pdfs --chapters 1-5
 ```
 
 
@@ -239,7 +239,7 @@ author:asimov and tags:scifi     # Boolean AND
 
 The CLI maintains session state with:
 
-- **Session file**: `~/.cli-anything-calibre/session.json`
+- **Session file**: `~/.tarunai-connect-calibre/session.json`
 - **Library path persistence**: Active library is saved across sessions
 - **Environment override**: `CALIBRE_LIBRARY` environment variable
 
@@ -252,10 +252,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-calibre books list
+tarunai-connect-calibre books list
 
 # JSON output for agents
-cli-anything-calibre --json books list
+tarunai-connect-calibre --json books list
 ```
 
 ## For AI Agents
@@ -274,7 +274,7 @@ When using this CLI programmatically:
 - Full documentation: See README.md in the package
 - Architecture SOP: See CALIBRE.md in the agent-harness directory
 - Test coverage: See test_core.py and test_full_e2e.py in the tests directory
-- Methodology: See HARNESS.md in the cli-anything-plugin
+- Methodology: See HARNESS.md in the tarunai-connect-plugin
 
 ## Version
 

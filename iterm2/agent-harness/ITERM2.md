@@ -8,7 +8,7 @@ iTerm2 is a macOS terminal emulator with an extensive Python API that allows pro
 
 ```
 ┌─────────────────────────────────┐
-│   cli-anything-iterm2 (Click)   │  ← This CLI harness
+│   tarunai-connect-iterm2 (Click)   │  ← This CLI harness
 └──────────────┬──────────────────┘
                │ iterm2 Python API (async/websocket)
 ┌──────────────▼──────────────────┐
@@ -60,14 +60,14 @@ App
 Use `app snapshot` as the first command when landing in any existing workspace:
 
 ```bash
-cli-anything-iterm2 --json app snapshot
+tarunai-connect-iterm2 --json app snapshot
 ```
 
 Returns for every session: name, current directory (`path`), foreground process, `user.role` label, and last visible output line — a full picture without reading each pane's screen contents individually.
 
 Label panes on setup so snapshot can identify them on re-entry:
 ```bash
-cli-anything-iterm2 session set-var user.role "api-server"
+tarunai-connect-iterm2 session set-var user.role "api-server"
 ```
 
 ## Key API Patterns
@@ -114,7 +114,7 @@ async def main(connection):
 
 ## Session State
 
-The CLI stores current context (window_id, tab_id, session_id) in a JSON session file at `~/.cli-anything-iterm2/session.json`. This allows stateful multi-command workflows without re-discovering the target on every call.
+The CLI stores current context (window_id, tab_id, session_id) in a JSON session file at `~/.tarunai-connect-iterm2/session.json`. This allows stateful multi-command workflows without re-discovering the target on every call.
 
 ## Error Handling
 

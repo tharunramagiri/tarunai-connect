@@ -2,7 +2,7 @@
 
 ## Overview
 
-This harness adds `cli-anything-eth2-quickstart`, a production-oriented CLI wrapper for the
+This harness adds `tarunai-connect-eth2-quickstart`, a production-oriented CLI wrapper for the
 [`chimera-defi/eth2-quickstart`](https://github.com/chimera-defi/eth2-quickstart) repository.
 It does not reimplement node installation logic. Instead, it maps agent-friendly commands onto
 the repo's canonical shell entrypoints:
@@ -19,15 +19,15 @@ the repo's canonical shell entrypoints:
 
 ## Architecture
 
-The package follows standard CLI-Anything layout:
+The package follows standard tarunAI Connect layout:
 
-- `cli_anything/eth2_quickstart/eth2_quickstart_cli.py`
+- `tarunai_connect/eth2_quickstart/eth2_quickstart_cli.py`
   Click entrypoint with REPL and machine-readable `--json` mode.
-- `cli_anything/eth2_quickstart/core/project.py`
+- `tarunai_connect/eth2_quickstart/core/project.py`
   Repo-root discovery plus safe updates to `config/user_config.env`.
-- `cli_anything/eth2_quickstart/utils/eth2qs_backend.py`
+- `tarunai_connect/eth2_quickstart/utils/eth2qs_backend.py`
   Thin subprocess backend for invoking the upstream wrapper/scripts.
-- `cli_anything/eth2_quickstart/core/*.py`
+- `tarunai_connect/eth2_quickstart/core/*.py`
   Small orchestration helpers for install, RPC, validator guidance, and health.
 
 ## Command Mapping
@@ -91,10 +91,10 @@ Returns the canonical `doctor --json` output and a short harness summary.
 
 ## Installation Model
 
-The harness is meant to be installed from the CLI-Anything repo:
+The harness is meant to be installed from the tarunAI Connect repo:
 
 ```bash
-pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=eth2-quickstart/agent-harness
+pip install git+https://github.com/tharunramagiri/tarunai-connect.git#subdirectory=eth2-quickstart/agent-harness
 ```
 
 At runtime it operates against an `eth2-quickstart` checkout discovered by:

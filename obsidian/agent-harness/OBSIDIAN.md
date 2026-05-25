@@ -21,7 +21,7 @@ The Local REST API plugin exposes vault operations via an HTTPS server on `local
 └──────────────────────┼─────────────────────────────┘
                        │ HTTPS + Bearer Token
          ┌─────────────┴──────────────┐
-         │   cli-anything-obsidian    │
+         │   tarunai-connect-obsidian    │
          │   Click CLI + REPL         │
          └────────────────────────────┘
 ```

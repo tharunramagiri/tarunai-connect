@@ -1,7 +1,7 @@
 {
   "name": "sketch-harness",
   "version": "1.0.0",
-  "description": "CLI tool to generate Sketch files from JSON design specs — CLI-Anything harness for Sketch",
+  "description": "CLI tool to generate Sketch files from JSON design specs — tarunAI Connect harness for Sketch",
   "main": "src/cli.js",
   "bin": {
     "sketch-cli": "src/cli.js"

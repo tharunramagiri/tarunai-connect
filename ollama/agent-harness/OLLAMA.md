@@ -53,9 +53,9 @@ Ollama already provides a clean REST API. Our CLI wraps it with:
 | `/api/embed` | POST | Generate embeddings |
 | `/api/version` | GET | Server version |
 
-## Command Map: Ollama Native CLI → CLI-Anything
+## Command Map: Ollama Native CLI → tarunAI Connect
 
-| Ollama CLI | CLI-Anything |
+| Ollama CLI | tarunAI Connect |
 |-----------|-------------|
 | `ollama list` | `model list` |
 | `ollama show <name>` | `model show <name>` |

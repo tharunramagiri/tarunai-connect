@@ -1,5 +1,5 @@
 ---
-name: "cli-anything-safari"
+name: "tarunai-connect-safari"
 description: >-
   Safari browser automation CLI on macOS via safari-mcp. Controls real Safari
   (native, keeps logins) by wrapping the safari-mcp MCP server. Every one of
@@ -7,7 +7,7 @@ description: >-
   parity, no manual drift.
 ---
 
-# cli-anything-safari
+# tarunai-connect-safari
 
 A command-line interface for Safari browser automation on macOS. Wraps the
 [`safari-mcp`](https://github.com/achiya-automation/safari-mcp) Node.js MCP
@@ -28,7 +28,7 @@ etc.), using `safari-mcp` directly over MCP stdio will be faster.
 - Your agent framework does **not** speak MCP (Codex CLI, GitHub Copilot
   CLI, custom scripts, older agent frameworks).
 - You need to **script browser automation from bash** —
-  `cli-anything-safari --json tool snapshot | jq '...'`.
+  `tarunai-connect-safari --json tool snapshot | jq '...'`.
 - You run in **CI/CD** and want cron-able, subprocess-friendly output.
 - You're **debugging interactively** from Terminal.
 
@@ -69,62 +69,62 @@ The CLI has 5 top-level commands:
 
 ```bash
 # Count of tools (sanity check — must match safari-mcp's registered tools)
-cli-anything-safari tools count
+tarunai-connect-safari tools count
 # → 84
 
 # List every tool
-cli-anything-safari tools list
-cli-anything-safari tools list --filter click   # filter by substring
+tarunai-connect-safari tools list
+tarunai-connect-safari tools list --filter click   # filter by substring
 
 # Full schema for one tool (JSON or human format)
-cli-anything-safari tools describe safari_scroll
-cli-anything-safari --json tools describe safari_click
+tarunai-connect-safari tools describe safari_scroll
+tarunai-connect-safari --json tools describe safari_click
 ```
 
 ### Call a tool (schema-driven)
 
 ```bash
 # Navigate
-cli-anything-safari tool navigate --url https://example.com
+tarunai-connect-safari tool navigate --url https://example.com
 
 # Take a snapshot (preferred over screenshot — structured text with ref IDs)
-cli-anything-safari --json tool snapshot
+tarunai-connect-safari --json tool snapshot
 
 # Click by ref (refs come from snapshot; they expire on the next snapshot!)
-cli-anything-safari tool click --ref 0_5
+tarunai-connect-safari tool click --ref 0_5
 
 # Click by selector or visible text
-cli-anything-safari tool click --selector "#submit"
-cli-anything-safari tool click --text "Log in"
+tarunai-connect-safari tool click --selector "#submit"
+tarunai-connect-safari tool click --text "Log in"
 
 # Fill a field
-cli-anything-safari tool fill --selector "#email" --value "user@example.com"
+tarunai-connect-safari tool fill --selector "#email" --value "user@example.com"
 
 # Scroll by direction/amount (NOT x/y — note the schema!)
-cli-anything-safari tool scroll --direction down --amount 500
+tarunai-connect-safari tool scroll --direction down --amount 500
 
 # Drag one element onto another
-cli-anything-safari tool drag \
+tarunai-connect-safari tool drag \
     --source-selector ".card" \
     --target-selector ".trash"
 
 # Screenshot — returns base64 JPEG in stdout. Decode with:
-cli-anything-safari --json tool screenshot --full-page \
+tarunai-connect-safari --json tool screenshot --full-page \
     | python3 -c "import sys,json,base64; \
         d=json.load(sys.stdin); \
         open('/tmp/shot.jpg','wb').write(base64.b64decode(d['data']))"
 
 # Save as PDF (this one writes to disk directly)
-cli-anything-safari tool save-pdf --path /tmp/page.pdf
+tarunai-connect-safari tool save-pdf --path /tmp/page.pdf
 
 # Evaluate JavaScript (note: parameter is --script, not --code)
-cli-anything-safari tool evaluate --script "document.title"
+tarunai-connect-safari tool evaluate --script "document.title"
 ```
 
 ### Navigate and read in one round-trip
 
 ```bash
-cli-anything-safari --json tool navigate-and-read --url https://example.com
+tarunai-connect-safari --json tool navigate-and-read --url https://example.com
 ```
 
 ### Form fill (bulk)
@@ -133,32 +133,32 @@ cli-anything-safari --json tool navigate-and-read --url https://example.com
 Pass it as a JSON string:
 
 ```bash
-cli-anything-safari tool fill-form --fields '[
+tarunai-connect-safari tool fill-form --fields '[
   {"selector": "#email",    "value": "user@example.com"},
   {"selector": "#password", "value": "hunter2"}
 ]'
 ```
 
-Run `cli-anything-safari tools describe safari_fill_form` to see the
+Run `tarunai-connect-safari tools describe safari_fill_form` to see the
 exact schema, including any new fields safari-mcp adds upstream.
 
 ### Network monitoring
 
 ```bash
-cli-anything-safari tool start-network-capture
-cli-anything-safari tool navigate --url https://example.com
-cli-anything-safari --json tool network
-cli-anything-safari tool performance-metrics
+tarunai-connect-safari tool start-network-capture
+tarunai-connect-safari tool navigate --url https://example.com
+tarunai-connect-safari --json tool network
+tarunai-connect-safari tool performance-metrics
 ```
 
 ### Storage
 
 ```bash
-cli-anything-safari tool get-cookies
-cli-anything-safari tool set-cookie --name session --value abc123 --domain example.com
-cli-anything-safari tool local-storage --key theme
+tarunai-connect-safari tool get-cookies
+tarunai-connect-safari tool set-cookie --name session --value abc123 --domain example.com
+tarunai-connect-safari tool local-storage --key theme
 # export-storage returns JSON to stdout — no --path arg. Pipe to a file:
-cli-anything-safari --json tool export-storage > /tmp/storage.json
+tarunai-connect-safari --json tool export-storage > /tmp/storage.json
 ```
 
 ### Raw JSON escape hatch
@@ -167,14 +167,14 @@ When you need to pass a complex nested object or want to drive the CLI from
 a pre-built JSON blob:
 
 ```bash
-cli-anything-safari raw safari_evaluate \
+tarunai-connect-safari raw safari_evaluate \
     --json-args '{"code":"[...document.querySelectorAll(\"a\")].map(a => a.href)"}'
 ```
 
 ### Interactive REPL
 
 ```bash
-cli-anything-safari
+tarunai-connect-safari
 ```
 
 The REPL banner prints the absolute path to this SKILL.md so agents can
@@ -185,9 +185,9 @@ self-discover capabilities.
 All commands support `--json` as a global flag:
 
 ```bash
-cli-anything-safari --json tool snapshot
-cli-anything-safari --json tool list-tabs
-cli-anything-safari --json tools list
+tarunai-connect-safari --json tool snapshot
+tarunai-connect-safari --json tool list-tabs
+tarunai-connect-safari --json tools list
 ```
 
 ## State Management
@@ -217,12 +217,12 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-safari tool snapshot
+tarunai-connect-safari tool snapshot
 
 # JSON output for agents
-cli-anything-safari --json tool snapshot
-cli-anything-safari --json tools list
-cli-anything-safari --json tools describe safari_click
+tarunai-connect-safari --json tool snapshot
+tarunai-connect-safari --json tools list
+tarunai-connect-safari --json tools describe safari_click
 ```
 
 ## For AI Agents
@@ -262,11 +262,11 @@ MCP server 1:1:
 
 ```bash
 # Find all click-related tools
-cli-anything-safari tools list --filter click
+tarunai-connect-safari tools list --filter click
 
 # Get the full schema (including every argument with type, description,
 # required/optional, enum choices, defaults)
-cli-anything-safari --json tools describe safari_click
+tarunai-connect-safari --json tools describe safari_click
 ```
 
 ### Tool selection strategy
@@ -319,15 +319,15 @@ processes older than 10 seconds. If you run two CLI instances at once,
 one will kill the other's backend. **There is currently no daemon
 mode** — for latency-sensitive workflows, drive the CLI from a
 long-lived Python script that imports
-``cli_anything.safari.utils.safari_backend.call()`` directly to avoid
+``tarunai_connect.safari.utils.safari_backend.call()`` directly to avoid
 re-spawning the subprocess on every invocation.
 
 ## Links
 
 - [Safari MCP GitHub](https://github.com/achiya-automation/safari-mcp)
 - [Safari MCP on npm](https://www.npmjs.com/package/safari-mcp)
-- [CLI-Anything](https://github.com/HKUDS/CLI-Anything)
-- [MCP Backend Pattern Guide](https://github.com/HKUDS/CLI-Anything/blob/main/cli-anything-plugin/guides/mcp-backend.md)
+- [tarunAI Connect](https://github.com/tharunramagiri/tarunai-connect)
+- [MCP Backend Pattern Guide](https://github.com/tharunramagiri/tarunai-connect/blob/main/tarunai-connect-plugin/guides/mcp-backend.md)
 
 ## Security Considerations
 
@@ -336,7 +336,7 @@ re-spawning the subprocess on every invocation.
 All navigation tools (`tool navigate`, `tool navigate-and-read`, `tool
 new-tab`, and `raw safari_navigate*`) pass the `url` argument through
 `utils/security.py` which blocks dangerous schemes and optionally blocks
-private networks (set `CLI_ANYTHING_SAFARI_BLOCK_PRIVATE=1`).
+private networks (set `TARUNAI_CONNECT_SAFARI_BLOCK_PRIVATE=1`).
 
 ### Tab Isolation
 
@@ -350,7 +350,7 @@ automation:
 
 ```bash
 export SAFARI_PROFILE="Automation"
-cli-anything-safari tool navigate --url https://example.com
+tarunai-connect-safari tool navigate --url https://example.com
 ```
 
 This keeps cookies/logins/history separate from the user's main browsing.
@@ -374,7 +374,7 @@ If you upgrade `safari-mcp`, regenerate the bundled schema:
 ```bash
 python scripts/extract_tools.py \
     "$(npm root -g)/safari-mcp/index.js" \
-    cli_anything/safari/resources/tools.json
+    tarunai_connect/safari/resources/tools.json
 ```
 
 The parity test (`test_parity.py`) pins the expected tool count; update
@@ -382,11 +382,11 @@ it when the upstream tool list changes.
 
 ## More Information
 
-- **Full documentation:** `cli_anything/safari/README.md` in the package
-- **Test coverage:** `cli_anything/safari/tests/TEST.md` in the package
+- **Full documentation:** `tarunai_connect/safari/README.md` in the package
+- **Test coverage:** `tarunai_connect/safari/tests/TEST.md` in the package
 - **Architecture analysis:** `safari/agent-harness/SAFARI.md`
-- **Methodology:** `cli-anything-plugin/HARNESS.md`
-- **MCP backend pattern:** `cli-anything-plugin/guides/mcp-backend.md`
+- **Methodology:** `tarunai-connect-plugin/HARNESS.md`
+- **MCP backend pattern:** `tarunai-connect-plugin/guides/mcp-backend.md`
 
 ## Version
 

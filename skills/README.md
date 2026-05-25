@@ -1,26 +1,26 @@
-# CLI-Anything Skills
+# tarunAI Connect Skills
 
-This directory is the canonical `npx skills` surface for in-repo CLI-Anything
+This directory is the canonical `npx skills` surface for in-repo tarunAI Connect
 harnesses.
 
 Layout:
 
 ```text
 skills/
-  cli-anything-audacity/SKILL.md
-  cli-anything-blender/SKILL.md
+  tarunai-connect-audacity/SKILL.md
+  tarunai-connect-blender/SKILL.md
   ...
 ```
 
 Typical usage:
 
 ```bash
-npx skills add HKUDS/CLI-Anything --list
-npx skills add HKUDS/CLI-Anything --skill cli-anything-audacity -g -y
+npx skills add tharunramagiri/tarunai-connect --list
+npx skills add tharunramagiri/tarunai-connect --skill tarunai-connect-audacity -g -y
 ```
 
 The `SKILL.md` files here are the canonical repo-root copies. Installed harness
-packages still ship compatibility copies inside `cli_anything/<software>/skills/`
+packages still ship compatibility copies inside `tarunai_connect/<software>/skills/`
 for local runtime discovery.
 
 CI rule:

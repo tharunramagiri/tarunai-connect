@@ -7,11 +7,11 @@ const LABELS = {
     color: "1D76DB",
     description: "Fixes or improves an existing CLI harness",
   },
-  "cli-anything-skill": {
+  "tarunai-connect-skill": {
     color: "5319E7",
-    description: "Changes CLI-Anything plugin or skill files",
+    description: "Changes tarunAI Connect plugin or skill files",
   },
-  "cli-anything-hub": {
+  "tarunai-connect-hub": {
     color: "FBCA04",
     description: "Changes CLI-Hub, registries, or hub docs",
   },

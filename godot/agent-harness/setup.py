@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-setup.py for cli-anything-godot
+setup.py for tarunai-connect-godot
 
 Install with: pip install -e .
 Or publish to PyPI: python -m build && twine upload dist/*
@@ -8,19 +8,19 @@ Or publish to PyPI: python -m build && twine upload dist/*
 
 from setuptools import setup, find_namespace_packages
 
-with open("cli_anything/godot/README.md", "r", encoding="utf-8") as fh:
+with open("tarunai_connect/godot/README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="cli-anything-godot",
+    name="tarunai-connect-godot",
     version="1.0.0",
-    author="cli-anything contributors",
+    author="tarunai-connect contributors",
     author_email="",
     description="CLI harness for Godot Engine - Game project management, scene editing, export and GDScript execution. Recommended: Godot 4.x on PATH",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/HKUDS/CLI-Anything",
-    packages=find_namespace_packages(include=["cli_anything.*"]),
+    url="https://github.com/tharunramagiri/tarunai-connect",
+    packages=find_namespace_packages(include=["tarunai_connect.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -45,11 +45,11 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cli-anything-godot=cli_anything.godot.godot_cli:main",
+            "tarunai-connect-godot=tarunai_connect.godot.godot_cli:main",
         ],
     },
     package_data={
-        "cli_anything.godot": ["skills/*.md"],
+        "tarunai_connect.godot": ["skills/*.md"],
     },
     include_package_data=True,
     zip_safe=False,

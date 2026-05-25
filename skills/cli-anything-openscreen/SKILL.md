@@ -1,5 +1,5 @@
 ---
-name: "cli-anything-openscreen"
+name: "tarunai-connect-openscreen"
 description: >-
   Command-line interface for Openscreen — a screen recording editor.
   A stateful CLI for editing screen recordings with zoom, speed ramps,
@@ -8,7 +8,7 @@ description: >-
   AI agents and power users who need programmatic video editing.
 ---
 
-# cli-anything-openscreen
+# tarunai-connect-openscreen
 
 A stateful command-line interface for editing screen recordings. Transform raw
 captures into polished demo videos with zoom effects, speed adjustments,
@@ -17,7 +17,7 @@ trimming, annotations, and beautiful backgrounds.
 ## Installation
 
 ```bash
-pip install cli-anything-openscreen
+pip install tarunai-connect-openscreen
 ```
 
 **Prerequisites:**
@@ -29,15 +29,15 @@ pip install cli-anything-openscreen
 ### Basic Commands
 
 ```bash
-cli-anything-openscreen --help
-cli-anything-openscreen                     # REPL mode
-cli-anything-openscreen project new -v recording.mp4 -o project.openscreen
-cli-anything-openscreen --json project info
+tarunai-connect-openscreen --help
+tarunai-connect-openscreen                     # REPL mode
+tarunai-connect-openscreen project new -v recording.mp4 -o project.openscreen
+tarunai-connect-openscreen --json project info
 ```
 
 ### REPL Mode
 
-Run `cli-anything-openscreen` without arguments to enter interactive mode.
+Run `tarunai-connect-openscreen` without arguments to enter interactive mode.
 Type `help` for available commands, `quit` to exit.
 
 ## Command Groups

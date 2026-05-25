@@ -1,18 +1,18 @@
 {
-  "name": "cli-anything",
+  "name": "tarunai-connect",
   "owner": {
-    "name": "cli-anything contributors"
+    "name": "tarunai-connect contributors"
   },
   "metadata": {
-    "description": "Build powerful, stateful CLI interfaces for any GUI application using the cli-anything harness methodology."
+    "description": "Build powerful, stateful CLI interfaces for any GUI application using the tarunai-connect harness methodology."
   },
   "plugins": [
     {
-      "name": "cli-anything",
-      "source": "./cli-anything-plugin",
-      "description": "Build powerful, stateful CLI interfaces for any GUI application using the cli-anything harness methodology.",
+      "name": "tarunai-connect",
+      "source": "./tarunai-connect-plugin",
+      "description": "Build powerful, stateful CLI interfaces for any GUI application using the tarunai-connect harness methodology.",
       "author": {
-        "name": "cli-anything contributors"
+        "name": "tarunai-connect contributors"
       },
       "category": "development"
     }
